@@ -21,6 +21,12 @@ Base: `https://marcellaaaaaaaa.github.io/medine-demos/<slug>/`
 
 ## Notas de unicidad
 
+- **Componentes (nav/footer)**: las 12 demos fundadoras usan variantes de nav sticky +
+  footer con redes (era el estándar viejo del BRIEF-COMUN). Desde 2026-07-23 el eje 4 de
+  unicidad exige rotar también la FORMA de nav, footer, tarjetas y CTAs — registrar aquí
+  qué forma usó cada demo nueva (columna "Técnica de firma" o nota aparte) y no repetirla
+  mientras queden formas frescas en el pool de `references/diseno.md` de la skill.
+
 - `background-clip:text` usado 2 veces (Supulca, Magusa) — NO usarlo más.
 - Marquees: SMD (marcas) y OBA (franja ámbar) — evitar como firma principal en adelante.
 - Bases claras: solo Mersan y OBA — alternar más hacia claro/excéntrico en futuras.

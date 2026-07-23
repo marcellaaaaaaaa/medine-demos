@@ -34,20 +34,29 @@ Cada demo tiene su propio ARQUETIPO DE LAYOUT (viene en el brief individual). Ad
 - JS permitido y recomendado con moderación: menú móvil, reveal-on-scroll sutil (IntersectionObserver),
   y la interacción específica que pida el brief (ej. filtros estáticos, tabs). Sin librerías.
 
-## Componentes obligatorios en TODAS las demos
+## Elementos obligatorios en TODAS las demos (la FORMA la dicta el brief individual)
 
-1. **Nav sticky** con logo (asset local o wordmark tipográfico fiel) + CTA WhatsApp.
+Estos son ELEMENTOS requeridos, NO formas fijas: el nav y el footer deben variar de forma
+entre demos (píldora flotante, rail lateral, overlay, footer-póster, una línea minimal, etc.
+— el brief individual asigna cuál). Dos demos con el mismo nav o el mismo footer = fallo.
+
+1. **Navegación** con acceso al logo (asset local o wordmark tipográfico fiel) + CTA WhatsApp,
+   en la forma que asigne el brief individual.
 2. **Hero** según dirección de arte del brief individual.
 3. **Botón flotante de WhatsApp** (esquina inferior derecha, SVG del logo de WhatsApp, verde
    #25D366) con `https://wa.me/<numero>?text=<mensaje prellenado url-encoded>` — número y
    mensaje en el brief individual. Si el negocio no tiene WhatsApp público, el FAB apunta a su
    Instagram DM.
-4. **Sección de contacto/ubicación** con los datos reales.
-5. **Footer** con: redes sociales reales (SVG icons inline, no font-awesome), datos del negocio,
-   y el sello: `Demo diseñada por Medine.tech · Esta es una propuesta de diseño — no es el sitio
-   oficial` (discreto pero visible, con link a https://medine.tech).
+4. **Contacto/ubicación** con los datos reales.
+5. **Cierre de página** (footer en la forma asignada) con: redes sociales reales (SVG icons
+   inline, no font-awesome), datos del negocio, y el sello: `Demo diseñada por Medine.tech ·
+   Esta es una propuesta de diseño — no es el sitio oficial` (discreto pero visible, con link
+   a https://medine.tech).
 6. Los precios/promos reales del brief individual — son el corazón de la demo: el dueño debe
-   ver SU negocio, no un template.
+   ver SU negocio, no un template. Si hay fotos reales del negocio en ./assets/, tienen
+   prioridad sobre cualquier stock.
+7. **2-3 técnicas modernas de frontend** (las asigna el brief individual) al servicio de la
+   marca — nunca decoración gratuita; siempre con fallback y prefers-reduced-motion.
 
 ## Definición de "listo"
 
