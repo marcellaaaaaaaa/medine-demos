@@ -96,21 +96,34 @@ img,svg{max-width:100%;display:block}
 /* ---------- HERO ---------- */
 .hero{
   position:relative;
+  min-height:600px;
   background:
-    radial-gradient(ellipse 90% 55% at 50% 108%, rgba(211,47,47,.10), transparent 60%),
-    radial-gradient(ellipse 70% 45% at 50% 112%, rgba(255,255,255,.05), transparent 55%),
+    radial-gradient(ellipse 70% 60% at 10% 112%, rgba(211,47,47,.09), transparent 60%),
     linear-gradient(180deg,#16181D 0%,#14161B 55%,#101216 100%);
   border-bottom:1px solid var(--line);
   overflow:hidden;
 }
-.hero-in{max-width:var(--max);margin:0 auto;padding:72px 20px 0;text-align:left}
+.hero-in{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:88px 20px 96px;text-align:left}
 .hero h1{
   font-weight:800;
-  font-size:clamp(2.7rem,9.5vw,8.25rem);
+  font-size:clamp(2.6rem,5.8vw,5.5rem);
   line-height:.98;letter-spacing:-.025em;
-  margin:22px 0 26px;max-width:14ch;
+  margin:22px 0 26px;max-width:12ch;
 }
 .hero h1 em{font-style:normal;color:var(--red)}
+/* H1 word-stagger reveal */
+.hero h1 .hw{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.12em;margin-bottom:-.12em}
+.hero h1 .hwi{display:inline-block;transform:translateY(115%);animation:hw-up .65s cubic-bezier(.22,.65,.3,1) both}
+.hero h1 .hw:nth-child(1) .hwi{animation-delay:.08s}
+.hero h1 .hw:nth-child(2) .hwi{animation-delay:.15s}
+.hero h1 .hw:nth-child(3) .hwi{animation-delay:.22s}
+.hero h1 .hw:nth-child(4) .hwi{animation-delay:.29s}
+.hero h1 .hw:nth-child(5) .hwi{animation-delay:.36s}
+.hero h1 .hw:nth-child(6) .hwi{animation-delay:.43s}
+.hero h1 .hw:nth-child(7) .hwi{animation-delay:.50s}
+.hero h1 .hw:nth-child(8) .hwi{animation-delay:.57s}
+.hero h1 .hw:nth-child(9) .hwi{animation-delay:.64s}
+@keyframes hw-up{to{transform:translateY(0)}}
 .hero-sub{
   color:var(--gray);font-size:clamp(1rem,2.5vw,1.15rem);
   max-width:52ch;margin-bottom:34px;
@@ -119,22 +132,69 @@ img,svg{max-width:100%;display:block}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:8px}
 .hero-facts{
   display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:38px;
-  padding-top:22px;border-top:1px solid var(--line);
+  padding-top:22px;border-top:1px solid var(--line);max-width:560px;
 }
 .hero-facts div{font-size:.78rem;color:var(--gray);letter-spacing:.06em}
 .hero-facts strong{
   display:block;font-family:'Archivo',sans-serif;font-stretch:75%;
   font-weight:800;font-size:1.5rem;color:var(--white);letter-spacing:0;
 }
-.hero-car{position:relative;margin-top:-8px}
-.hero-car svg{width:min(880px,94%);margin:0 auto;height:auto}
-.hero-floor{
-  position:absolute;left:0;right:0;bottom:0;height:120px;pointer-events:none;
-  background:linear-gradient(180deg,transparent,rgba(0,0,0,.45));
+/* Photo real (Toyota FJ Cruiser nocturna) anclada a la derecha, emerge del grafito */
+.hero-photo{
+  position:absolute;top:0;right:0;bottom:0;width:min(54%,760px);
+  overflow:hidden;pointer-events:none;z-index:1;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.85) 34%,#000 58%);
+          mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.85) 34%,#000 58%);
 }
+.hero-photo-img{
+  position:absolute;inset:0;
+  background:url("https://images.unsplash.com/photo-1778942854946-968abff62aab?q=80&w=1600&auto=format") 50% 42%/cover no-repeat;
+  filter:grayscale(.35) saturate(.7) contrast(1.07) brightness(.95);
+}
+.hero-photo-img::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(205deg,rgba(44,60,86,.45),rgba(22,24,29,.55));
+  mix-blend-mode:multiply;
+}
+/* LA FIRMA: barrido de faros — franja diagonal cálida que cruza la foto una vez */
+.hero-beam{
+  position:absolute;top:-25%;bottom:-25%;left:0;width:36%;
+  background:linear-gradient(90deg,transparent,rgba(255,241,214,.14) 28%,rgba(255,248,231,.38) 50%,rgba(255,241,214,.14) 72%,transparent);
+  transform:rotate(16deg) translateX(-130%);
+  filter:blur(22px);mix-blend-mode:screen;opacity:0;
+}
+.hero-lit .hero-beam{animation:beam-sweep 2.5s ease-out .2s 1 forwards}
+@keyframes beam-sweep{
+  0%{opacity:0;transform:rotate(16deg) translateX(-130%)}
+  12%{opacity:1}
+  62%{opacity:.9;transform:rotate(16deg) translateX(170%)}
+  100%{opacity:0;transform:rotate(16deg) translateX(330%)}
+}
+/* Glow tenue fijo sobre barra de luz y faros de la foto */
+.hero-glow{
+  position:absolute;inset:0;opacity:0;mix-blend-mode:screen;
+  background:
+    radial-gradient(46% 7% at 50% 39%, rgba(255,248,229,.5), transparent 75%),
+    radial-gradient(34% 9% at 50% 52%, rgba(214,231,255,.32), transparent 75%);
+}
+.hero-lit .hero-glow{animation:glow-in 1s ease-out 2.4s forwards}
+@keyframes glow-in{to{opacity:.85}}
 @media(max-width:760px){
-  .hero-in{padding-top:56px}
+  .hero{min-height:0}
+  .hero-photo{
+    position:relative;width:100%;height:min(64vw,340px);margin-bottom:-44px;
+    -webkit-mask-image:linear-gradient(180deg,#000 52%,transparent 100%);
+            mask-image:linear-gradient(180deg,#000 52%,transparent 100%);
+  }
+  .hero-photo-img{background-position:50% 46%}
+  .hero-beam{width:44%}
+  .hero-in{padding:0 20px 56px}
   .hero-facts{gap:10px 22px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero h1 .hwi{transform:none}
+  .hero-beam{display:none}
+  .hero-glow{opacity:.7}
 }
 
 /* ---------- FILTER BAR ---------- */
@@ -383,9 +443,14 @@ footer{border-top:1px solid var(--line);background:#111318;padding:56px 0 40px}
 
 <!-- HERO -->
 <header class="hero">
+  <div class="hero-photo" aria-hidden="true">
+    <div class="hero-photo-img"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-beam"></div>
+  </div>
   <div class="hero-in">
     <p class="eyebrow"><span class="tick">—</span> Lechería · Edo. Anzoátegui</p>
-    <h1>El carro que buscas, con los papeles <em>al día.</em></h1>
+    <h1><span class="hw"><span class="hwi">El</span></span> <span class="hw"><span class="hwi">carro</span></span> <span class="hw"><span class="hwi">que</span></span> <span class="hw"><span class="hwi">buscas,</span></span> <span class="hw"><span class="hwi">con</span></span> <span class="hw"><span class="hwi">los</span></span> <span class="hw"><span class="hwi">papeles</span></span> <span class="hw"><span class="hwi"><em>al</em></span></span> <span class="hw"><span class="hwi"><em>día.</em></span></span></h1>
     <p class="hero-sub">Compra, venta y consignación de vehículos en la Av. Bolívar de Lechería. Trato directo, sin intermediarios raros — y <b>recibimos tu vehículo como parte de pago</b>.</p>
     <div class="hero-ctas">
       <a class="btn btn-red" href="#inventario">Ver inventario</a>
@@ -397,67 +462,20 @@ footer{border-top:1px solid var(--line);background:#111318;padding:56px 0 40px}
       <div><strong>0KM</strong>y usados verificados</div>
     </div>
   </div>
-  <div class="hero-car" aria-hidden="true">
-    <svg viewBox="0 0 760 400" role="img" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="fade" x1="0" y1="278" x2="0" y2="400" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#fff" stop-opacity=".30"/>
-          <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-        </linearGradient>
-        <mask id="reflmask">
-          <rect x="0" y="276" width="760" height="130" fill="url(#fade)"/>
-        </mask>
-      </defs>
-      <g id="car" fill="none" stroke="#E8EAEE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <!-- body silhouette -->
-        <path d="M46 218
-                 C40 206 38 190 46 172
-                 L54 156
-                 C68 147 96 142 140 139
-                 L240 131
-                 L312 80
-                 C320 72 334 69 350 69
-                 L586 67
-                 C604 67 614 71 619 78
-                 L637 148
-                 C643 160 648 174 650 188
-                 L652 206
-                 C652 218 646 226 634 226
-                 L618 226
-                 A 58 58 0 0 0 502 226
-                 L250 226
-                 A 58 58 0 0 0 134 226
-                 L60 226
-                 C50 226 46 224 46 218 Z"/>
-        <!-- glass + details -->
-        <path d="M316 86 L256 130" stroke-opacity=".55"/>
-        <path d="M246 134 L636 127" stroke-opacity=".4" stroke-width="1.5"/>
-        <path d="M420 73 L415 129" stroke-opacity=".55"/>
-        <path d="M602 74 L622 128" stroke-opacity=".55"/>
-        <path d="M300 122 l-17 -6 l3 -11 l14 5 z" stroke-opacity=".7" stroke-width="2"/>
-        <path d="M352 152 h22 M470 150 h22" stroke-opacity=".6"/>
-        <path d="M362 136 L358 212" stroke-opacity=".3" stroke-width="1.5"/>
-        <path d="M478 134 L476 214" stroke-opacity=".3" stroke-width="1.5"/>
-        <path d="M56 160 l28 -3" stroke-opacity=".7"/>
-        <path d="M644 152 l-16 2" stroke-opacity=".7"/>
-        <!-- red rocker accent -->
-        <path d="M152 210 L610 206" stroke="#D32F2F" stroke-width="3" stroke-opacity=".85"/>
-        <!-- wheels -->
-        <circle cx="192" cy="226" r="44" stroke-width="3"/>
-        <circle cx="192" cy="226" r="24" stroke-opacity=".55"/>
-        <circle cx="192" cy="226" r="4" fill="#E8EAEE" stroke="none" fill-opacity=".7"/>
-        <circle cx="560" cy="226" r="44" stroke-width="3"/>
-        <circle cx="560" cy="226" r="24" stroke-opacity=".55"/>
-        <circle cx="560" cy="226" r="4" fill="#E8EAEE" stroke="none" fill-opacity=".7"/>
-      </g>
-      <!-- ground line -->
-      <line x1="20" y1="274" x2="740" y2="274" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
-      <!-- reflection -->
-      <use href="#car" transform="translate(0,552) scale(1,-1)" mask="url(#reflmask)" opacity=".35"/>
-    </svg>
-  </div>
-  <div class="hero-floor" aria-hidden="true"></div>
 </header>
+<script>
+(function(){
+  var hero=document.querySelector('.hero');
+  if(!hero)return;
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){hero.classList.add('hero-lit');return;}
+  var done=false;
+  var lit=function(){if(!done){done=true;hero.classList.add('hero-lit');}};
+  var img=new Image();
+  img.onload=lit;img.onerror=lit;
+  img.src='https://images.unsplash.com/photo-1778942854946-968abff62aab?q=80&w=1600&auto=format';
+  setTimeout(lit,2500);
+})();
+</script>
 
 <!-- FILTER BAR -->
 <div class="filterbar" id="filtros">

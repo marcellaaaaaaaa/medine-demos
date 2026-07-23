@@ -137,30 +137,39 @@ ul{list-style:none}
   .burger{display:inline-flex}
 }
 
-/* ---------- HERO ---------- */
+/* ---------- HERO (split diagonal animado) ---------- */
 .hero{
   position:relative;overflow:hidden;background:var(--ink);
   padding:clamp(3.2rem,7vw,6rem) 0 clamp(4.5rem,8vw,7rem);
 }
-.hero::before{ /* destello radial rojo */
-  content:"";position:absolute;inset:0;pointer-events:none;
+.hero-half{position:absolute;inset:0;pointer-events:none}
+.hero-half--left{
   background:
-    radial-gradient(620px 520px at 78% 42%,rgba(227,6,19,.38),transparent 65%),
-    radial-gradient(900px 700px at 90% 110%,rgba(227,6,19,.14),transparent 60%);
+    radial-gradient(560px 460px at 18% 32%,rgba(227,6,19,.14),transparent 65%),
+    linear-gradient(150deg,#1B1B1B,var(--ink) 55%,#0A0A0A);
+  clip-path:polygon(0 0,64% 0,48% 100%,0 100%);
 }
-.hero::after{ /* diagonales racing de fondo */
-  content:"";position:absolute;top:-10%;right:-14%;width:56%;height:130%;
-  background:repeating-linear-gradient(115deg,rgba(255,255,255,.028) 0 3px,transparent 3px 60px);
-  transform:skewX(-8deg);pointer-events:none;
+.hero-half--right{
+  background:linear-gradient(135deg,#F31423,var(--red) 45%,#B90410);
+  clip-path:polygon(64% 0,100% 0,100% 100%,48% 100%);
 }
-.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:center}
+.hero-half--right::after{ /* rayos/chevrons blancos sutiles */
+  content:"";position:absolute;inset:0;
+  background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><path d='M0 0 L32 32 L0 64 H11 L43 32 L11 0 Z' fill='%23fff' fill-opacity='.05'/></svg>") repeat;
+  background-size:64px 64px;
+}
+.hero-seam{
+  position:absolute;inset:0;pointer-events:none;background:#fff;opacity:.9;
+  clip-path:polygon(63.8% 0,64.25% 0,48.25% 100%,47.8% 100%);
+}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;gap:2.5rem;align-items:center}
 .hero h1{
   font-family:var(--disp);font-weight:900;font-style:italic;text-transform:uppercase;
-  font-size:clamp(3.1rem,10.5vw,8.2rem);line-height:.9;letter-spacing:0;
-  margin:1.2rem 0 1.4rem;
+  font-size:clamp(3.1rem,8.6vw,7rem);line-height:.9;letter-spacing:0;
+  margin:1.2rem 0 1.2rem;
 }
 .hero h1 .rojo{color:var(--red)}
-.hero-sub{color:var(--muted);font-size:1.06rem;max-width:44ch}
+.hero-sub{color:var(--muted);font-size:1.06rem;max-width:40ch}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
 .hero-slogan{
   margin-top:2.4rem;font-family:var(--disp);font-style:italic;font-weight:700;
@@ -169,12 +178,77 @@ ul{list-style:none}
 }
 .hero-slogan::before{content:"";width:52px;height:2px;background:var(--red);flex:none}
 .hero-art{position:relative;display:flex;justify-content:center}
-.hero-art svg{width:min(480px,100%);height:auto;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
-@media (max-width:900px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero-art{order:2;margin-top:1rem}
-  .hero-art svg{width:min(340px,88%)}
+.hero-art svg{width:min(500px,100%);height:auto;filter:drop-shadow(0 34px 60px rgba(0,0,0,.55))}
+
+/* medidor de carga segmentado (firma) */
+.charge{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:0 0 1.5rem 6px}
+.charge-track{
+  display:flex;gap:5px;padding:5px 6px;flex:none;
+  border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.05);
+  transform:skewX(-16deg);
 }
+.charge-track i{
+  display:block;width:clamp(15px,2.2vw,23px);height:17px;
+  background:var(--red);box-shadow:0 0 9px rgba(227,6,19,.5);
+}
+.charge-track i:last-child{background:#2EE56B;box-shadow:0 0 13px rgba(46,229,107,.7)}
+.charge-txt{
+  font-family:var(--disp);font-weight:800;font-style:italic;font-size:1.02rem;
+  letter-spacing:.18em;text-transform:uppercase;color:#fff;
+}
+
+/* animación de cierre + llenado — solo si el usuario acepta movimiento */
+@media (prefers-reduced-motion:no-preference){
+  .hero-half--left{animation:heroSlideL 1s cubic-bezier(.2,1.25,.35,1) both}
+  .hero-half--right{animation:heroSlideR 1s cubic-bezier(.2,1.25,.35,1) both}
+  .hero-seam{animation:heroSlideR 1s cubic-bezier(.2,1.25,.35,1) both}
+  .hero-copy{animation:heroCopyIn .7s ease .5s backwards}
+  .hero-art{animation:heroArtIn .8s cubic-bezier(.2,1.25,.35,1) .55s backwards}
+  .charge-track i{animation:chargeCell .32s ease-out both}
+  .charge-track i:nth-child(1){animation-delay:1s}
+  .charge-track i:nth-child(2){animation-delay:1.1s}
+  .charge-track i:nth-child(3){animation-delay:1.2s}
+  .charge-track i:nth-child(4){animation-delay:1.3s}
+  .charge-track i:nth-child(5){animation-delay:1.4s}
+  .charge-track i:nth-child(6){animation-delay:1.5s}
+  .charge-track i:nth-child(7){animation-delay:1.6s}
+  .charge-track i:nth-child(8){animation-name:chargeCellLast;animation-duration:.5s;animation-delay:1.7s}
+  .charge-txt{animation:chargeTxt .5s ease 2.15s backwards}
+}
+@keyframes heroSlideL{from{transform:translateX(-102%)}}
+@keyframes heroSlideR{from{transform:translateX(102%)}}
+@keyframes heroCopyIn{from{opacity:0;transform:translateX(-28px)}}
+@keyframes heroArtIn{from{opacity:0;transform:translateX(44px) scale(.94)}}
+@keyframes chargeCell{from{background:rgba(255,255,255,.09);box-shadow:none}}
+@keyframes chargeCellLast{
+  0%{background:rgba(255,255,255,.09);box-shadow:none}
+  60%{background:var(--red);box-shadow:0 0 12px rgba(227,6,19,.6)}
+}
+@keyframes chargeTxt{from{opacity:0;transform:translateX(-10px)}}
+
+@media (max-width:900px){
+  .hero{padding-bottom:3.2rem}
+  .hero-grid{grid-template-columns:1fr;gap:1.6rem}
+  .hero-art{order:2;margin-top:1.4rem}
+  .hero-art svg{width:min(330px,82%)}
+  /* la diagonal se vuelve horizontal: mitad superior negra, inferior roja */
+  .hero{--split-l:calc(100% - 365px);--split-r:calc(100% - 340px)}
+  .hero-half--left{clip-path:polygon(0 0,100% 0,100% var(--split-r),0 var(--split-l))}
+  .hero-half--right{clip-path:polygon(0 var(--split-l),100% var(--split-r),100% 100%,0 100%)}
+  .hero-seam{clip-path:polygon(0 calc(var(--split-l) - 2px),100% calc(var(--split-r) - 2px),100% calc(var(--split-r) + 1px),0 calc(var(--split-l) + 1px))}
+}
+@media (max-width:402px){
+  .hero{--split-l:calc(100% - 325px);--split-r:calc(100% - 302px)}
+}
+@media (max-width:352px){
+  .hero{--split-l:calc(100% - 278px);--split-r:calc(100% - 255px)}
+}
+@media (max-width:900px) and (prefers-reduced-motion:no-preference){
+  .hero-half--left{animation-name:heroSlideT}
+  .hero-half--right,.hero-seam{animation-name:heroSlideB}
+}
+@keyframes heroSlideT{from{transform:translateY(-102%)}}
+@keyframes heroSlideB{from{transform:translateY(102%)}}
 
 /* barra de confianza diagonal */
 .trust{background:var(--red);transform:skewY(-2.2deg);margin:-1px 0;position:relative;z-index:2}
@@ -416,10 +490,17 @@ footer{background:#0A0A0A;border-top:1px solid var(--line);padding:2.2rem 0 6.5r
 
 <!-- ============ HERO ============ -->
 <section class="hero">
+  <div class="hero-half hero-half--left" aria-hidden="true"></div>
+  <div class="hero-half hero-half--right" aria-hidden="true"></div>
+  <div class="hero-seam" aria-hidden="true"></div>
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-copy">
       <p class="eyebrow">Único distribuidor autorizado en Venezuela</p>
       <h1>La garantía<br>más larga<br><span class="rojo">de Venezuela.</span></h1>
+      <div class="charge" role="img" aria-label="Indicador de carga completa: garantía máxima">
+        <span class="charge-track" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="charge-txt" aria-hidden="true">Garantía máxima</span>
+      </div>
       <p class="hero-sub">Baterías LTH con tecnología PowerFrame. Diagnóstico, venta e instalación en nuestras 3 sedes de Caracas — te la montamos en el momento.</p>
       <div class="hero-ctas">
         <a class="btn btn-red" href="https://wa.me/584143520645?text=Hola%20LTH%2C%20quiero%20cotizar%20una%20bater%C3%ADa%20para%20mi%20carro." target="_blank" rel="noopener">Cotiza por WhatsApp</a>

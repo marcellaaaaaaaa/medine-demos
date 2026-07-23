@@ -125,12 +125,65 @@
   .hero{
     position:relative;
     background:var(--ambar);
-    background-image:radial-gradient(rgba(38,20,10,.14) 1.6px,transparent 1.6px);
-    background-size:22px 22px;
     border-bottom:3px solid var(--choco);
     padding:56px 0 96px;
+    /* posición de la lupa (JS la anima vía --lx/--ly; estos son los valores sin JS) */
+    --lx:60%;
+    --ly:44%;
+    --lr:75px;
   }
-  .hero-inner{max-width:1100px;margin:0 auto;padding:0 20px;position:relative}
+  .hero-inner{max-width:1100px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+
+  /* ----- firma: lupa que revela productos ocultos ----- */
+  .lupa-escena{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+  .lupa-fondo,.lupa-color{position:absolute;inset:0;pointer-events:none}
+  .lupa-fondo{
+    background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='240'%20height='240'%3E%3Cg%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='3'%3E%3Cg%20transform='translate(30%2014)%20rotate(-8)'%20stroke='rgba(38,20,10,0.12)'%20fill='none'%3E%3Cpath%20d='M11%200h10v12c0%207%209%209%209%2020v44a8%208%200%200%201-8%208H10a8%208%200%200%201-8-8V32c0-11%209-13%209-20z'/%3E%3Cpath%20fill='none'%20d='M6%2046h20M6%2058h20'/%3E%3C/g%3E%3Cg%20transform='translate(138%2026)%20rotate(6)'%20stroke='rgba(38,20,10,0.12)'%20fill='none'%3E%3Crect%20x='0'%20y='0'%20width='54'%20height='70'%20rx='6'/%3E%3Ccircle%20fill='none'%20cx='27'%20cy='27'%20r='13'/%3E%3Cpath%20fill='none'%20d='M13%2052h28M13%2060h18'/%3E%3C/g%3E%3Cg%20transform='translate(34%20148)%20rotate(5)'%20stroke='rgba(38,20,10,0.12)'%20fill='none'%3E%3Crect%20x='0'%20y='7'%20width='40'%20height='48'%20rx='7'/%3E%3Cellipse%20cx='20'%20cy='8'%20rx='20'%20ry='6'/%3E%3Cpath%20fill='none'%20d='M5%2028h30M5%2038h30'/%3E%3C/g%3E%3Cg%20transform='translate(148%20142)%20rotate(-6)'%20stroke='rgba(38,20,10,0.12)'%20fill='none'%3E%3Cpath%20d='M6%2010h44l5%208-5%2046H6L1%2018z'/%3E%3Cpath%20fill='none'%20d='M6%2010%203%203M50%2010l3-7'/%3E%3Ccircle%20fill='none'%20cx='28'%20cy='38'%20r='12'/%3E%3C/g%3E%3Cg%20transform='translate(100%2096)%20rotate(4)'%20stroke='rgba(38,20,10,0.12)'%20fill='none'%3E%3Crect%20x='7'%20y='0'%20width='30'%20height='11'%20rx='4'/%3E%3Crect%20x='0'%20y='9'%20width='44'%20height='46'%20rx='12'/%3E%3Cpath%20fill='none'%20d='M10%2032h24'/%3E%3C/g%3E%3Cg%20stroke='rgba(38,20,10,0.12)'%20fill='none'%3E%3Cpath%20d='M204%20120v12M198%20126h12'/%3E%3Cpath%20d='M96%20216v12M90%20222h12'/%3E%3Cpath%20d='M12%20108v10M7%20113h10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size:240px 240px;
+  }
+  .lupa-color{
+    background-color:rgba(255,255,255,.22);
+    background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='240'%20height='240'%3E%3Cg%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='3'%3E%3Cg%20transform='translate(30%2014)%20rotate(-8)'%20stroke='%23E8641B'%20fill='%23FFF8EC'%3E%3Cpath%20d='M11%200h10v12c0%207%209%209%209%2020v44a8%208%200%200%201-8%208H10a8%208%200%200%201-8-8V32c0-11%209-13%209-20z'/%3E%3Cpath%20fill='none'%20d='M6%2046h20M6%2058h20'/%3E%3C/g%3E%3Cg%20transform='translate(138%2026)%20rotate(6)'%20stroke='%2326140A'%20fill='%23FFF8EC'%3E%3Crect%20x='0'%20y='0'%20width='54'%20height='70'%20rx='6'/%3E%3Ccircle%20fill='%23E8641B'%20cx='27'%20cy='27'%20r='13'/%3E%3Cpath%20fill='none'%20d='M13%2052h28M13%2060h18'/%3E%3C/g%3E%3Cg%20transform='translate(34%20148)%20rotate(5)'%20stroke='%2326140A'%20fill='%23FFF8EC'%3E%3Crect%20x='0'%20y='7'%20width='40'%20height='48'%20rx='7'/%3E%3Cellipse%20cx='20'%20cy='8'%20rx='20'%20ry='6'/%3E%3Cpath%20fill='none'%20d='M5%2028h30M5%2038h30'/%3E%3C/g%3E%3Cg%20transform='translate(148%20142)%20rotate(-6)'%20stroke='%23E8641B'%20fill='%23FFF8EC'%3E%3Cpath%20d='M6%2010h44l5%208-5%2046H6L1%2018z'/%3E%3Cpath%20fill='none'%20d='M6%2010%203%203M50%2010l3-7'/%3E%3Ccircle%20fill='%23FFC54A'%20cx='28'%20cy='38'%20r='12'/%3E%3C/g%3E%3Cg%20transform='translate(100%2096)%20rotate(4)'%20stroke='%2326140A'%20fill='%23FFF8EC'%3E%3Crect%20x='7'%20y='0'%20width='30'%20height='11'%20rx='4'/%3E%3Crect%20x='0'%20y='9'%20width='44'%20height='46'%20rx='12'/%3E%3Cpath%20fill='none'%20d='M10%2032h24'/%3E%3C/g%3E%3Cg%20stroke='%23E8641B'%20fill='none'%3E%3Cpath%20d='M204%20120v12M198%20126h12'/%3E%3Cpath%20d='M96%20216v12M90%20222h12'/%3E%3Cpath%20d='M12%20108v10M7%20113h10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size:240px 240px;
+    clip-path:circle(var(--lr) at var(--lx) var(--ly));
+    will-change:clip-path;
+  }
+  .lupa{
+    position:absolute;z-index:1;pointer-events:none;
+    width:calc(var(--lr)*2);height:calc(var(--lr)*2);
+    left:calc(var(--lx) - var(--lr));top:calc(var(--ly) - var(--lr));
+    border:6px solid var(--choco);border-radius:50%;
+    box-shadow:6px 6px 0 rgba(38,20,10,.18), inset 0 0 0 3px rgba(255,255,255,.3);
+  }
+  .lupa::after{ /* mango */
+    content:"";position:absolute;
+    width:16px;height:58px;border-radius:9px;background:var(--choco);
+    right:-27px;bottom:-40px;transform:rotate(-45deg);
+  }
+  .lupa::before{ /* brillo del cristal */
+    content:"";position:absolute;left:16%;top:12%;
+    width:26%;height:14%;border-radius:50%;
+    background:rgba(255,255,255,.5);transform:rotate(-32deg);
+  }
+  /* producto estrella escondido cerca del H1 + mini-sello */
+  .prod-hallazgo{position:absolute;left:48%;top:58%;width:138px;transform:rotate(7deg)}
+  .prod-hallazgo svg{display:block;width:100%;height:auto}
+  .mini-sello{
+    position:absolute;top:-22px;left:50%;
+    font-family:var(--display);font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;
+    border:2px dashed #1B7A3D;color:#1B7A3D;background:#EAF7EE;
+    border-radius:8px;padding:.35em .7em;white-space:nowrap;
+    transform:translateX(-50%) rotate(-8deg);
+  }
+  /* con JS activo el sello nace oculto y "pop-ea" al pasar la lupa */
+  .lupa-activa .mini-sello{
+    transform:translateX(-50%) rotate(-8deg) scale(0);
+    transition:transform .35s cubic-bezier(.34,1.8,.4,1);
+  }
+  .lupa-activa .mini-sello.hallado{transform:translateX(-50%) rotate(-8deg) scale(1)}
+  @media (prefers-reduced-motion:reduce){
+    .lupa-activa .mini-sello{transition:none}
+  }
   .sello{
     width:132px;height:132px;display:block;margin-bottom:28px;
     animation:girar 24s linear infinite;
@@ -155,15 +208,17 @@
     margin-bottom:34px;
   }
   .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
-  .hero-stick-1,.hero-stick-2,.hero-tag{position:absolute}
+  .hero-stick-1,.hero-stick-2,.hero .hero-tag{position:absolute}
   .hero-stick-1{top:14px;right:16px;transform:rotate(6deg)}
   .hero-stick-2{bottom:-52px;right:44px;transform:rotate(-5deg)}
   .hero-tag{top:150px;right:28px;transform:rotate(8deg)}
   @media (max-width:760px){
-    .hero{padding:40px 0 84px}
-    .hero-tag{display:none}
+    .hero{padding:40px 0 84px;--lr:62px;--lx:76%;--ly:32%}
+    .hero .hero-tag{display:none}
     .hero-stick-2{right:16px;bottom:-48px}
     .sello{width:104px;height:104px}
+    .prod-hallazgo{left:auto;right:5%;top:29%;width:106px}
+    .mini-sello{font-size:.55rem}
   }
 
   /* precio-tag de góndola */
@@ -401,6 +456,33 @@
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="inicio">
+  <div class="lupa-escena" aria-hidden="true">
+  <!-- capa 1: wallpaper de siluetas (tenue) + producto estrella escondido -->
+  <div class="lupa-fondo">
+    <div class="prod-hallazgo">
+      <svg viewBox="0 0 120 72" fill="none" stroke="rgba(38,20,10,.13)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="16" width="114" height="42" rx="9"/>
+        <path d="M14 16v42M106 16v42"/>
+        <ellipse cx="60" cy="37" rx="27" ry="14"/>
+      </svg>
+    </div>
+  </div>
+  <!-- capa 2: mismo patrón a todo color, recortado por el círculo de la lupa -->
+  <div class="lupa-color">
+    <div class="prod-hallazgo" id="prod-hallazgo">
+      <svg viewBox="0 0 120 72" stroke="#26140A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="16" width="114" height="42" rx="9" fill="#E8641B"/>
+        <path d="M14 16v42M106 16v42" fill="none"/>
+        <ellipse cx="60" cy="37" rx="27" ry="14" fill="#FFF8EC"/>
+        <text x="60" y="41" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="11" fill="#26140A" stroke="none">¡AQUÍ!</text>
+      </svg>
+      <span class="mini-sello" id="mini-sello">Encontrado ✓</span>
+    </div>
+  </div>
+  <!-- la lupa -->
+  <div class="lupa"></div>
+  </div>
+
   <div class="hero-inner">
     <span class="sticker naranja hero-stick-1" aria-hidden="true">Caso #023 · Abierto</span>
     <span class="tag-precio hero-tag" aria-hidden="true">
@@ -716,6 +798,75 @@
       }
       panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
+  })();
+
+  // Lupa del hero: recorrido automático (12s) que revela el patrón a color,
+  // sigue el cursor en dispositivos con puntero y queda fija con reduced-motion.
+  (function(){
+    var hero = document.querySelector('.hero');
+    var prod = document.getElementById('prod-hallazgo');
+    var sello = document.getElementById('mini-sello');
+    if (!hero || !prod) return;
+    hero.classList.add('lupa-activa');
+
+    var W = 0, H = 0, R = 75, px = 0, py = 0;
+    // waypoints en fracciones del hero; el índice 2 se fija sobre el producto estrella
+    var pts = [[.16,.28],[.5,.16],[.6,.42],[.88,.62],[.52,.82],[.16,.62]];
+
+    function medir(){
+      var r = hero.getBoundingClientRect();
+      W = r.width; H = r.height;
+      R = parseFloat(getComputedStyle(hero).getPropertyValue('--lr')) || 75;
+      var pr = prod.getBoundingClientRect();
+      px = pr.left - r.left + pr.width / 2;
+      py = pr.top - r.top + pr.height / 2;
+      pts[2] = [px / W, py / H];
+    }
+    medir();
+    window.addEventListener('resize', medir);
+
+    function fijar(x, y){
+      hero.style.setProperty('--lx', x.toFixed(1) + 'px');
+      hero.style.setProperty('--ly', y.toFixed(1) + 'px');
+      if (sello) sello.classList.toggle('hallado', Math.hypot(x - px, y - py) < R + 24);
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      fijar(px, py); // lupa fija sobre el producto revelado
+      window.addEventListener('resize', function(){ fijar(px, py); });
+      return;
+    }
+
+    // Catmull-Rom cerrado para un recorrido suave
+    function cr(p0, p1, p2, p3, u){
+      return .5 * ((2 * p1) + (-p0 + p2) * u + (2 * p0 - 5 * p1 + 4 * p2 - p3) * u * u + (-p0 + 3 * p1 - 3 * p2 + p3) * u * u * u);
+    }
+    function ruta(t){
+      var n = pts.length, f = t * n, i = Math.floor(f), u = f - i;
+      var a = pts[(i - 1 + n) % n], b = pts[i % n], c = pts[(i + 1) % n], d = pts[(i + 2) % n];
+      return [cr(a[0], b[0], c[0], d[0], u) * W, cr(a[1], b[1], c[1], d[1], u) * H];
+    }
+
+    var cursor = false, tx = W * .5, ty = H * .4, x = tx, y = ty, DUR = 12000;
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      hero.addEventListener('pointermove', function(e){
+        var r = hero.getBoundingClientRect();
+        cursor = true; tx = e.clientX - r.left; ty = e.clientY - r.top;
+      });
+      hero.addEventListener('pointerleave', function(){ cursor = false; });
+    }
+
+    function marco(now){
+      now = now || performance.now();
+      if (!cursor) { var p = ruta((now % DUR) / DUR); tx = p[0]; ty = p[1]; }
+      // dentro del hero: sin desbordes a 390px
+      var cx = Math.max(R + 8, Math.min(W - R - 8, tx));
+      var cy = Math.max(R + 8, Math.min(H - R - 8, ty));
+      x += (cx - x) * .09; y += (cy - y) * .09;
+      fijar(x, y);
+      requestAnimationFrame(marco);
+    }
+    requestAnimationFrame(marco);
   })();
 </script>
 </body>

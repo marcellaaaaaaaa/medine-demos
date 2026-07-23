@@ -13,6 +13,7 @@
 <link rel="icon" href="./assets/magusa-logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -104,34 +105,89 @@
     min-height:calc(100svh - 68px);
     display:flex;flex-direction:column;justify-content:center;
     position:relative;
-    padding:80px 0 100px;
+    padding:72px 0 110px;
+    background:var(--negro);
+    overflow:hidden;
   }
-  .hero-art{
-    position:absolute;inset:0;
-    pointer-events:none;overflow:hidden;
-  }
-  .hero-art svg{
-    position:absolute;right:-8%;top:50%;
-    transform:translateY(-50%);
-    width:min(70vw,760px);height:auto;
-    opacity:.07;
-  }
-  .hero .label{margin-bottom:28px}
+  .hero .label{margin-bottom:36px}
   .hero .label b{color:var(--gris-claro);font-weight:600}
+
+  /* — FIRMA: foto B/N clippeada dentro del display + reveal cinematográfico — */
   .hero h1{
     font-family:var(--display);
     font-weight:400;
-    font-size:clamp(42px,11.5vw,138px);
-    line-height:1.04;
+    font-size:clamp(38px,calc((100vw - 48px)/6.45),236px);
+    line-height:.98;
     letter-spacing:.01em;
     text-transform:uppercase;
+    width:100%;
+    padding:0 24px;
+    /* wipe vertical: máscara degradada que barre de arriba hacia abajo */
+    -webkit-mask-image:linear-gradient(180deg,#000 42%,rgba(0,0,0,0) 58%);
+    mask-image:linear-gradient(180deg,#000 42%,rgba(0,0,0,0) 58%);
+    -webkit-mask-size:100% 300%;
+    mask-size:100% 300%;
+    -webkit-mask-position:0 100%;
+    mask-position:0 100%;
+    -webkit-mask-repeat:no-repeat;
+    mask-repeat:no-repeat;
+    animation:heroWipe 1.2s cubic-bezier(.77,0,.18,1) .15s forwards;
   }
-  .hero h1 .l2{display:block}
-  .gold-rule{
-    width:min(180px,40%);height:2px;
+  @keyframes heroWipe{
+    to{-webkit-mask-position:0 0;mask-position:0 0}
+  }
+  .hero h1 .ln{
+    display:block;
+    /* capa 1: foto B/N · capa 2: gradiente metálico de respaldo si la foto no carga */
+    background-image:
+      url("https://images.unsplash.com/photo-1618418721668-0d1f72aa4bab?q=80&w=1600&auto=format&sat=-100&bri=22&con=12"),
+      linear-gradient(115deg,#6d6d6d 0%,#ececec 32%,#8f8f8f 50%,#f6f6f6 68%,#6d6d6d 100%);
+    background-size:175% auto,300% 100%;
+    background-repeat:no-repeat;
+    background-position:38% 44%;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+    -webkit-text-stroke:1px rgba(253,253,253,.16);
+    filter:grayscale(1) contrast(1.22) brightness(1.22);
+    /* pan lentísimo de la foto dentro de las letras */
+    animation:heroPan 20s ease-in-out infinite alternate;
+  }
+  .hero h1 .ln2{
+    letter-spacing:.34em;
+    margin-right:-.34em;
+    background-position:96% 62%;
+    animation-name:heroPan2;
+  }
+  @keyframes heroPan{
+    from{background-position:38% 44%}
+    to{background-position:98% 44%}
+  }
+  @keyframes heroPan2{
+    from{background-position:96% 62%}
+    to{background-position:30% 62%}
+  }
+  /* fallback: navegadores sin background-clip:text → blanco sólido */
+  @supports not ((background-clip:text) or (-webkit-background-clip:text)){
+    .hero h1 .ln{
+      background:none;
+      color:var(--blanco);
+      -webkit-text-fill-color:var(--blanco);
+      filter:none;
+      animation:none;
+    }
+  }
+  /* línea dorada de 1px que se dibuja al terminar el reveal */
+  .hero-rule{
+    height:1px;
     background:var(--oro);
-    margin:34px 0 26px;
+    margin:40px 24px 30px;
+    transform:scaleX(0);
+    transform-origin:left center;
+    animation:heroRule .9s cubic-bezier(.77,0,.18,1) 1.4s forwards;
   }
+  @keyframes heroRule{to{transform:scaleX(1)}}
   .hero-sub{
     color:var(--gris-medio);
     font-size:15px;
@@ -432,6 +488,9 @@
     html{scroll-behavior:auto}
     .rv{opacity:1;transform:none;transition:none}
     .hero-scroll svg{animation:none}
+    .hero h1{animation:none;-webkit-mask-image:none;mask-image:none}
+    .hero h1 .ln{animation:none}
+    .hero-rule{animation:none;transform:scaleX(1)}
     *{transition:none!important}
   }
 </style>
@@ -456,18 +515,12 @@
 
 <!-- HERO -->
 <header class="hero" id="top">
-  <div class="hero-art" aria-hidden="true">
-    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M200 20 L340 100 V300 L200 380 L60 300 V100 Z" stroke="#FDFDFD" stroke-width="1.5"/>
-      <path d="M200 70 L295 125 V275 L200 330 L105 275 V125 Z" stroke="#FDFDFD" stroke-width="1"/>
-      <path d="M150 250 L200 120 L250 250" stroke="#C9A227" stroke-width="1.5"/>
-      <path d="M168 205 H232" stroke="#C9A227" stroke-width="1.5"/>
-    </svg>
-  </div>
   <div class="wrap">
     <p class="label"><b>Caracas · Chacao</b> &nbsp;—&nbsp; Importados 0km y año reciente</p>
-    <h1>Sube de<span class="l2">nivel.</span></h1>
-    <div class="gold-rule" aria-hidden="true"></div>
+  </div>
+  <h1><span class="ln">Sube&nbsp;de</span><span class="ln ln2">nivel.</span></h1>
+  <div class="hero-rule" aria-hidden="true"></div>
+  <div class="wrap">
     <p class="hero-sub"><strong>Importados 2025–2026 · Entrega inmediata en Chacao.</strong><br>Venta, compra y consignación de vehículos gama media-alta.</p>
   </div>
   <a class="hero-scroll" href="#inventario" aria-label="Ver inventario">

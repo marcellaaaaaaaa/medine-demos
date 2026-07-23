@@ -110,30 +110,43 @@
   /* ---------- hero ---------- */
   .hero{
     position:relative;text-align:center;
-    padding:5.5rem 0 5rem;
+    padding:5rem 0 5.5rem;overflow:hidden;
   }
-  @media(min-width:768px){.hero{padding:8rem 0 7.5rem}}
+  @media(min-width:900px){.hero{padding:7.5rem 0 8rem;text-align:left}}
   .hero::before{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:radial-gradient(ellipse 65% 45% at 50% 8%,rgba(212,175,55,.10),transparent 70%);
+    content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
+    background:radial-gradient(ellipse 55% 42% at 50% 10%,rgba(212,175,55,.09),transparent 70%);
   }
+  @media(min-width:900px){
+    .hero::before{background:radial-gradient(ellipse 45% 50% at 74% 38%,rgba(212,175,55,.08),transparent 70%)}
+  }
+  .hero-skyline{position:absolute;left:0;right:0;bottom:-2px;z-index:0;pointer-events:none}
+  .hero-skyline svg{display:block;width:100%;height:clamp(150px,24vw,290px)}
+  .hero-grid{
+    position:relative;z-index:3;
+    display:grid;grid-template-columns:1fr;align-items:center;gap:3.4rem;
+  }
+  @media(min-width:900px){.hero-grid{grid-template-columns:1.08fr .92fr;gap:3.5rem}}
   .hero-eyebrow{
     display:inline-flex;align-items:center;gap:.9rem;margin-bottom:2.2rem;
   }
   .hero-eyebrow::before,.hero-eyebrow::after{
     content:"";width:2.4rem;height:1px;background:var(--linea);
   }
+  @media(min-width:900px){.hero-eyebrow::before{display:none}}
   .hero h1{
     font-family:var(--serif);font-weight:700;
-    font-size:clamp(2.6rem,9vw,5.6rem);
+    font-size:clamp(2.6rem,8vw,4.6rem);
     line-height:1.08;letter-spacing:-.01em;
     margin:0 auto 1.6rem;max-width:15ch;
   }
+  @media(min-width:900px){.hero h1{margin:0 0 1.6rem}}
   .hero h1 em{font-style:italic;font-weight:500}
   .hero-sub{
     color:var(--gris);font-size:clamp(1rem,2.6vw,1.15rem);
     max-width:34rem;margin:0 auto 2.6rem;
   }
+  @media(min-width:900px){.hero-sub{margin:0 0 2.6rem}}
   .hero-sub strong{color:var(--humo);font-weight:500}
   .btn-oro{
     display:inline-block;text-decoration:none;
@@ -155,6 +168,80 @@
   }
   .hero-marcas span{display:flex;align-items:center;gap:.55rem}
   .hero-marcas i{width:4px;height:4px;background:var(--oro);border-radius:50%;display:inline-block}
+  @media(min-width:900px){.hero-marcas{justify-content:flex-start}}
+
+  /* ---------- tarjeta 3D ---------- */
+  .card-scene{perspective:1100px;display:flex;justify-content:center}
+  .card-float{
+    width:min(88%,320px);
+    transform-style:preserve-3d;
+    animation:levitar 7s ease-in-out infinite;
+  }
+  @media(min-width:900px){.card-float{width:min(100%,420px)}}
+  .card3d{
+    position:relative;width:100%;aspect-ratio:8/5;border-radius:16px;
+    background:linear-gradient(145deg,#0E0E18,#16161F 58%,#101019);
+    border:1px solid rgba(212,175,55,.26);
+    box-shadow:
+      0 34px 64px -26px rgba(0,0,0,.85),
+      inset 0 1px 0 rgba(255,255,255,.05),
+      0 20px 48px -22px rgba(212,175,55,.16);
+    transform:rotateX(calc(6deg + var(--rx,0deg))) rotateY(calc(-10deg + var(--ry,0deg)));
+    transform-style:preserve-3d;
+    transition:transform .35s ease-out;
+    padding:1.35rem 1.5rem;
+    display:flex;flex-direction:column;justify-content:space-between;
+    overflow:hidden;text-align:left;
+  }
+  .card3d::after{
+    content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:linear-gradient(115deg,transparent 32%,rgba(255,255,255,.05) 45%,rgba(244,208,63,.09) 50%,rgba(255,255,255,.05) 55%,transparent 68%);
+    background-size:260% 100%;background-position:130% 0;
+    animation:brillo 6.5s ease-in-out infinite;
+  }
+  @keyframes levitar{
+    0%,100%{transform:translateY(0) rotateX(0deg) rotateY(0deg)}
+    50%{transform:translateY(-13px) rotateX(2.5deg) rotateY(-3deg)}
+  }
+  @keyframes brillo{
+    0%,18%{background-position:130% 0}
+    60%,100%{background-position:-130% 0}
+  }
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start}
+  .card-chip{
+    width:44px;height:32px;border-radius:6px;position:relative;flex:none;
+    background:linear-gradient(135deg,var(--oro-1),var(--oro-2) 55%,var(--oro-1));
+    box-shadow:inset 0 1px 1px rgba(255,255,255,.35),0 1px 3px rgba(0,0,0,.5);
+  }
+  .card-chip::before{
+    content:"";position:absolute;inset:5px;border:1px solid rgba(10,10,18,.35);border-radius:3px;
+  }
+  .card-chip::after{
+    content:"";position:absolute;left:5px;right:5px;top:50%;height:1px;background:rgba(10,10,18,.35);
+  }
+  .card-brand{
+    font-family:var(--serif);font-weight:600;font-size:.78rem;
+    letter-spacing:.22em;color:var(--humo);padding-top:.2rem;
+  }
+  .card-num{
+    font-size:1.02rem;font-weight:500;letter-spacing:.2em;
+    color:rgba(243,243,245,.55);white-space:nowrap;
+    font-variant-numeric:tabular-nums;
+  }
+  @media(min-width:900px){.card-num{font-size:1.12rem}}
+  .card-bottom{display:flex;justify-content:space-between;align-items:flex-end}
+  .card-label{
+    font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--gris-deep);
+  }
+  .card-debit{
+    font-family:var(--serif);font-style:italic;font-weight:500;
+    font-size:1.1rem;line-height:1;color:rgba(243,243,245,.85);
+  }
+  @media(prefers-reduced-motion:reduce){
+    .card-float,.card3d::after{animation:none}
+    .card3d{transform:rotateX(6deg) rotateY(-10deg)}
+  }
 
   /* ---------- pasos ---------- */
   .pasos{list-style:none;position:relative;margin-top:2.8rem}
@@ -343,20 +430,87 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="col">
-      <p class="hero-eyebrow"><span class="eyebrow">Valencia · Venezuela</span></p>
-      <h1>Tu cuenta en <em>Estados Unidos</em>, sin salir de Venezuela.</h1>
-      <p class="hero-sub">
-        Apertura de cuenta bancaria personal en USA, 100% remota, en
-        <strong>15 días hábiles</strong>. Con acceso a <strong>Zelle</strong> y tu
-        <strong>tarjeta de débito Visa o Mastercard</strong>, entregada en una sesión por Zoom.
-      </p>
-      <a class="btn-oro" href="https://wa.me/584244739506?text=Hola%20Jash%20Capital%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20cuenta%20personal%20en%20USA" target="_blank" rel="noopener">Quiero mi cuenta en USA</a>
-      <p class="hero-micro"><b>Garantía de devolución del 100%</b> si el banco rechaza tu solicitud.</p>
-      <div class="hero-marcas" aria-label="Beneficios clave">
-        <span><i></i>Sin viajar</span>
-        <span><i></i>Zelle incluido</span>
-        <span><i></i>Visa · Mastercard</span>
+    <div class="hero-skyline" aria-hidden="true">
+      <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+        <!-- capa trasera -->
+        <g fill="#0C0C15">
+          <rect x="-20" y="128" width="105" height="172"/>
+          <rect x="100" y="176" width="62" height="124"/>
+          <rect x="180" y="96" width="112" height="204"/>
+          <rect x="310" y="156" width="72" height="144"/>
+          <rect x="470" y="66" width="100" height="234"/>
+          <rect x="516" y="34" width="4" height="34"/>
+          <rect x="590" y="182" width="62" height="118"/>
+          <rect x="668" y="104" width="118" height="196"/>
+          <rect x="806" y="148" width="80" height="152"/>
+          <rect x="904" y="76" width="108" height="224"/>
+          <rect x="955" y="46" width="3" height="32"/>
+          <rect x="1030" y="166" width="66" height="134"/>
+          <rect x="1112" y="118" width="120" height="182"/>
+        </g>
+        <!-- capa delantera -->
+        <g fill="#10101B">
+          <rect x="40" y="196" width="88" height="104"/>
+          <rect x="238" y="172" width="84" height="128"/>
+          <rect x="398" y="140" width="74" height="160"/>
+          <rect x="552" y="210" width="96" height="90"/>
+          <rect x="742" y="188" width="76" height="112"/>
+          <rect x="872" y="216" width="92" height="84"/>
+          <rect x="1056" y="196" width="84" height="104"/>
+        </g>
+        <!-- ventanas encendidas -->
+        <g fill="#D4AF37" opacity=".15">
+          <rect x="12" y="150" width="4" height="6"/><rect x="34" y="178" width="4" height="6"/>
+          <rect x="58" y="214" width="4" height="6"/><rect x="118" y="196" width="4" height="6"/>
+          <rect x="204" y="118" width="4" height="6"/><rect x="230" y="146" width="4" height="6"/>
+          <rect x="258" y="192" width="4" height="6"/><rect x="286" y="224" width="4" height="6"/>
+          <rect x="334" y="176" width="4" height="6"/><rect x="418" y="160" width="4" height="6"/>
+          <rect x="444" y="196" width="4" height="6"/><rect x="492" y="90" width="4" height="6"/>
+          <rect x="518" y="124" width="4" height="6"/><rect x="540" y="162" width="4" height="6"/>
+          <rect x="576" y="232" width="4" height="6"/><rect x="612" y="204" width="4" height="6"/>
+          <rect x="692" y="128" width="4" height="6"/><rect x="718" y="164" width="4" height="6"/>
+          <rect x="744" y="210" width="4" height="6"/><rect x="766" y="236" width="4" height="6"/>
+          <rect x="828" y="172" width="4" height="6"/><rect x="856" y="204" width="4" height="6"/>
+          <rect x="926" y="100" width="4" height="6"/><rect x="952" y="136" width="4" height="6"/>
+          <rect x="978" y="172" width="4" height="6"/><rect x="1052" y="188" width="4" height="6"/>
+          <rect x="1094" y="222" width="4" height="6"/><rect x="1136" y="142" width="4" height="6"/>
+          <rect x="1164" y="178" width="4" height="6"/>
+        </g>
+      </svg>
+    </div>
+    <div class="col-wide">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-eyebrow"><span class="eyebrow">Valencia · Venezuela</span></p>
+          <h1>Tu cuenta en <em>Estados Unidos</em>, sin salir de Venezuela.</h1>
+          <p class="hero-sub">
+            Apertura de cuenta bancaria personal en USA, 100% remota, en
+            <strong>15 días hábiles</strong>. Con acceso a <strong>Zelle</strong> y tu
+            <strong>tarjeta de débito Visa o Mastercard</strong>, entregada en una sesión por Zoom.
+          </p>
+          <a class="btn-oro" href="https://wa.me/584244739506?text=Hola%20Jash%20Capital%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20cuenta%20personal%20en%20USA" target="_blank" rel="noopener">Quiero mi cuenta en USA</a>
+          <p class="hero-micro"><b>Garantía de devolución del 100%</b> si el banco rechaza tu solicitud.</p>
+          <div class="hero-marcas" aria-label="Beneficios clave">
+            <span><i></i>Sin viajar</span>
+            <span><i></i>Zelle incluido</span>
+            <span><i></i>Visa · Mastercard</span>
+          </div>
+        </div>
+        <div class="card-scene" aria-hidden="true">
+          <div class="card-float">
+            <div class="card3d">
+              <div class="card-top">
+                <span class="card-chip"></span>
+                <span class="card-brand">JASH&nbsp;CAPITAL</span>
+              </div>
+              <p class="card-num">••••&nbsp;&nbsp;••••&nbsp;&nbsp;••••&nbsp;&nbsp;4821</p>
+              <div class="card-bottom">
+                <span class="card-label">Cuenta personal · USA</span>
+                <span class="card-debit">debit</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -590,6 +744,24 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
   els.forEach(function(el){ io.observe(el); });
+})();
+(function(){
+  var scene = document.querySelector('.card-scene');
+  var card = document.querySelector('.card3d');
+  if (!scene || !card) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.matchMedia('(hover: hover)').matches) return;
+  scene.addEventListener('pointermove', function(e){
+    var r = scene.getBoundingClientRect();
+    var x = (e.clientX - r.left) / r.width - 0.5;
+    var y = (e.clientY - r.top) / r.height - 0.5;
+    card.style.setProperty('--ry', (x * 10).toFixed(2) + 'deg');
+    card.style.setProperty('--rx', (y * -8).toFixed(2) + 'deg');
+  });
+  scene.addEventListener('pointerleave', function(){
+    card.style.setProperty('--ry', '0deg');
+    card.style.setProperty('--rx', '0deg');
+  });
 })();
 </script>
 
