@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>ALTOS del Sol Amada — Especialidades de Carnes | La carnicería más barata de Maracaibo</title>
+<meta name="description" content="Carnicería y distribuidora al mayor y detal en Altos del Sol Amada, Maracaibo. Res, cerdo, aves, embutidos y huevos a tasa BCV. Delivery y pick-up.">
+<meta property="og:title" content="ALTOS del Sol Amada — Especialidades de Carnes">
+<meta property="og:description" content="La carnicería más barata de la ciudad. Combos desde $6/kg, muslo de pollo a $2.50/kg. Pide por WhatsApp — delivery y pick-up en Maracaibo.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=1600&auto=format">
+<link rel="icon" href="./assets/carnes-logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon:#600505;
+  --maroon-deep:#4a0404;
+  --yellow:#F7C413;
+  --red:#A2222B;
+  --espresso:#3E2316;
+  --crema:#F8EBE3;
+  --black:#141414;
+  --white:#FFF7F0;
+  --anton:'Anton',Impact,sans-serif;
+  --inter:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--inter);background:var(--crema);color:var(--espresso);line-height:1.55;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.wrap{width:min(1160px,100% - 2.5rem);margin-inline:auto}
+.klabel{font-family:var(--inter);font-weight:700;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase}
+.secnum{font-family:var(--anton);font-size:.95rem;letter-spacing:.12em;opacity:.55}
+
+/* ============ NAV ============ */
+.nav{position:sticky;top:0;z-index:60;background:var(--maroon-deep);border-bottom:1px solid rgba(247,196,19,.25)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem 0}
+.nav-logo img{height:46px;width:auto}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{color:var(--crema);text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:.35rem 0;border-bottom:2px solid transparent;transition:border-color .2s,color .2s}
+.nav-links a:hover{color:var(--yellow);border-color:var(--yellow)}
+.btn-wa{display:inline-flex;align-items:center;gap:.5rem;background:var(--yellow);color:var(--black);text-decoration:none;font-weight:800;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;padding:.7rem 1.15rem;border:2px solid var(--black);box-shadow:3px 3px 0 var(--black);transition:transform .15s,box-shadow .15s}
+.btn-wa:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--black)}
+.btn-wa svg{width:17px;height:17px;flex:none}
+
+/* ============ HERO ============ */
+.hero{position:relative;background:var(--maroon);color:var(--white);isolation:isolate;overflow:hidden}
+.hero-img{position:absolute;inset:0;z-index:-2}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(115deg,rgba(74,4,4,.97) 0%,rgba(96,5,5,.9) 45%,rgba(96,5,5,.55) 100%)}
+.hero-in{padding:3.2rem 0 4.2rem;position:relative}
+.hero-badge{width:min(230px,58vw);margin-bottom:2.2rem;filter:drop-shadow(0 10px 24px rgba(0,0,0,.5))}
+.hero-kicker{color:var(--yellow);display:flex;align-items:center;gap:.8rem;margin-bottom:1.1rem}
+.hero-kicker::before{content:"";width:38px;height:2px;background:var(--yellow)}
+h1{font-family:var(--anton);font-weight:400;text-transform:uppercase;font-size:clamp(2.9rem,10.5vw,8.5rem);line-height:.95;letter-spacing:.01em;max-width:11ch}
+h1 .amarillo{color:var(--yellow);display:inline-block;transform:skewX(-8deg)}
+.hero-sub{margin-top:1.4rem;max-width:44ch;font-size:1.02rem;color:#f3ded2}
+.hero-sub strong{color:var(--yellow);font-weight:700}
+.hero-ctas{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.9rem}
+.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--white);text-decoration:none;font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;padding:.7rem 1.15rem;border:2px solid var(--white);transition:background .2s,color .2s}
+.btn-ghost:hover{background:var(--white);color:var(--maroon)}
+/* sticker de góndola */
+.sticker{position:absolute;right:0;top:5.2rem;width:148px;height:148px;border-radius:50%;background:var(--yellow);color:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(-9deg);box-shadow:0 12px 28px rgba(0,0,0,.45);z-index:2}
+.sticker::before{content:"";position:absolute;inset:7px;border:2px dashed rgba(20,20,20,.55);border-radius:50%}
+.sticker .s-top{font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.sticker .s-price{font-family:var(--anton);font-size:2.1rem;line-height:1;margin:.15rem 0}
+.sticker .s-kg{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+@keyframes stickerpop{0%{transform:scale(0) rotate(30deg)}70%{transform:scale(1.12) rotate(-12deg)}100%{transform:scale(1) rotate(-9deg)}}
+.sticker{animation:stickerpop .55s cubic-bezier(.2,1.4,.4,1) .45s both}
+@media (max-width:900px){.sticker{width:118px;height:118px;top:1.1rem}.sticker .s-price{font-size:1.65rem}}
+
+/* ============ MARQUEE ============ */
+.marquee{background:var(--crema);color:var(--espresso);border-block:3px solid var(--espresso);overflow:hidden;padding:.65rem 0}
+.marquee-track{display:flex;width:max-content;animation:marq 26s linear infinite;gap:0}
+.marquee span{font-family:var(--anton);font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;padding-right:.5rem}
+.marquee b{color:var(--red);padding:0 .8rem;font-weight:400}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ============ SECCIONES ============ */
+.sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:.6rem}
+.sec-title{font-family:var(--anton);font-weight:400;text-transform:uppercase;font-size:clamp(2rem,6.4vw,3.6rem);line-height:1.02}
+.sec-lead{max-width:52ch;font-size:.98rem}
+
+/* COMBOS */
+.combos{background:var(--maroon);color:var(--white);padding:4.2rem 0 4.6rem;position:relative;overflow:hidden}
+.combos::after{content:"";position:absolute;right:-90px;top:-90px;width:340px;height:340px;border-radius:50%;border:2px dashed rgba(247,196,19,.22);pointer-events:none}
+.combos .sec-title .amarillo{color:var(--yellow)}
+.combos .sec-lead{color:#f0dccf}
+.combo-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2.4rem}
+.combo{position:relative;background:var(--crema);color:var(--espresso);border:3px solid var(--black);box-shadow:8px 8px 0 rgba(0,0,0,.4);padding:1.9rem 1.7rem 1.7rem;display:flex;flex-direction:column}
+.combo-flag{position:absolute;top:-14px;left:1.4rem;background:var(--red);color:#fff;font-weight:800;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;padding:.35rem .75rem}
+.combo h3{font-family:var(--anton);font-weight:400;text-transform:uppercase;font-size:2rem;line-height:1}
+.combo-price{font-family:var(--anton);font-size:clamp(3.2rem,9vw,4.6rem);line-height:1;color:var(--red);margin:.7rem 0 .2rem}
+.combo-price small{font-size:.4em;color:var(--espresso)}
+.combo-per{display:inline-block;background:var(--yellow);color:var(--black);font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .6rem;margin-bottom:1rem;align-self:flex-start;transform:rotate(-2deg)}
+.combo ul{list-style:none;margin:.4rem 0 1.4rem;flex:1}
+.combo li{padding:.5rem 0;border-bottom:1px dashed rgba(62,35,22,.35);font-size:.95rem;display:flex;gap:.6rem;align-items:baseline}
+.combo li::before{content:"—";color:var(--red);font-weight:800}
+.combo .btn-wa{justify-content:center}
+
+/* ARMA TU PEDIDO */
+.builder{padding:4.4rem 0 5rem;background:
+  repeating-linear-gradient(90deg,rgba(62,35,22,.035) 0 2px,transparent 2px 96px),var(--crema)}
+.builder-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:2.2rem;margin-top:2.2rem;align-items:start}
+.plist{list-style:none;border-top:3px solid var(--espresso)}
+.prow{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"check info price" "check step sub";gap:.35rem 1rem;align-items:center;padding:1.05rem .35rem;border-bottom:1px solid rgba(62,35,22,.28)}
+.prow.on{background:rgba(247,196,19,.14)}
+.pcheck{grid-area:check;display:flex;align-items:center;cursor:pointer}
+.pcheck input{position:absolute;opacity:0;width:28px;height:28px;cursor:pointer}
+.pcheck .box{width:26px;height:26px;border:2.5px solid var(--espresso);background:#fff;display:grid;place-items:center;transition:background .15s}
+.pcheck input:checked + .box{background:var(--red);border-color:var(--red)}
+.pcheck input:checked + .box::after{content:"";width:7px;height:12px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.pcheck input:focus-visible + .box{outline:3px solid var(--yellow);outline-offset:2px}
+.pinfo{grid-area:info;min-width:0}
+.pname{font-family:var(--anton);font-weight:400;font-size:1.15rem;letter-spacing:.03em;text-transform:uppercase;line-height:1.15}
+.ptag{display:inline-block;margin-top:.25rem;background:var(--yellow);color:var(--black);font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.18rem .5rem}
+.pprice{grid-area:price;font-family:var(--anton);font-size:1.25rem;color:var(--red);white-space:nowrap;justify-self:end}
+.pprice small{font-size:.62em;color:var(--espresso)}
+.stepper{grid-area:step;display:inline-flex;align-items:center;gap:.15rem;visibility:hidden}
+.prow.on .stepper{visibility:visible}
+.stepper button{width:34px;height:34px;border:2px solid var(--espresso);background:#fff;font-size:1.15rem;font-weight:800;line-height:1;color:var(--espresso);display:grid;place-items:center;transition:background .15s}
+.stepper button:hover{background:var(--yellow)}
+.stepper output{min-width:78px;text-align:center;font-weight:800;font-size:.92rem}
+.psub{grid-area:sub;justify-self:end;font-weight:800;font-size:1rem;visibility:hidden}
+.prow.on .psub{visibility:visible;color:var(--espresso)}
+.legal{margin-top:1rem;font-size:.74rem;color:rgba(62,35,22,.65)}
+/* resumen desktop */
+.summary{position:sticky;top:86px;background:var(--maroon);color:var(--white);border:3px solid var(--black);box-shadow:8px 8px 0 rgba(20,20,20,.28);padding:1.6rem 1.5rem}
+.summary h3{font-family:var(--anton);font-weight:400;text-transform:uppercase;font-size:1.5rem;letter-spacing:.04em;border-bottom:2px solid rgba(247,196,19,.4);padding-bottom:.7rem}
+.sum-empty{padding:1.2rem 0 .4rem;font-size:.9rem;color:#eed9cb}
+.sum-list{list-style:none;margin:.6rem 0 .2rem}
+.sum-list li{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;padding:.42rem 0;border-bottom:1px dashed rgba(248,235,227,.25)}
+.sum-list li b{font-weight:800;color:var(--yellow);white-space:nowrap}
+.sum-total{display:flex;justify-content:space-between;align-items:baseline;margin:1rem 0 1.2rem}
+.sum-total .lbl{font-size:.72rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#eed9cb}
+.sum-total .amt{font-family:var(--anton);font-size:2.4rem;color:var(--yellow);line-height:1}
+.sum-note{font-size:.72rem;color:#e5cbbb;margin-top:.8rem}
+.summary .btn-wa{width:100%;justify-content:center}
+.summary .btn-wa[aria-disabled="true"]{opacity:.45;pointer-events:none}
+/* barra móvil */
+.orderbar{position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--maroon-deep);color:var(--white);border-top:3px solid var(--yellow);padding:.65rem 1rem calc(.65rem + env(safe-area-inset-bottom));display:none;align-items:center;justify-content:space-between;gap:.8rem;transform:translateY(105%);visibility:hidden;transition:transform .3s,visibility .3s}
+.orderbar.show{transform:translateY(0);visibility:visible}
+.orderbar .ob-tot{line-height:1.15}
+.orderbar .ob-lbl{display:block;font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#eed9cb}
+.orderbar .ob-amt{font-family:var(--anton);font-size:1.5rem;color:var(--yellow)}
+.orderbar .btn-wa{padding:.6rem .9rem;font-size:.74rem}
+
+/* MAYOR Y DETAL */
+.mayor{background:var(--espresso);color:var(--crema);display:grid;grid-template-columns:1fr 1fr;min-height:440px}
+.mayor-img{position:relative;min-height:280px}
+.mayor-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mayor-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,var(--espresso) 100%)}
+.mayor-txt{padding:3.6rem clamp(1.25rem,5vw,4rem);display:flex;flex-direction:column;justify-content:center}
+.mayor .sec-title{color:var(--crema)}
+.mayor .sec-title .amarillo{color:var(--yellow)}
+.mayor p{max-width:46ch;margin-top:1rem;color:#ecd8ca}
+.mayor-feats{list-style:none;margin-top:1.6rem;display:grid;gap:.6rem}
+.mayor-feats li{display:flex;gap:.7rem;align-items:baseline;font-size:.95rem}
+.mayor-feats li::before{content:"";width:10px;height:10px;background:var(--yellow);flex:none;transform:translateY(1px) rotate(45deg)}
+.mayor .btn-wa{align-self:flex-start;margin-top:1.8rem}
+
+/* UBICACIÓN */
+.ubi{background:var(--black);color:var(--crema);padding:4.4rem 0 4.8rem}
+.ubi .sec-title{color:var(--crema)}
+.ubi .sec-title .amarillo{color:var(--yellow)}
+.ubi-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:2.4rem;margin-top:2.2rem}
+.ubi-card{border:2px solid rgba(248,235,227,.25);padding:1.7rem 1.6rem}
+.ubi-card h3{font-family:var(--anton);font-weight:400;text-transform:uppercase;font-size:1.2rem;letter-spacing:.06em;color:var(--yellow);margin-bottom:.9rem}
+.ubi-card p{font-size:.97rem;color:#e8d5c8}
+.ubi-card .big{font-size:1.15rem;font-weight:700;color:var(--crema)}
+.ubi-card a.maplink{color:var(--yellow);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.hours{width:100%;border-collapse:collapse;margin-top:.4rem}
+.hours td{padding:.6rem 0;border-bottom:1px dashed rgba(248,235,227,.22);font-size:.95rem}
+.hours td:last-child{text-align:right;font-weight:800;color:var(--yellow)}
+.ubi-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.3rem}
+.ubi-tags span{border:1.5px solid var(--yellow);color:var(--yellow);font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:.35rem .7rem}
+
+/* FOOTER */
+footer{background:var(--maroon-deep);color:#e8d0c0;padding:3rem 0 5.6rem}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.6rem}
+.foot-logo img{height:64px;width:auto}
+.foot-social{display:flex;gap:.9rem}
+.foot-social a{display:grid;place-items:center;width:42px;height:42px;border:1.5px solid rgba(248,235,227,.4);color:var(--crema);transition:background .2s,color .2s}
+.foot-social a:hover{background:var(--yellow);color:var(--black);border-color:var(--yellow)}
+.foot-social svg{width:19px;height:19px}
+.foot-data{font-size:.84rem;line-height:1.8}
+.foot-seal{margin-top:2.2rem;padding-top:1.2rem;border-top:1px solid rgba(248,235,227,.15);font-size:.74rem;color:#c9a795}
+.foot-seal a{color:var(--yellow);text-decoration:none;font-weight:700}
+.foot-seal a:hover{text-decoration:underline}
+
+/* FAB */
+.fab{position:fixed;right:1.1rem;bottom:1.1rem;z-index:80;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.35);transition:bottom .3s,transform .15s}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:30px;height:30px;fill:#fff}
+body.has-order .fab{bottom:calc(78px + env(safe-area-inset-bottom))}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:980px){
+  .combo-grid,.builder-grid,.ubi-grid{grid-template-columns:1fr}
+  .mayor{grid-template-columns:1fr}
+  .summary{display:none}
+  .orderbar{display:flex}
+  .nav-links{display:none}
+}
+@media (min-width:981px){
+  .orderbar{display:none!important}
+  body.has-order .fab{bottom:1.1rem}
+  .prow{grid-template-columns:auto minmax(0,1fr) auto auto auto;grid-template-areas:"check info step price sub";column-gap:1.4rem}
+  .pprice{min-width:110px;text-align:right}
+  .psub{min-width:74px;text-align:right}
+}
+@media (max-width:520px){
+  .nav-logo img{height:38px}
+  .btn-wa{font-size:.72rem;padding:.6rem .8rem}
+  .prow{grid-template-columns:auto 1fr;grid-template-areas:"check info" "check price" "step step" "sub sub";row-gap:.5rem}
+  .pprice{justify-self:start}
+  .stepper{margin-top:.2rem}
+  .psub{justify-self:end;margin-top:-2.3rem}
+  .hero-in{padding:2.4rem 0 3.4rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .marquee-track{animation:none}
+  .sticker{animation:none}
+  .rv{opacity:1;transform:none;transition:none}
+  .orderbar{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Principal">
+  <div class="wrap nav-in">
+    <a class="nav-logo" href="#inicio" aria-label="ALTOS del Sol Amada — inicio">
+      <img src="./assets/logo_big_crop.png" alt="ALTOS del Sol Amada — Especialidades de Carnes" width="230" height="70">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#combos">Combos</a></li>
+      <li><a href="#pedido">Arma tu pedido</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+    </ul>
+    <a class="btn-wa" href="https://wa.me/584121995992" data-wa="Hola! Vengo de la página web y quiero hacer un pedido.">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.6.2-.8l.5-.6c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9 2.6 1.1 2.6.7 3.1.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.4z"/></svg>
+      Pedir ya
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="inicio">
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=1600&auto=format" alt="Cortes frescos de res, chorizos y carne molida sobre tabla de madera oscura" loading="eager" fetchpriority="high">
+  </div>
+  <div class="wrap hero-in">
+    <img class="hero-badge" src="./assets/logo_big_crop.png" alt="Sello ALTOS del Sol Amada — Especialidades de Carnes" width="230" height="70">
+    <p class="hero-kicker klabel">Especialidades de Carnes · Maracaibo</p>
+    <h1>La carnicería <span class="amarillo">más barata</span> de la ciudad.</h1>
+    <p class="hero-sub">Res, cerdo, aves, embutidos, huevos y vísceras — <strong>al mayor y al detal, a tasa BCV</strong>. En la Urb. Altos del Sol Amada, primera entrada al lado de la redoma. Con delivery y pick-up.</p>
+    <div class="hero-ctas">
+      <a class="btn-wa" href="#pedido">Arma tu pedido</a>
+      <a class="btn-ghost" href="#combos">Ver combos</a>
+    </div>
+    <div class="sticker" role="img" aria-label="Oferta: muslo de pollo a 2 dólares con 50 el kilo">
+      <span class="s-top">Muslo de pollo</span>
+      <span class="s-price">$2.50</span>
+      <span class="s-kg">el kilo</span>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-label="Tasa BCV, mayor y detal, delivery y pick-up">
+  <div class="marquee-track">
+    <span>Tasa BCV del día<b>◆</b>Mayor y detal<b>◆</b>Delivery y pick-up<b>◆</b>Res · Cerdo · Aves · Embutidos<b>◆</b></span>
+    <span aria-hidden="true">Tasa BCV del día<b>◆</b>Mayor y detal<b>◆</b>Delivery y pick-up<b>◆</b>Res · Cerdo · Aves · Embutidos<b>◆</b></span>
+  </div>
+</div>
+
+<!-- COMBOS -->
+<section class="combos" id="combos">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="secnum">01</span><h2 class="sec-title">Combos de la <span class="amarillo">semana</span></h2></div>
+    <p class="sec-lead rv">Los mismos precios que publicamos en Instagram, aquí siempre a la mano. Tocas el botón y el pedido llega armado a nuestro WhatsApp.</p>
+    <div class="combo-grid">
+      <article class="combo rv">
+        <span class="combo-flag">El favorito</span>
+        <h3>Combo Rey · 10 kilos</h3>
+        <p class="combo-price">$59<small>.99</small></p>
+        <span class="combo-per">Sale a $6 el kilo</span>
+        <ul>
+          <li>10 kilos de proteína a precio de mayorista</li>
+          <li>Rinde para la quincena de toda la familia</li>
+          <li>Lo pagas a tasa BCV del día</li>
+        </ul>
+        <a class="btn-wa" href="https://wa.me/584121995992" data-wa="Hola! Quiero el Combo Rey de 10 kilos por $59.99. ¿Está disponible?">Pedir el Combo Rey</a>
+      </article>
+      <article class="combo rv">
+        <span class="combo-flag">Para la semana</span>
+        <h3>Combo #2 · Surtido</h3>
+        <p class="combo-price">$15<small>.00</small></p>
+        <span class="combo-per">5 productos en uno</span>
+        <ul>
+          <li>½ kg de bistec</li>
+          <li>½ kg de carne de puerco</li>
+          <li>½ kg de chorizo</li>
+          <li>½ kg de recorte de pollo</li>
+          <li>½ cartón de huevos</li>
+        </ul>
+        <a class="btn-wa" href="https://wa.me/584121995992" data-wa="Hola! Quiero el Combo #2 de $15 (½kg bistec, ½kg carne de puerco, ½kg chorizo, ½kg recorte de pollo y ½ cartón de huevos).">Pedir el Combo #2</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ARMA TU PEDIDO -->
+<section class="builder" id="pedido">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="secnum">02</span><h2 class="sec-title">Arma tu pedido</h2></div>
+    <p class="sec-lead rv">Marca lo que necesitas, ajusta los kilos y envíalo por WhatsApp con el total ya calculado. Sin dictar nada por teléfono.</p>
+    <div class="builder-grid">
+      <div>
+        <ul class="plist" id="plist">
+          <li class="prow" data-name="Muslo de pollo" data-price="2.50" data-unit="kg">
+            <label class="pcheck"><input type="checkbox" aria-label="Agregar muslo de pollo al pedido"><span class="box"></span></label>
+            <div class="pinfo"><span class="pname">Muslo de pollo</span><br><span class="ptag">Oferta: 5 kg por $10 en divisas</span></div>
+            <span class="pprice">$2.50<small>/kg</small></span>
+            <div class="stepper">
+              <button type="button" class="minus" aria-label="Quitar medio kilo de muslo de pollo">−</button>
+              <output>1 kg</output>
+              <button type="button" class="plus" aria-label="Agregar medio kilo de muslo de pollo">+</button>
+            </div>
+            <span class="psub">$2.50</span>
+          </li>
+          <li class="prow" data-name="Chuleta de cerdo" data-price="5.90" data-unit="kg">
+            <label class="pcheck"><input type="checkbox" aria-label="Agregar chuleta de cerdo al pedido"><span class="box"></span></label>
+            <div class="pinfo"><span class="pname">Chuleta de cerdo</span></div>
+            <span class="pprice">$5.90<small>/kg</small></span>
+            <div class="stepper">
+              <button type="button" class="minus" aria-label="Quitar medio kilo de chuleta de cerdo">−</button>
+              <output>1 kg</output>
+              <button type="button" class="plus" aria-label="Agregar medio kilo de chuleta de cerdo">+</button>
+            </div>
+            <span class="psub">$5.90</span>
+          </li>
+          <li class="prow" data-name="Carne molida de res" data-price="5.90" data-unit="kg">
+            <label class="pcheck"><input type="checkbox" aria-label="Agregar carne molida de res al pedido"><span class="box"></span></label>
+            <div class="pinfo"><span class="pname">Carne molida de res</span><br><span class="ptag">Precio de fin de semana</span></div>
+            <span class="pprice">$5.90<small>/kg</small></span>
+            <div class="stepper">
+              <button type="button" class="minus" aria-label="Quitar medio kilo de carne molida">−</button>
+              <output>1 kg</output>
+              <button type="button" class="plus" aria-label="Agregar medio kilo de carne molida">+</button>
+            </div>
+            <span class="psub">$5.90</span>
+          </li>
+          <li class="prow" data-name="Hígado de res" data-price="5.90" data-unit="kg">
+            <label class="pcheck"><input type="checkbox" aria-label="Agregar hígado de res al pedido"><span class="box"></span></label>
+            <div class="pinfo"><span class="pname">Hígado de res</span></div>
+            <span class="pprice">$5.90<small>/kg</small></span>
+            <div class="stepper">
+              <button type="button" class="minus" aria-label="Quitar medio kilo de hígado de res">−</button>
+              <output>1 kg</output>
+              <button type="button" class="plus" aria-label="Agregar medio kilo de hígado de res">+</button>
+            </div>
+            <span class="psub">$5.90</span>
+          </li>
+          <li class="prow" data-name="Carne de chivo" data-price="3.94" data-unit="kg">
+            <label class="pcheck"><input type="checkbox" aria-label="Agregar carne de chivo al pedido"><span class="box"></span></label>
+            <div class="pinfo"><span class="pname">Carne de chivo</span></div>
+            <span class="pprice">$3.94<small>/kg</small></span>
+            <div class="stepper">
+              <button type="button" class="minus" aria-label="Quitar medio kilo de carne de chivo">−</button>
+              <output>1 kg</output>
+              <button type="button" class="plus" aria-label="Agregar medio kilo de carne de chivo">+</button>
+            </div>
+            <span class="psub">$3.94</span>
+          </li>
+          <li class="prow" data-name="Huevos AA" data-price="2.16" data-unit="medio-carton">
+            <label class="pcheck"><input type="checkbox" aria-label="Agregar huevos AA al pedido"><span class="box"></span></label>
+            <div class="pinfo"><span class="pname">Huevos AA</span></div>
+            <span class="pprice">$2.16<small>/½ cartón</small></span>
+            <div class="stepper">
+              <button type="button" class="minus" aria-label="Quitar medio cartón de huevos">−</button>
+              <output>1 × ½ cartón</output>
+              <button type="button" class="plus" aria-label="Agregar medio cartón de huevos">+</button>
+            </div>
+            <span class="psub">$2.16</span>
+          </li>
+        </ul>
+        <p class="legal">Precios de referencia — julio 2026. Se cobran a tasa BCV del día. Disponibilidad sujeta a inventario.</p>
+      </div>
+      <aside class="summary rv" aria-label="Resumen del pedido">
+        <h3>Tu pedido</h3>
+        <p class="sum-empty" id="sumEmpty">Marca los productos de la lista y aquí se arma tu pedido con el total en vivo.</p>
+        <ul class="sum-list" id="sumList"></ul>
+        <div class="sum-total">
+          <span class="lbl">Total aprox.</span>
+          <span class="amt" id="sumTotal" aria-live="polite">$0.00</span>
+        </div>
+        <a class="btn-wa" id="sumBtn" href="https://wa.me/584121995992" aria-disabled="true">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.6.2-.8l.5-.6c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9 2.6 1.1 2.6.7 3.1.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.4z"/></svg>
+          Pedir por WhatsApp
+        </a>
+        <p class="sum-note">El total es referencial: en el chat te confirmamos disponibilidad y el monto exacto en bolívares a tasa BCV.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- MAYOR Y DETAL -->
+<section class="mayor">
+  <div class="mayor-img">
+    <img src="https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?q=80&w=1600&auto=format" alt="Chuletas de res frescas apiladas con romero" loading="lazy">
+  </div>
+  <div class="mayor-txt rv">
+    <div class="sec-head"><span class="secnum">03</span><h2 class="sec-title">Mayor y <span class="amarillo">detal</span></h2></div>
+    <p>¿Tienes restaurante, abasto o negocio de comida? Somos distribuidora: el mismo precio de cartel que nos hizo famosos en Instagram, ahora en volumen para tu negocio.</p>
+    <ul class="mayor-feats">
+      <li>Res, cerdo, aves, embutidos, huevos y vísceras</li>
+      <li>Precios de mayorista a tasa BCV</li>
+      <li>Delivery en Maracaibo o pick-up en tienda</li>
+    </ul>
+    <a class="btn-wa" href="https://wa.me/584121995992" data-wa="Hola! Tengo un negocio y quiero cotizar precios al mayor.">Cotizar al mayor</a>
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section class="ubi" id="ubicacion">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="secnum">04</span><h2 class="sec-title">Aquí nos <span class="amarillo">consigues</span></h2></div>
+    <div class="ubi-grid">
+      <div class="ubi-card rv">
+        <h3>Dirección</h3>
+        <p class="big">Urb. Altos del Sol Amada, primera entrada — al lado de la redoma.</p>
+        <p>Maracaibo, estado Zulia.</p>
+        <p style="margin-top:.9rem"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Urbanizaci%C3%B3n+Altos+del+Sol+Amada+Maracaibo" target="_blank" rel="noopener">Abrir en Google Maps</a></p>
+        <div class="ubi-tags">
+          <span>Delivery</span><span>Pick-up</span><span>Tasa BCV</span>
+        </div>
+      </div>
+      <div class="ubi-card rv">
+        <h3>Horario</h3>
+        <table class="hours">
+          <tr><td>Lunes a viernes</td><td>8:00 am — 8:00 pm</td></tr>
+          <tr><td>Sábado</td><td>8:00 am — 5:00 pm</td></tr>
+          <tr><td>Domingo</td><td>Hasta la 1:00 pm</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <a class="foot-logo" href="#inicio" aria-label="Volver al inicio">
+        <img src="./assets/logo_big_crop.png" alt="ALTOS del Sol Amada — Especialidades de Carnes" width="230" height="70">
+      </a>
+      <div class="foot-data">
+        Urb. Altos del Sol Amada, primera entrada al lado de la redoma · Maracaibo<br>
+        WhatsApp: <a href="https://wa.me/584121995992">+58 412-199-5992</a> · IG: <a href="https://www.instagram.com/especialidadesdecarnes" target="_blank" rel="noopener">@especialidadesdecarnes</a>
+      </div>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/especialidadesdecarnes" target="_blank" rel="noopener" aria-label="Instagram de Especialidades de Carnes">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://wa.me/584121995992" aria-label="WhatsApp de Especialidades de Carnes">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.6.2-.8l.5-.6c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9 2.6 1.1 2.6.7 3.1.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.4z"/></svg>
+        </a>
+      </div>
+    </div>
+    <p class="foot-seal">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial de ALTOS del Sol Amada.</p>
+  </div>
+</footer>
+
+<!-- BARRA MÓVIL DE PEDIDO -->
+<div class="orderbar" id="orderbar">
+  <div class="ob-tot">
+    <span class="ob-lbl">Total aprox.</span>
+    <span class="ob-amt" id="obTotal">$0.00</span>
+  </div>
+  <a class="btn-wa" id="obBtn" href="https://wa.me/584121995992">Pedir por WhatsApp</a>
+</div>
+
+<!-- FAB WHATSAPP -->
+<a class="fab" href="https://wa.me/584121995992" data-wa="Hola! Vengo de la página web y quiero hacer un pedido." aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.6.2-.8l.5-.6c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9 2.6 1.1 2.6.7 3.1.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.4z"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  var WA = "https://wa.me/584121995992";
+
+  /* Enlaces estáticos con texto prellenado */
+  document.querySelectorAll("[data-wa]").forEach(function(el){
+    el.href = WA + "?text=" + encodeURIComponent(el.getAttribute("data-wa"));
+  });
+
+  /* ===== Arma tu pedido ===== */
+  var rows = Array.prototype.slice.call(document.querySelectorAll(".prow"));
+  var sumList = document.getElementById("sumList");
+  var sumEmpty = document.getElementById("sumEmpty");
+  var sumTotal = document.getElementById("sumTotal");
+  var sumBtn = document.getElementById("sumBtn");
+  var obTotal = document.getElementById("obTotal");
+  var obBtn = document.getElementById("obBtn");
+  var orderbar = document.getElementById("orderbar");
+
+  /* Cantidades en "medios": 1 = ½kg (o ½ cartón). Se evita coma flotante. */
+  var state = {}; // idx -> halves (0 = no seleccionado)
+
+  function money(cents){ return "$" + (cents/100).toFixed(2); }
+  function qtyLabel(row, halves){
+    if(row.dataset.unit === "kg"){
+      var whole = Math.floor(halves/2), half = halves % 2;
+      var s = (whole > 0 ? whole : "") + (half ? "½" : "");
+      return s + " kg";
+    }
+    return halves + " × ½ cartón";
+  }
+  function rowCents(row, halves){
+    return Math.round(parseFloat(row.dataset.price) * 100 * halves / (row.dataset.unit === "kg" ? 2 : 1));
+  }
+
+  function render(){
+    var total = 0, items = [];
+    sumList.innerHTML = "";
+    rows.forEach(function(row, i){
+      var halves = state[i] || 0;
+      var on = halves > 0;
+      row.classList.toggle("on", on);
+      row.querySelector("input").checked = on;
+      if(!on) return;
+      var cents = rowCents(row, halves);
+      total += cents;
+      var label = qtyLabel(row, halves);
+      row.querySelector("output").textContent = label;
+      row.querySelector(".psub").textContent = money(cents);
+      var nmMsg = row.dataset.name.charAt(0).toLowerCase() + row.dataset.name.slice(1);
+      items.push(label + " de " + nmMsg + " (" + money(cents) + ")");
+      var li = document.createElement("li");
+      var nm = document.createElement("span");
+      nm.textContent = label + " " + row.dataset.name;
+      var pr = document.createElement("b");
+      pr.textContent = money(cents);
+      li.appendChild(nm); li.appendChild(pr);
+      sumList.appendChild(li);
+    });
+
+    var has = items.length > 0;
+    sumEmpty.style.display = has ? "none" : "block";
+    sumTotal.textContent = money(total);
+    obTotal.textContent = money(total);
+    sumBtn.setAttribute("aria-disabled", has ? "false" : "true");
+    document.body.classList.toggle("has-order", has);
+    orderbar.classList.toggle("show", has);
+
+    if(has){
+      var msg = "Hola! Quiero hacer un pedido:\n" +
+        items.map(function(l){ return "• " + l; }).join("\n") +
+        "\nTotal aprox: " + money(total) + " a tasa BCV.\n¿Delivery o pick-up disponible?";
+      var href = WA + "?text=" + encodeURIComponent(msg);
+      sumBtn.href = href;
+      obBtn.href = href;
+    } else {
+      sumBtn.href = WA;
+      obBtn.href = WA;
+    }
+  }
+
+  rows.forEach(function(row, i){
+    var base = row.dataset.unit === "kg" ? 2 : 1; /* arranca en 1kg o 1×½cartón */
+    row.querySelector("input").addEventListener("change", function(e){
+      state[i] = e.target.checked ? base : 0;
+      render();
+    });
+    row.querySelector(".plus").addEventListener("click", function(){
+      state[i] = (state[i] || 0) + 1;
+      render();
+    });
+    row.querySelector(".minus").addEventListener("click", function(){
+      state[i] = Math.max(0, (state[i] || 0) - 1);
+      render();
+    });
+  });
+  render();
+
+  /* ===== Reveal on scroll ===== */
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(!reduce && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll(".rv").forEach(function(el){ el.classList.add("in"); });
+  }
+})();
+</script>
+</body>
+</html>
