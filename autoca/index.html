@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>AUTOCA — Tu concesionario de confianza en Lechería</title>
+<meta name="description" content="Compra, venta y consignación de vehículos en Lechería, Anzoátegui. Recibimos tu vehículo como parte de pago. Papeles al día.">
+<meta property="og:title" content="AUTOCA — Tu concesionario de confianza">
+<meta property="og:description" content="Compra, venta y consignación de vehículos en Lechería. Recibimos tu vehículo como parte de pago.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_VE">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%99%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#16181D;
+  --bg2:#1B1E24;
+  --panel:#1E2229;
+  --line:rgba(255,255,255,.09);
+  --white:#F4F5F7;
+  --gray:#9AA0A8;
+  --red:#D32F2F;
+  --red-dk:#B02525;
+  --wa:#25D366;
+  --max:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:'Inter',system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Archivo',sans-serif}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.eyebrow{
+  font-family:'Archivo',sans-serif;font-weight:600;font-size:.72rem;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--gray);
+}
+.eyebrow .tick{color:var(--red)}
+.sec-num{
+  font-family:'Archivo',sans-serif;font-stretch:70%;font-weight:800;
+  font-size:1.25rem;color:var(--red);letter-spacing:.12em;
+}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(22,24,29,.85);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{
+  max-width:var(--max);margin:0 auto;padding:0 20px;
+  height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand strong{
+  font-family:'Archivo',sans-serif;font-weight:900;font-size:1.35rem;
+  letter-spacing:.03em;color:var(--white);
+}
+.brand span{
+  font-family:'Archivo',sans-serif;font-weight:600;font-size:.58rem;
+  letter-spacing:.3em;color:var(--gray);border:1px solid var(--line);
+  padding:3px 7px;border-radius:2px;text-transform:uppercase;transform:translateY(-2px);
+}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{
+  font-size:.82rem;font-weight:500;color:var(--gray);
+  letter-spacing:.04em;transition:color .2s;
+}
+.nav-links a:hover{color:var(--white)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:.85rem;
+  letter-spacing:.04em;padding:12px 22px;border-radius:4px;
+  border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;
+}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-dk)}
+.btn-ghost{border-color:rgba(255,255,255,.22);color:var(--white)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.5)}
+.btn-nav{padding:9px 16px;font-size:.78rem}
+@media(max-width:760px){.nav-links{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  background:
+    radial-gradient(ellipse 90% 55% at 50% 108%, rgba(211,47,47,.10), transparent 60%),
+    radial-gradient(ellipse 70% 45% at 50% 112%, rgba(255,255,255,.05), transparent 55%),
+    linear-gradient(180deg,#16181D 0%,#14161B 55%,#101216 100%);
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.hero-in{max-width:var(--max);margin:0 auto;padding:72px 20px 0;text-align:left}
+.hero h1{
+  font-weight:800;
+  font-size:clamp(2.7rem,9.5vw,8.25rem);
+  line-height:.98;letter-spacing:-.025em;
+  margin:22px 0 26px;max-width:14ch;
+}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero-sub{
+  color:var(--gray);font-size:clamp(1rem,2.5vw,1.15rem);
+  max-width:52ch;margin-bottom:34px;
+}
+.hero-sub b{color:var(--white);font-weight:600}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:8px}
+.hero-facts{
+  display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:38px;
+  padding-top:22px;border-top:1px solid var(--line);
+}
+.hero-facts div{font-size:.78rem;color:var(--gray);letter-spacing:.06em}
+.hero-facts strong{
+  display:block;font-family:'Archivo',sans-serif;font-stretch:75%;
+  font-weight:800;font-size:1.5rem;color:var(--white);letter-spacing:0;
+}
+.hero-car{position:relative;margin-top:-8px}
+.hero-car svg{width:min(880px,94%);margin:0 auto;height:auto}
+.hero-floor{
+  position:absolute;left:0;right:0;bottom:0;height:120px;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.45));
+}
+@media(max-width:760px){
+  .hero-in{padding-top:56px}
+  .hero-facts{gap:10px 22px}
+}
+
+/* ---------- FILTER BAR ---------- */
+.filterbar{
+  position:sticky;top:64px;z-index:40;
+  background:rgba(22,24,29,.92);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.filterbar-in{
+  max-width:var(--max);margin:0 auto;padding:14px 20px;
+  display:flex;align-items:center;gap:18px;
+}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{
+  flex:0 0 auto;font-family:'Archivo',sans-serif;font-weight:600;font-size:.76rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gray);
+  background:transparent;border:1px solid var(--line);border-radius:999px;
+  padding:8px 18px;cursor:pointer;transition:all .2s;
+}
+.chip:hover{color:var(--white);border-color:rgba(255,255,255,.3)}
+.chip[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.filter-count{
+  margin-left:auto;font-size:.74rem;color:var(--gray);
+  letter-spacing:.08em;white-space:nowrap;
+}
+@media(max-width:600px){.filter-count{display:none}}
+
+/* ---------- INVENTORY ---------- */
+.section{padding:84px 0}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:10px}
+.sec-title{
+  font-weight:800;font-size:clamp(1.9rem,5vw,3rem);
+  letter-spacing:-.02em;line-height:1.05;
+}
+.sec-lede{color:var(--gray);max-width:56ch;margin-bottom:44px}
+.grid{
+  display:grid;gap:22px;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .25s,border-color .25s;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.2)}
+.card.hide{display:none}
+.plate{
+  position:relative;height:158px;display:flex;align-items:center;justify-content:center;
+  border-bottom:1px solid var(--line);overflow:hidden;
+}
+.plate::before{content:"";position:absolute;inset:0}
+.plate .mono{
+  position:relative;font-family:'Archivo',sans-serif;font-stretch:65%;font-weight:900;
+  font-size:4rem;letter-spacing:.04em;color:transparent;
+  -webkit-text-stroke:1.5px rgba(255,255,255,.3);
+}
+.plate .mk{
+  position:absolute;top:12px;left:16px;font-family:'Archivo',sans-serif;
+  font-weight:600;font-size:.58rem;letter-spacing:.34em;color:rgba(255,255,255,.6);
+  text-transform:uppercase;
+}
+.plate .yr{
+  position:absolute;bottom:12px;right:14px;font-family:'Archivo',sans-serif;
+  font-stretch:75%;font-weight:800;font-size:.72rem;letter-spacing:.1em;
+  color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.2);
+  padding:2px 8px;border-radius:2px;
+}
+.plate .flag{
+  position:absolute;top:12px;right:14px;font-family:'Archivo',sans-serif;
+  font-weight:700;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--red);color:#fff;padding:3px 9px;border-radius:2px;
+}
+/* per-model plates */
+.p-cross{background:linear-gradient(135deg,#1C232C,#31404F)}
+.p-cross::before{background:repeating-linear-gradient(45deg,rgba(255,255,255,.045) 0 2px,transparent 2px 16px)}
+.p-lc300{background:linear-gradient(135deg,#26211A,#463A26)}
+.p-lc300::before{background:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px}
+.p-sr5{background:linear-gradient(135deg,#1B221E,#2E4438)}
+.p-sr5::before{background:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1.6px);background-size:18px 18px}
+.p-rush{background:linear-gradient(135deg,#1D222E,#2C3A55)}
+.p-rush::before{background:repeating-linear-gradient(-45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 12px)}
+.p-yaris{background:linear-gradient(135deg,#1F1F23,#3A3A41)}
+.p-yaris::before{background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 10px)}
+.p-fortuner{background:linear-gradient(135deg,#26201B,#4A3826)}
+.p-fortuner::before{background:repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 2px,transparent 2px 14px)}
+.p-fj{background:linear-gradient(135deg,#152530,#255064)}
+.p-fj::before{background:repeating-linear-gradient(45deg,rgba(255,255,255,.045) 0 1px,transparent 1px 9px),repeating-linear-gradient(-45deg,rgba(255,255,255,.045) 0 1px,transparent 1px 9px)}
+
+.card-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+.card-model{font-weight:800;font-size:1.15rem;letter-spacing:-.01em;line-height:1.25}
+.card-specs{
+  color:var(--gray);font-size:.82rem;margin-top:6px;letter-spacing:.02em;
+}
+.card-foot{
+  margin-top:auto;padding-top:18px;display:flex;align-items:center;
+  justify-content:space-between;gap:12px;
+}
+.price{
+  font-family:'Archivo',sans-serif;font-stretch:78%;font-weight:800;
+  font-size:1.45rem;color:var(--red);letter-spacing:-.01em;line-height:1.1;
+}
+.price small{
+  display:block;font-family:'Inter',sans-serif;font-weight:500;
+  font-size:.62rem;color:var(--gray);letter-spacing:.14em;text-transform:uppercase;
+}
+.price.ask{color:var(--white);font-size:1.1rem;font-weight:700}
+.btn-card{padding:11px 16px;font-size:.78rem;white-space:nowrap}
+.btn-card svg{width:15px;height:15px;flex:0 0 auto}
+.grid-empty{
+  display:none;grid-column:1/-1;text-align:center;color:var(--gray);
+  border:1px dashed var(--line);border-radius:8px;padding:48px 20px;font-size:.9rem;
+}
+
+/* ---------- CONSIGNACIÓN ---------- */
+.consign{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.consign-grid{display:grid;grid-template-columns:1fr;gap:48px}
+@media(min-width:900px){.consign-grid{grid-template-columns:5fr 6fr;gap:72px}}
+.consign-sticky{align-self:start}
+@media(min-width:900px){.consign-sticky{position:sticky;top:130px}}
+.consign h2{margin:14px 0 18px}
+.consign-copy{color:var(--gray);max-width:44ch}
+.steps{display:flex;flex-direction:column}
+.step{
+  display:grid;grid-template-columns:auto 1fr;gap:22px;
+  padding:30px 0;border-top:1px solid var(--line);
+}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step-num{
+  font-family:'Archivo',sans-serif;font-stretch:65%;font-weight:900;
+  font-size:3rem;line-height:1;color:transparent;
+  -webkit-text-stroke:1.5px rgba(255,255,255,.35);
+}
+.step h3{font-weight:700;font-size:1.1rem;margin-bottom:6px}
+.step p{color:var(--gray);font-size:.92rem;max-width:46ch}
+.tradein{
+  margin-top:40px;border:1px solid rgba(211,47,47,.45);border-radius:8px;
+  background:linear-gradient(135deg,rgba(211,47,47,.10),rgba(211,47,47,.03));
+  padding:26px 26px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;
+  justify-content:space-between;
+}
+.tradein p{max-width:40ch}
+.tradein strong{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.15rem;display:block;margin-bottom:4px}
+.tradein span{color:var(--gray);font-size:.9rem}
+
+/* ---------- UBICACIÓN ---------- */
+.loc-grid{display:grid;gap:22px;grid-template-columns:1fr;margin-top:44px}
+@media(min-width:820px){.loc-grid{grid-template-columns:1.2fr 1fr 1fr}}
+.loc-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:28px;
+}
+.loc-card h3{
+  font-size:.7rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gray);margin-bottom:16px;
+}
+.loc-big{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.35rem;line-height:1.3;letter-spacing:-.01em}
+.loc-card p{color:var(--gray);font-size:.9rem;margin-top:8px}
+.hours{width:100%;border-collapse:collapse}
+.hours td{
+  padding:10px 0;font-size:.9rem;border-bottom:1px solid var(--line);
+}
+.hours tr:last-child td{border-bottom:0}
+.hours td:first-child{color:var(--gray)}
+.hours td:last-child{text-align:right;font-family:'Archivo',sans-serif;font-stretch:80%;font-weight:700}
+.loc-phone{display:flex;flex-direction:column;gap:14px}
+.loc-phone a,.loc-phone .ph{
+  display:flex;align-items:center;gap:12px;font-family:'Archivo',sans-serif;
+  font-stretch:82%;font-weight:700;font-size:1.15rem;transition:color .2s;
+}
+.loc-phone a:hover{color:var(--wa)}
+.loc-phone svg{width:20px;height:20px;flex:0 0 auto}
+.loc-phone small{
+  display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:.68rem;
+  color:var(--gray);letter-spacing:.12em;text-transform:uppercase;
+}
+
+/* ---------- FOOTER ---------- */
+footer{border-top:1px solid var(--line);background:#111318;padding:56px 0 40px}
+.foot-grid{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start}
+.foot-brand strong{font-family:'Archivo',sans-serif;font-weight:900;font-size:1.6rem;letter-spacing:.03em}
+.foot-brand p{color:var(--gray);font-size:.85rem;max-width:34ch;margin-top:10px}
+.foot-social{display:flex;gap:12px;margin-top:18px}
+.foot-social a{
+  width:40px;height:40px;border:1px solid var(--line);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;color:var(--gray);
+  transition:color .2s,border-color .2s;
+}
+.foot-social a:hover{color:var(--white);border-color:rgba(255,255,255,.4)}
+.foot-social svg{width:18px;height:18px}
+.foot-col h4{
+  font-size:.68rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gray);margin-bottom:14px;
+}
+.foot-col p,.foot-col a{display:block;color:var(--gray);font-size:.88rem;margin-bottom:8px}
+.foot-col a:hover{color:var(--white)}
+.foot-col .lit{color:var(--white)}
+.foot-seal{
+  margin-top:48px;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;
+  font-size:.75rem;color:var(--gray);
+}
+.foot-seal a{color:var(--gray);text-decoration:underline;text-underline-offset:3px}
+.foot-seal a:hover{color:var(--white)}
+
+/* ---------- FAB ---------- */
+.fab{
+  position:fixed;right:18px;bottom:18px;z-index:60;
+  width:56px;height:56px;border-radius:50%;background:var(--wa);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.45);
+  transition:transform .2s;
+}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:30px;height:30px;fill:#fff}
+
+/* ---------- REVEAL ---------- */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Principal">
+  <div class="nav-in">
+    <a class="brand" href="#" aria-label="AUTOCA Lechería — inicio">
+      <strong>AUTOCA</strong><span>Lechería</span>
+    </a>
+    <div class="nav-links">
+      <a href="#inventario">Inventario</a>
+      <a href="#consignacion">Consignación</a>
+      <a href="#ubicacion">Ubicación</a>
+    </div>
+    <a class="btn btn-red btn-nav" href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20vi%20su%20cat%C3%A1logo%20online%20y%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.53 15.23L2 22l4.9-1.42A10 10 0 1 0 12 2Zm0 18.13c-1.64 0-3.17-.44-4.49-1.21l-.32-.19-2.91.84.86-2.84-.21-.34A8.13 8.13 0 1 1 12 20.13Zm4.46-6.08c-.24-.12-1.44-.71-1.66-.79s-.39-.12-.55.12-.63.79-.77.95-.28.18-.53.06a6.65 6.65 0 0 1-3.32-2.9c-.25-.43.25-.4.72-1.33.08-.16.04-.3-.02-.42s-.55-1.32-.75-1.8-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.73 2.73 0 0 0-.85 2.03 4.75 4.75 0 0 0 1 2.52 10.9 10.9 0 0 0 4.17 3.68c1.55.67 2.16.73 2.94.61a2.5 2.5 0 0 0 1.65-1.16 2 2 0 0 0 .14-1.16c-.06-.11-.22-.17-.46-.29Z"/></svg>
+      Escríbenos
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-in">
+    <p class="eyebrow"><span class="tick">—</span> Lechería · Edo. Anzoátegui</p>
+    <h1>El carro que buscas, con los papeles <em>al día.</em></h1>
+    <p class="hero-sub">Compra, venta y consignación de vehículos en la Av. Bolívar de Lechería. Trato directo, sin intermediarios raros — y <b>recibimos tu vehículo como parte de pago</b>.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-red" href="#inventario">Ver inventario</a>
+      <a class="btn btn-ghost" href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20vi%20su%20cat%C3%A1logo%20online%20y%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener">Cotiza por WhatsApp</a>
+    </div>
+    <div class="hero-facts">
+      <div><strong>7</strong>vehículos disponibles</div>
+      <div><strong>14.4K</strong>en Instagram</div>
+      <div><strong>0KM</strong>y usados verificados</div>
+    </div>
+  </div>
+  <div class="hero-car" aria-hidden="true">
+    <svg viewBox="0 0 760 400" role="img" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="fade" x1="0" y1="278" x2="0" y2="400" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#fff" stop-opacity=".30"/>
+          <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <mask id="reflmask">
+          <rect x="0" y="276" width="760" height="130" fill="url(#fade)"/>
+        </mask>
+      </defs>
+      <g id="car" fill="none" stroke="#E8EAEE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <!-- body silhouette -->
+        <path d="M46 218
+                 C40 206 38 190 46 172
+                 L54 156
+                 C68 147 96 142 140 139
+                 L240 131
+                 L312 80
+                 C320 72 334 69 350 69
+                 L586 67
+                 C604 67 614 71 619 78
+                 L637 148
+                 C643 160 648 174 650 188
+                 L652 206
+                 C652 218 646 226 634 226
+                 L618 226
+                 A 58 58 0 0 0 502 226
+                 L250 226
+                 A 58 58 0 0 0 134 226
+                 L60 226
+                 C50 226 46 224 46 218 Z"/>
+        <!-- glass + details -->
+        <path d="M316 86 L256 130" stroke-opacity=".55"/>
+        <path d="M246 134 L636 127" stroke-opacity=".4" stroke-width="1.5"/>
+        <path d="M420 73 L415 129" stroke-opacity=".55"/>
+        <path d="M602 74 L622 128" stroke-opacity=".55"/>
+        <path d="M300 122 l-17 -6 l3 -11 l14 5 z" stroke-opacity=".7" stroke-width="2"/>
+        <path d="M352 152 h22 M470 150 h22" stroke-opacity=".6"/>
+        <path d="M362 136 L358 212" stroke-opacity=".3" stroke-width="1.5"/>
+        <path d="M478 134 L476 214" stroke-opacity=".3" stroke-width="1.5"/>
+        <path d="M56 160 l28 -3" stroke-opacity=".7"/>
+        <path d="M644 152 l-16 2" stroke-opacity=".7"/>
+        <!-- red rocker accent -->
+        <path d="M152 210 L610 206" stroke="#D32F2F" stroke-width="3" stroke-opacity=".85"/>
+        <!-- wheels -->
+        <circle cx="192" cy="226" r="44" stroke-width="3"/>
+        <circle cx="192" cy="226" r="24" stroke-opacity=".55"/>
+        <circle cx="192" cy="226" r="4" fill="#E8EAEE" stroke="none" fill-opacity=".7"/>
+        <circle cx="560" cy="226" r="44" stroke-width="3"/>
+        <circle cx="560" cy="226" r="24" stroke-opacity=".55"/>
+        <circle cx="560" cy="226" r="4" fill="#E8EAEE" stroke="none" fill-opacity=".7"/>
+      </g>
+      <!-- ground line -->
+      <line x1="20" y1="274" x2="740" y2="274" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+      <!-- reflection -->
+      <use href="#car" transform="translate(0,552) scale(1,-1)" mask="url(#reflmask)" opacity=".35"/>
+    </svg>
+  </div>
+  <div class="hero-floor" aria-hidden="true"></div>
+</header>
+
+<!-- FILTER BAR -->
+<div class="filterbar" id="filtros">
+  <div class="filterbar-in">
+    <div class="chips" role="group" aria-label="Filtrar inventario">
+      <button class="chip" data-filter="todos" aria-pressed="true">Todos</button>
+      <button class="chip" data-filter="0km" aria-pressed="false">0KM</button>
+      <button class="chip" data-filter="usados" aria-pressed="false">Usados</button>
+      <button class="chip" data-filter="suv" aria-pressed="false">SUV</button>
+      <button class="chip" data-filter="sedan" aria-pressed="false">Sedán</button>
+    </div>
+    <span class="filter-count" id="filterCount" aria-live="polite">Mostrando 7 vehículos</span>
+  </div>
+</div>
+
+<!-- INVENTARIO -->
+<main>
+<section class="section" id="inventario">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">Inventario disponible</h2>
+    </div>
+    <p class="sec-lede rv">Cada vehículo revisado y con su documentación en regla. ¿Te interesa uno? Escríbenos y coordinamos para que lo veas en la Av. Bolívar.</p>
+
+    <div class="grid" id="grid">
+
+      <!-- 1. Corolla Cross -->
+      <article class="card rv" data-cat="0km suv">
+        <div class="plate p-cross">
+          <span class="mk">Toyota</span>
+          <span class="flag">0KM</span>
+          <span class="mono">CROSS</span>
+          <span class="yr">2026</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-model">Toyota Corolla Cross 2026</h3>
+          <p class="card-specs">0 km · Importación directa</p>
+          <div class="card-foot">
+            <p class="price"><small>Desde</small>$20.900</p>
+            <a class="btn btn-red btn-card" href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20me%20interesa%20el%20Toyota%20Corolla%20Cross%202026" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.53 15.23L2 22l4.9-1.42A10 10 0 1 0 12 2Zm4.46 14.05a2.5 2.5 0 0 1-1.65 1.16c-.78.12-1.39.06-2.94-.61a10.9 10.9 0 0 1-4.17-3.68 4.75 4.75 0 0 1-1-2.52 2.73 2.73 0 0 1 .85-2.03.9.9 0 0 1 .65-.3h.47c.15.01.35-.06.55.42s.69 1.68.75 1.8.08.26.02.42c-.47.93-.97.9-.72 1.33a6.65 6.65 0 0 0 3.32 2.9c.25.12.39.1.53-.06s.61-.71.77-.95.31-.2.55-.12 1.42.67 1.66.79.4.18.46.29a2 2 0 0 1-.1 1.16Z"/></svg>
+              Me interesa
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. LC300 -->
+      <article class="card rv" data-cat="suv">
+        <div class="plate p-lc300">
+          <span class="mk">Toyota</span>
+          <span class="mono">LC300</span>
+          <span class="yr">2025</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-model">Toyota Land Cruiser LC300 GX-R 2025</h3>
+          <p class="card-specs">Serie 300 · Versión GX-R</p>
+          <div class="card-foot">
+            <p class="price ask"><small>Precio</small>Consultar</p>
+            <a class="btn btn-red btn-card" href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20me%20interesa%20el%20Toyota%20Land%20Cruiser%20LC300%20GX-R%202025" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.53 15.23L2 22l4.9-1.42A10 10 0 1 0 12 2Zm4.46 14.05a2.5 2.5 0 0 1-1.65 1.16c-.78.12-1.39.06-2.94-.61a10.9 10.9 0 0 1-4.17-3.68 4.75 4.75 0 0 1-1-2.52 2.73 2.73 0 0 1 .85-2.03.9.9 0 0 1 .65-.3h.47c.15.01.35-.06.55.42s.69 1.68.75 1.8.08.26.02.42c-.47.93-.97.9-.72 1.33a6.65 6.65 0 0 0 3.32 2.9c.25.12.39.1.53-.06s.61-.71.77-.95.31-.2.55-.12 1.42.67 1.66.79.4.18.46.29a2 2 0 0 1-.1 1.16Z"/></svg>
+              Me interesa
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. 4Runner -->
+      <article class="card rv" data-cat="usados suv">
+        <div class="plate p-sr5">
+          <span class="mk">Toyota</span>
+          <span class="mono">SR5</span>
+          <span class="yr">2016</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-model">Toyota 4Runner SR5 2016</h3>
+          <p class="card-specs">32.000 millas · 2 dueños</p>
+          <div class="card-foot">
+            <p class="price ask"><small>Precio</small>Consultar</p>
+            <a class="btn btn-red btn-card" href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20me%20interesa%20el%20Toyota%204Runner%20SR5%202016" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.53 15.23L2 22l4.9-1.42A10 10 0 1 0 12 2Zm4.46 14.05a2.5 2.5 0 0 1-1.65 1.16c-.78.12-1.39.06-2.94-.61a10.9 10.9 0 0 1-4.17-3.68 4.75 4.75 0 0 1-1-2.52 2.73 2.73 0 0 1 .85-2.03.9.9 0 0 1 .65-.3h.47c.15.01.35-.06.55.42s.69 1.68.75 1.8.08.26.02.42c-.47.93-.97.9-.72 1.33a6.65 6.65 0 0 0 3.32 2.9c.25.12.39.1.53-.06s.61-.71.77-.95.31-.2.55-.12 1.42.67 1.66.79.4.18.46.29a2 2 0 0 1-.1 1.16Z"/></svg>
+              Me interesa
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Rush -->
+      <article class="card rv" data-cat="usados suv">
+        <div class="plate p-rush">
+          <span class="mk">Toyota</span>
+          <span class="mono">RUSH</span>
+          <span class="yr">2023</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-model">Toyota Rush 2023</h3>
+          <p class="card-specs">12.600 km · Único dueño</p>
+          <div class="card-foot">
+            <p class="price ask"><small>Precio</small>Consultar</p>
+            <a class="btn btn-red btn-card" href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20me%20interesa%20el%20Toyota%20Rush%202023" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.53 15.23L2 22l4.9-1.42A10 10 0 1 0 12 2Zm4.46 14.05a2.5 2.5 0 0 1-1.65 1.16c-.78.12-1.39.06-2.94-.61a10.9 10.9 0 0 1-4.17-3.68 4.75 4.75 0 0 1-1-2.52 2.73 2.73 0 0 1 .85-2.03.9.9 0 0 1 .65-.3h.47c.15.01.35-.06.55.42s.69 1.68.75 1.8.08.26.02.42c-.47.93-.97.9-.72 1.33a6.65 6.65 0 0 0 3.32 2.9c.25.12.39.1.53-.06s.61-.71.77-.95.31-.2.55-.12 1.42.67 1.66.79.4.18.46.29a2 2 0 0 1-.1 1.16Z"/></svg>
+              Me interesa
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Yaris -->
+      <article class="card rv" data-cat="usados sedan">
+        <div class="plate p-yaris">
+          <span class="mk">Toyota</span>
+          <span class="mono">YARIS</span>
+          <span class="yr">2019</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-model">Toyota Yaris 2019</h3>
+          <p class="card-specs">96.000 km · Sedán</p>
+          <div class="card-foot">
+            <p class="price"><small>Precio</small>$23.900</p>
+            <a class="btn btn-red btn-card" href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20me%20interesa%20el%20Toyota%20Yaris%202019" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.53 15.23L2 22l4.9-1.42A10 10 0 1 0 12 2Zm4.46 14.05a2.5 2.5 0 0 1-1.65 1.16c-.78.12-1.39.06-2.94-.61a10.9 10.9 0 0 1-4.17-3.68 4.75 4.75 0 0 1-1-2.52 2.73 2.73 0 0 1 .85-2.03.9.9 0 0 1 .65-.3h.47c.15.01.35-.06.55.42s.69 1.68.75 1.8.08.26.02.42c-.47.93-.97.9-.72 1.33a6.65 6.65 0 0 0 3.32 2.9c.25.12.39.1.53-.06s.61-.71.77-.95.31-.2.55-.12 1.42.67 1.66.79.4.18.46.29a2 2 0 0 1-.1 1.16Z"/></svg>
+              Me interesa
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. Fortuner -->
+      <article class="card rv" data-cat="usados suv">
+        <div class="plate p-fortuner">
+          <span class="mk">Toyota</span>
+          <span class="mono">4X4</span>
+          <span class="yr">2012</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-model">Toyota Fortuner 4x4 2012</h3>
+          <p class="card-specs">Tracción 4x4 · Lista para carretera</p>
+          <div class="card-foot">
+            <p class="price ask"><small>Precio</small>Consultar</p>
+            <a class="btn btn-red btn-card" href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20me%20interesa%20el%20Toyota%20Fortuner%204x4%202012" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.53 15.23L2 22l4.9-1.42A10 10 0 1 0 12 2Zm4.46 14.05a2.5 2.5 0 0 1-1.65 1.16c-.78.12-1.39.06-2.94-.61a10.9 10.9 0 0 1-4.17-3.68 4.75 4.75 0 0 1-1-2.52 2.73 2.73 0 0 1 .85-2.03.9.9 0 0 1 .65-.3h.47c.15.01.35-.06.55.42s.69 1.68.75 1.8.08.26.02.42c-.47.93-.97.9-.72 1.33a6.65 6.65 0 0 0 3.32 2.9c.25.12.39.1.53-.06s.61-.71.77-.95.31-.2.55-.12 1.42.67 1.66.79.4.18.46.29a2 2 0 0 1-.1 1.16Z"/></svg>
+              Me interesa
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. FJ Cruiser -->
+      <article class="card rv" data-cat="usados suv">
+        <div class="plate p-fj">
+          <span class="mk">Toyota</span>
+          <span class="flag">Modificado</span>
+          <span class="mono">FJ</span>
+          <span class="yr">2016</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-model">Toyota FJ Cruiser 2016</h3>
+          <p class="card-specs">Modificado · Pieza para conocedores</p>
+          <div class="card-foot">
+            <p class="price ask"><small>Precio</small>Consultar</p>
+            <a class="btn btn-red btn-card" href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20me%20interesa%20el%20Toyota%20FJ%20Cruiser%202016" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.53 15.23L2 22l4.9-1.42A10 10 0 1 0 12 2Zm4.46 14.05a2.5 2.5 0 0 1-1.65 1.16c-.78.12-1.39.06-2.94-.61a10.9 10.9 0 0 1-4.17-3.68 4.75 4.75 0 0 1-1-2.52 2.73 2.73 0 0 1 .85-2.03.9.9 0 0 1 .65-.3h.47c.15.01.35-.06.55.42s.69 1.68.75 1.8.08.26.02.42c-.47.93-.97.9-.72 1.33a6.65 6.65 0 0 0 3.32 2.9c.25.12.39.1.53-.06s.61-.71.77-.95.31-.2.55-.12 1.42.67 1.66.79.4.18.46.29a2 2 0 0 1-.1 1.16Z"/></svg>
+              Me interesa
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <p class="grid-empty" id="gridEmpty">No hay vehículos en esta categoría por ahora. Escríbenos por WhatsApp y te avisamos apenas llegue uno.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONSIGNACIÓN -->
+<section class="section consign" id="consignacion">
+  <div class="wrap consign-grid">
+    <div class="consign-sticky rv">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">Vende tu carro sin dolores de cabeza</h2>
+      <p class="consign-copy">Déjalo en consignación con nosotros: tú pones el vehículo, AUTOCA pone el showroom, los compradores y el papeleo. Así de simple.</p>
+    </div>
+    <div>
+      <div class="steps">
+        <div class="step rv">
+          <span class="step-num">01</span>
+          <div>
+            <h3>Evaluamos tu vehículo</h3>
+            <p>Tráelo a la Av. Bolívar de Lechería. Lo revisamos contigo y acordamos juntos el precio de venta.</p>
+          </div>
+        </div>
+        <div class="step rv">
+          <span class="step-num">02</span>
+          <div>
+            <h3>Nosotros lo movemos</h3>
+            <p>Lo publicamos, atendemos a los interesados y coordinamos cada visita. Tú sigues en lo tuyo, sin recibir llamadas de curiosos.</p>
+          </div>
+        </div>
+        <div class="step rv">
+          <span class="step-num">03</span>
+          <div>
+            <h3>Cierras con papeles al día</h3>
+            <p>Nos encargamos del traspaso y la documentación completa. Cobras sin enredos y con todo en regla.</p>
+          </div>
+        </div>
+      </div>
+      <div class="tradein rv">
+        <p>
+          <strong>¿Quieres cambiar de carro?</strong>
+          <span>Recibimos tu vehículo como parte de pago por cualquiera de nuestro inventario.</span>
+        </p>
+        <a class="btn btn-red" href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20quiero%20vender%20mi%20carro%20en%20consignaci%C3%B3n" target="_blank" rel="noopener">Quiero venderlo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section class="section" id="ubicacion">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">03</span>
+      <h2 class="sec-title">Ven a vernos</h2>
+    </div>
+    <p class="sec-lede rv">Estamos en plena Av. Bolívar de Lechería. Pasa cuando quieras dentro del horario, o escríbenos antes y te tenemos el vehículo listo para que lo pruebes.</p>
+    <div class="loc-grid">
+      <div class="loc-card rv">
+        <h3>Dirección</h3>
+        <p class="loc-big">Av. Bolívar,<br>Lechería</p>
+        <p>Edo. Anzoátegui, Venezuela</p>
+      </div>
+      <div class="loc-card rv">
+        <h3>Horario</h3>
+        <table class="hours">
+          <tr><td>Lunes a viernes</td><td>9:00 am – 7:00 pm</td></tr>
+          <tr><td>Sábado</td><td>10:00 am – 6:00 pm</td></tr>
+        </table>
+      </div>
+      <div class="loc-card rv">
+        <h3>Contacto</h3>
+        <div class="loc-phone">
+          <a href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20vi%20su%20cat%C3%A1logo%20online%20y%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.53 15.23L2 22l4.9-1.42A10 10 0 1 0 12 2Zm4.46 14.05a2.5 2.5 0 0 1-1.65 1.16c-.78.12-1.39.06-2.94-.61a10.9 10.9 0 0 1-4.17-3.68 4.75 4.75 0 0 1-1-2.52 2.73 2.73 0 0 1 .85-2.03.9.9 0 0 1 .65-.3h.47c.15.01.35-.06.55.42s.69 1.68.75 1.8.08.26.02.42c-.47.93-.97.9-.72 1.33a6.65 6.65 0 0 0 3.32 2.9c.25.12.39.1.53-.06s.61-.71.77-.95.31-.2.55-.12 1.42.67 1.66.79.4.18.46.29a2 2 0 0 1-.1 1.16Z"/></svg>
+            <span>0412-819-1982<small>WhatsApp principal</small></span>
+          </a>
+          <a href="tel:+584248427289">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>0424-842-7289<small>Llamadas</small></span>
+          </a>
+          <a href="https://instagram.com/autocalecheria" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+            <span>@autocalecheria<small>14.4K seguidores</small></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <strong>AUTOCA</strong>
+        <p>Tu concesionario de confianza en Lechería. Compra, venta y consignación de vehículos con los papeles al día.</p>
+        <div class="foot-social">
+          <a href="https://instagram.com/autocalecheria" target="_blank" rel="noopener" aria-label="Instagram de AUTOCA">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/autocalecheria" target="_blank" rel="noopener" aria-label="Facebook de AUTOCA">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.93.26-1.56 1.6-1.56h1.7V4.3c-.3-.04-1.3-.13-2.47-.13-2.45 0-4.13 1.5-4.13 4.24v2.4H7.5V14h2.7v8h3.3z"/></svg>
+          </a>
+          <a href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20vi%20su%20cat%C3%A1logo%20online%20y%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="WhatsApp de AUTOCA">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.53 15.23L2 22l4.9-1.42A10 10 0 1 0 12 2Zm4.46 14.05a2.5 2.5 0 0 1-1.65 1.16c-.78.12-1.39.06-2.94-.61a10.9 10.9 0 0 1-4.17-3.68 4.75 4.75 0 0 1-1-2.52 2.73 2.73 0 0 1 .85-2.03.9.9 0 0 1 .65-.3h.47c.15.01.35-.06.55.42s.69 1.68.75 1.8.08.26.02.42c-.47.93-.97.9-.72 1.33a6.65 6.65 0 0 0 3.32 2.9c.25.12.39.1.53-.06s.61-.71.77-.95.31-.2.55-.12 1.42.67 1.66.79.4.18.46.29a2 2 0 0 1-.1 1.16Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Visítanos</h4>
+        <p class="lit">Av. Bolívar, Lechería</p>
+        <p>Edo. Anzoátegui, Venezuela</p>
+        <p>L–V: 9:00 am – 7:00 pm</p>
+        <p>Sáb: 10:00 am – 6:00 pm</p>
+      </div>
+      <div class="foot-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20vi%20su%20cat%C3%A1logo%20online%20y%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener">WhatsApp: 0412-819-1982</a>
+        <a href="tel:+584248427289">Teléfono: 0424-842-7289</a>
+        <a href="https://instagram.com/autocalecheria" target="_blank" rel="noopener">Instagram: @autocalecheria</a>
+        <a href="https://www.facebook.com/autocalecheria" target="_blank" rel="noopener">Facebook: Autoca Lechería</a>
+      </div>
+    </div>
+    <div class="foot-seal">
+      <span>© 2026 AUTOCA · Lechería, Edo. Anzoátegui</span>
+      <span>Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FAB -->
+<a class="fab" href="https://wa.me/584128191982?text=Hola%20AUTOCA%2C%20vi%20su%20cat%C3%A1logo%20online%20y%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.383 3 4 8.383 4 15c0 2.31.66 4.47 1.8 6.3L4 29l7.9-1.75A11.9 11.9 0 0 0 16 27c6.617 0 12-5.383 12-12S22.617 3 16 3zm0 21.8c-1.9 0-3.68-.55-5.18-1.5l-.37-.22-3.84.85.88-3.74-.24-.39A9.72 9.72 0 0 1 6.2 15c0-5.4 4.4-9.8 9.8-9.8s9.8 4.4 9.8 9.8-4.4 9.8-9.8 9.8zm5.38-7.34c-.3-.15-1.74-.86-2-.96-.27-.1-.47-.15-.67.15s-.77.96-.94 1.16c-.17.2-.35.22-.64.07a8 8 0 0 1-2.36-1.46 8.85 8.85 0 0 1-1.63-2.03c-.17-.3-.02-.46.13-.6.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.1 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.74-.71 1.99-1.4.24-.69.24-1.28.17-1.4-.07-.12-.27-.2-.57-.35z"/></svg>
+</a>
+
+<script>
+(function(){
+  // --- Filtros de inventario ---
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('#grid .card');
+  var count = document.getElementById('filterCount');
+  var empty = document.getElementById('gridEmpty');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+      chip.setAttribute('aria-pressed','true');
+      var f = chip.dataset.filter, shown = 0;
+      cards.forEach(function(card){
+        var ok = f === 'todos' || card.dataset.cat.split(' ').indexOf(f) !== -1;
+        card.classList.toggle('hide', !ok);
+        if (ok) shown++;
+      });
+      empty.style.display = shown === 0 ? 'block' : 'none';
+      count.textContent = 'Mostrando ' + shown + (shown === 1 ? ' vehículo' : ' vehículos');
+    });
+  });
+
+  // --- Reveal on scroll ---
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.rv');
+  if (reduced || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

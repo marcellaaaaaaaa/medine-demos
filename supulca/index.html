@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>SUPULCA — Perfiles pultruidos de fibra de vidrio fabricados en Venezuela</title>
+<meta name="description" content="SUPULCA fabrica en Guarenas perfiles PRFV, rejillas de poliéster reforzado, bandejas portacables y escaleras dieléctricas para el sector eléctrico, petrolero e industrial.">
+<meta property="og:title" content="SUPULCA — Fibra de vidrio que no conduce, no se oxida y no se vence">
+<meta property="og:description" content="La única planta de pultrusión de Venezuela. Escaleras dieléctricas, rejillas de poliéster reforzado y perfiles PRFV a medida, desde Guarenas.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="./assets/supulca-logo.png">
+<link rel="icon" type="image/png" href="./assets/supulca-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --amarillo:#FCC500;
+    --negro:#121212;
+    --negro-suave:#1B1B1B;
+    --blanco:#FFFFFF;
+    --gris:#5A5A5A;
+    --gris-claro:#A9A9A9;
+    --crema:#FFF7DC;
+    --borde:#E4E0D2;
+    --f-display:'Rubik',sans-serif;
+    --f-texto:'Source Sans 3',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+  body{
+    font-family:var(--f-texto);
+    color:var(--negro);
+    background:var(--blanco);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--amarillo);outline-offset:3px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+  /* ---------- utilidades de banda ---------- */
+  .banda-negra{background:var(--negro);color:var(--blanco)}
+  .banda-blanca{background:var(--blanco);color:var(--negro)}
+  .banda-amarilla{background:var(--amarillo);color:var(--negro)}
+
+  .etiqueta{
+    font-family:var(--f-display);
+    font-weight:700;
+    font-size:.72rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    display:inline-flex;
+    align-items:center;
+    gap:.7em;
+  }
+  .etiqueta::before{
+    content:"";
+    width:2.2em;height:2px;
+    background:var(--amarillo);
+    flex:none;
+  }
+  .banda-amarilla .etiqueta::before{background:var(--negro)}
+
+  .num-seccion{
+    font-family:var(--f-display);
+    font-weight:900;
+    font-size:.8rem;
+    letter-spacing:.18em;
+    color:var(--gris);
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:60;
+    background:var(--negro);
+    border-bottom:1px solid rgba(252,197,0,.28);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:14px;padding:10px 20px;
+    max-width:1180px;margin:0 auto;
+  }
+  .nav-logo{
+    background:var(--blanco);
+    border-radius:6px;
+    padding:6px 12px;
+    display:flex;align-items:center;
+    flex:none;
+  }
+  .nav-logo img{height:34px;width:auto}
+  .nav-links{display:none;gap:28px;list-style:none}
+  .nav-links a{
+    font-family:var(--f-display);font-weight:500;
+    font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--blanco);text-decoration:none;
+    border-bottom:2px solid transparent;padding-bottom:2px;
+    transition:border-color .2s,color .2s;
+  }
+  .nav-links a:hover{color:var(--amarillo);border-color:var(--amarillo)}
+  .btn{
+    font-family:var(--f-display);font-weight:700;
+    font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+    text-decoration:none;display:inline-flex;align-items:center;gap:.6em;
+    padding:.85em 1.5em;
+    background:var(--amarillo);color:var(--negro);
+    border:2px solid var(--amarillo);
+    transition:background .2s,color .2s;
+    white-space:nowrap;
+  }
+  .btn:hover{background:transparent;color:var(--amarillo)}
+  .btn-contorno{
+    background:transparent;color:var(--negro);border-color:var(--negro);
+  }
+  .btn-contorno:hover{background:var(--negro);color:var(--amarillo)}
+  .btn svg{flex:none}
+  @media(min-width:860px){
+    .nav-links{display:flex}
+    .nav-inner{padding:12px 20px}
+    .nav-logo img{height:40px}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:72px 0 88px;
+    overflow:hidden;
+  }
+  .hero-patron{
+    position:absolute;inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='84' viewBox='0 0 150 84'%3E%3Cpath d='M20 72 L54 12 H78 L44 72 Z' fill='none' stroke='%23FCC500' stroke-opacity='0.10' stroke-width='7'/%3E%3Cpath d='M92 72 L126 12 H150 L116 72 Z' fill='none' stroke='%23FCC500' stroke-opacity='0.05' stroke-width='7'/%3E%3C/svg%3E");
+    background-size:150px 84px;
+    pointer-events:none;
+  }
+  .hero-inner{position:relative}
+  .hero h1{
+    font-family:var(--f-display);
+    font-weight:900;
+    font-size:clamp(2.5rem,9.2vw,7.2rem);
+    line-height:.98;
+    letter-spacing:-.02em;
+    text-transform:uppercase;
+    margin:26px 0 30px;
+    max-width:18ch;
+  }
+  .hero h1 em{
+    font-style:normal;color:var(--amarillo);
+  }
+  .hero-sub{
+    max-width:56ch;
+    font-size:1.06rem;
+    color:var(--gris-claro);
+    border-left:3px solid var(--amarillo);
+    padding-left:18px;
+    margin-bottom:38px;
+  }
+  .hero-sub strong{color:var(--blanco);font-weight:600}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .hero-nota{
+    font-size:.82rem;color:var(--gris-claro);
+    letter-spacing:.04em;
+  }
+  .hero-specs{
+    margin-top:56px;
+    display:grid;grid-template-columns:1fr;
+    border-top:1px solid rgba(255,255,255,.15);
+  }
+  .hero-specs div{
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.15);
+  }
+  @media(min-width:640px){
+    .hero-specs{grid-template-columns:repeat(3,1fr)}
+    .hero-specs div{
+      padding:16px 14px 0;
+      border-bottom:none;
+      border-left:1px solid rgba(255,255,255,.15);
+    }
+    .hero-specs div:first-child{border-left:none;padding-left:0}
+  }
+  .hero-specs b{
+    display:block;font-family:var(--f-display);font-weight:700;
+    color:var(--amarillo);font-size:.95rem;letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+  .hero-specs span{font-size:.8rem;color:var(--gris-claro)}
+  @media(min-width:860px){
+    .hero{padding:110px 0 120px}
+  }
+
+  /* ---------- secciones genéricas ---------- */
+  .seccion{padding:76px 0}
+  @media(min-width:860px){.seccion{padding:104px 0}}
+  .cabecera-seccion{
+    display:flex;flex-direction:column;gap:14px;
+    margin-bottom:46px;
+  }
+  .cabecera-seccion h2{
+    font-family:var(--f-display);font-weight:800;
+    font-size:clamp(1.8rem,5.4vw,3.4rem);
+    line-height:1.05;text-transform:uppercase;letter-spacing:-.01em;
+    max-width:20ch;
+  }
+  @media(min-width:860px){
+    .cabecera-seccion{flex-direction:row;justify-content:space-between;align-items:flex-end}
+    .cabecera-seccion .cab-meta{text-align:right}
+  }
+
+  /* ---------- tabla comparativa ---------- */
+  .tabla-marco{overflow-x:auto;border:2px solid var(--negro)}
+  table.spec{
+    width:100%;
+    border-collapse:collapse;
+    min-width:560px;
+    font-size:.95rem;
+  }
+  table.spec caption{
+    text-align:left;
+    font-family:var(--f-display);font-weight:700;
+    font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;
+    background:var(--negro);color:var(--blanco);
+    padding:12px 18px;
+  }
+  table.spec th,table.spec td{
+    padding:18px;
+    text-align:left;
+    vertical-align:top;
+    border-top:1px solid var(--borde);
+  }
+  table.spec thead th{
+    font-family:var(--f-display);font-weight:800;
+    text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;
+    border-top:none;
+    background:#F7F5EC;
+  }
+  table.spec thead th.col-prfv{
+    background:var(--amarillo);
+  }
+  table.spec tbody th{
+    font-family:var(--f-display);font-weight:700;
+    font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gris);width:22%;
+  }
+  td.prfv{
+    background:var(--crema);
+    font-weight:600;
+    border-left:3px solid var(--amarillo);
+  }
+  td.acero{color:var(--gris)}
+  .veredicto{
+    margin-top:22px;
+    font-size:.95rem;color:var(--gris);
+    max-width:62ch;
+  }
+  .veredicto strong{color:var(--negro)}
+
+  /* ---------- líneas de producto ---------- */
+  .producto{
+    border-top:1px solid rgba(255,255,255,.16);
+    padding:58px 0;
+    display:grid;gap:26px;
+  }
+  .producto:first-of-type{border-top:none;padding-top:0}
+  .producto-num{
+    font-family:var(--f-display);font-weight:900;
+    font-size:clamp(3.4rem,11vw,6.5rem);
+    line-height:1;
+    color:transparent;
+    -webkit-text-stroke:2px var(--amarillo);
+  }
+  .producto h3{
+    font-family:var(--f-display);font-weight:800;
+    font-size:clamp(1.5rem,4.6vw,2.4rem);
+    text-transform:uppercase;line-height:1.1;
+    margin:10px 0 14px;
+  }
+  .producto p{color:var(--gris-claro);max-width:52ch}
+  .chip-estrella{
+    display:inline-block;
+    font-family:var(--f-display);font-weight:700;
+    font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+    background:var(--amarillo);color:var(--negro);
+    padding:.5em 1em;margin-bottom:14px;
+  }
+  .apps{list-style:none;margin-top:6px}
+  .apps li{
+    padding:11px 0;
+    border-bottom:1px solid rgba(255,255,255,.14);
+    font-size:.95rem;
+    display:flex;gap:12px;align-items:baseline;
+  }
+  .apps li::before{
+    content:"—";
+    color:var(--amarillo);flex:none;font-weight:700;
+  }
+  .apps-titulo{
+    font-family:var(--f-display);font-weight:700;
+    font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--gris-claro);
+    border-bottom:2px solid var(--amarillo);
+    padding-bottom:8px;
+  }
+  .producto .cta-linea{
+    margin-top:20px;
+    font-family:var(--f-display);font-weight:700;
+    font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--amarillo);text-decoration:none;
+    display:inline-flex;align-items:center;gap:.5em;
+  }
+  .producto .cta-linea:hover{text-decoration:underline;text-underline-offset:5px}
+  @media(min-width:860px){
+    .producto{
+      grid-template-columns:130px 1.15fr .85fr;
+      gap:48px;
+    }
+    .producto:nth-of-type(even){grid-template-columns:130px .85fr 1.15fr}
+    .producto:nth-of-type(even) .producto-info{order:3}
+    .producto:nth-of-type(even) .producto-apps{order:2}
+  }
+
+  /* ---------- banda credencial ---------- */
+  .credencial{padding:80px 0}
+  .credencial .etiqueta{color:var(--negro)}
+  .credencial h2{
+    font-family:var(--f-display);font-weight:900;
+    font-size:clamp(2.2rem,7.5vw,5.4rem);
+    line-height:1;text-transform:uppercase;letter-spacing:-.02em;
+    margin:20px 0 22px;max-width:16ch;
+  }
+  .credencial p{
+    font-size:1.08rem;max-width:58ch;font-weight:600;
+  }
+  .credencial .dato-planta{
+    margin-top:34px;
+    display:flex;flex-wrap:wrap;gap:12px 40px;
+    font-family:var(--f-display);font-weight:700;
+    font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+  }
+  .credencial .dato-planta span{
+    border-top:3px solid var(--negro);
+    padding-top:10px;
+  }
+  @media(min-width:860px){.credencial{padding:110px 0}}
+
+  /* ---------- ficha técnica / contacto ---------- */
+  .ficha-grid{display:grid;gap:44px}
+  @media(min-width:900px){.ficha-grid{grid-template-columns:1.1fr .9fr;gap:70px}}
+  .ficha-grid h2{
+    font-family:var(--f-display);font-weight:800;
+    font-size:clamp(1.9rem,6vw,3.4rem);
+    text-transform:uppercase;line-height:1.05;
+    margin:16px 0 18px;
+  }
+  .ficha-grid h2 em{font-style:normal;color:var(--amarillo)}
+  .ficha-grid .intro{color:var(--gris-claro);max-width:50ch;margin-bottom:30px}
+  .btn-wsp{
+    background:#25D366;border-color:#25D366;color:var(--negro);
+  }
+  .btn-wsp:hover{background:transparent;color:#25D366}
+  .datos{list-style:none;border-top:1px solid rgba(255,255,255,.16)}
+  .datos li{
+    display:grid;grid-template-columns:110px 1fr;gap:14px;
+    padding:16px 0;
+    border-bottom:1px solid rgba(255,255,255,.16);
+    font-size:.95rem;
+  }
+  .datos .k{
+    font-family:var(--f-display);font-weight:700;
+    font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--amarillo);padding-top:3px;
+  }
+  .datos a{color:var(--blanco);text-decoration:none}
+  .datos a:hover{color:var(--amarillo);text-decoration:underline;text-underline-offset:4px}
+  .datos .v{color:var(--gris-claro)}
+  .datos .v strong{color:var(--blanco);font-weight:600}
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--negro);color:var(--gris-claro);
+    border-top:3px solid var(--amarillo);
+    padding:46px 0 34px;
+  }
+  .foot-grid{
+    display:flex;flex-wrap:wrap;gap:30px;
+    justify-content:space-between;align-items:flex-start;
+  }
+  .foot-logo{
+    background:var(--blanco);border-radius:6px;
+    padding:8px 14px;display:inline-block;
+  }
+  .foot-logo img{height:40px;width:auto}
+  .foot-col p{font-size:.88rem;max-width:32ch;margin-top:14px}
+  .foot-col .tt{
+    font-family:var(--f-display);font-weight:700;
+    font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--blanco);margin-bottom:12px;
+  }
+  .foot-col ul{list-style:none;font-size:.9rem}
+  .foot-col li{margin-bottom:8px}
+  .foot-col a{color:var(--gris-claro);text-decoration:none}
+  .foot-col a:hover{color:var(--amarillo)}
+  .foot-social{display:flex;gap:14px;margin-top:4px}
+  .foot-social a{
+    display:inline-flex;width:38px;height:38px;
+    align-items:center;justify-content:center;
+    border:1px solid rgba(255,255,255,.25);border-radius:50%;
+    transition:border-color .2s;
+  }
+  .foot-social a:hover{border-color:var(--amarillo)}
+  .foot-social svg{fill:var(--blanco)}
+  .sello{
+    margin-top:38px;padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.12);
+    font-size:.78rem;
+    display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;
+  }
+  .sello a{color:var(--amarillo);text-decoration:none}
+  .sello a:hover{text-decoration:underline}
+
+  /* ---------- FAB WhatsApp ---------- */
+  .fab-wsp{
+    position:fixed;right:18px;bottom:18px;z-index:70;
+    width:58px;height:58px;border-radius:50%;
+    background:#25D366;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.35);
+    transition:transform .2s;
+  }
+  .fab-wsp:hover{transform:scale(1.07)}
+  .fab-wsp svg{width:30px;height:30px;fill:#fff}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visto{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Principal">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#inicio" aria-label="SUPULCA — inicio">
+      <img src="./assets/supulca-logo.png" alt="Logo de SUPULCA">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#comparativa">PRFV vs. acero</a></li>
+      <li><a href="#productos">Líneas de producto</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a class="btn" href="https://wa.me/584242310021?text=Hola%20SUPULCA%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20proyecto.">Cotiza tu proyecto</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="inicio" class="banda-negra hero">
+  <div class="hero-patron" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <span class="etiqueta">Fabricado en Venezuela desde Guarenas</span>
+    <h1>Fibra de vidrio que <em>no conduce</em>, <em>no se oxida</em> y <em>no se vence</em>.</h1>
+    <p class="hero-sub">
+      <strong>Perfiles pultruidos PRFV</strong> estándar y a medida,
+      <strong>rejillas de poliéster reforzado</strong> y
+      <strong>escaleras dieléctricas</strong> para entornos eléctricos de alto riesgo.
+      Ingeniería para el sector eléctrico, petrolero e industrial.
+    </p>
+    <div class="hero-cta">
+      <a class="btn" href="https://wa.me/584242310021?text=Hola%20SUPULCA%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20proyecto.">Cotiza tu proyecto</a>
+      <span class="hero-nota">Respuesta directa por WhatsApp · +58 424-2310021</span>
+    </div>
+    <div class="hero-specs" aria-label="Propiedades del material">
+      <div><b>Dieléctrico</b><span>No conduce electricidad</span></div>
+      <div><b>Anticorrosivo</b><span>Inmune al óxido y a químicos</span></div>
+      <div><b>Liviano</b><span>Se instala sin equipos de izado</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- COMPARATIVA -->
+<section id="comparativa" class="banda-blanca seccion">
+  <div class="wrap">
+    <div class="cabecera-seccion reveal">
+      <div>
+        <span class="etiqueta">Ficha comparativa</span>
+        <h2 style="margin-top:14px">¿Por qué PRFV y no acero?</h2>
+      </div>
+      <div class="cab-meta">
+        <span class="num-seccion">SPEC / 01</span>
+      </div>
+    </div>
+    <div class="tabla-marco reveal">
+      <table class="spec">
+        <caption>Poliéster reforzado con fibra de vidrio vs. acero estructural</caption>
+        <thead>
+          <tr>
+            <th scope="col">Criterio</th>
+            <th scope="col" class="col-prfv">PRFV Supulca</th>
+            <th scope="col">Acero</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Corrosión</th>
+            <td class="prfv">Inmune. No se oxida ni en ambientes salinos, húmedos o químicos.</td>
+            <td class="acero">Se corroe. Exige galvanizado, recubrimientos y reposición periódica.</td>
+          </tr>
+          <tr>
+            <th scope="row">Conductividad</th>
+            <td class="prfv">Dieléctrico. No conduce electricidad: seguridad para trabajos cerca de líneas energizadas.</td>
+            <td class="acero">Conductor. Riesgo permanente de contacto eléctrico y arco.</td>
+          </tr>
+          <tr>
+            <th scope="row">Peso</th>
+            <td class="prfv">Liviano. Se transporta e instala a mano, sin grúas ni equipos de izado.</td>
+            <td class="acero">Pesado. Requiere maquinaria, más personal y más tiempo de obra.</td>
+          </tr>
+          <tr>
+            <th scope="row">Mantenimiento</th>
+            <td class="prfv">Prácticamente nulo. Sin pintura, sin tratamientos, sin paradas de planta.</td>
+            <td class="acero">Constante. Pintura, antioxidantes e inspecciones recurrentes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="veredicto reveal">
+      <strong>El veredicto de campo:</strong> donde el acero se convierte en un costo recurrente
+      —plantas eléctricas, instalaciones petroleras, ambientes costeros y químicos—
+      el PRFV se instala una vez y se olvida.
+    </p>
+  </div>
+</section>
+
+<!-- LÍNEAS DE PRODUCTO -->
+<section id="productos" class="banda-negra seccion">
+  <div class="wrap">
+    <div class="cabecera-seccion reveal">
+      <div>
+        <span class="etiqueta">Catálogo de fabricación</span>
+        <h2 style="margin-top:14px">Tres líneas, un mismo material que no falla</h2>
+      </div>
+      <div class="cab-meta">
+        <span class="num-seccion" style="color:var(--gris-claro)">SPEC / 02</span>
+      </div>
+    </div>
+
+    <article class="producto reveal">
+      <div class="producto-num" aria-hidden="true">01</div>
+      <div class="producto-info">
+        <span class="chip-estrella">Línea estrella</span>
+        <h3>Escaleras dieléctricas</h3>
+        <p>
+          Extensibles y tipo tijera, en 6 variantes, fabricadas en perfiles pultruidos de
+          fibra de vidrio. Diseñadas para entornos eléctricos de alto riesgo: el material
+          no conduce electricidad, así la cuadrilla trabaja cerca de líneas energizadas
+          con un margen de seguridad que el aluminio jamás dará.
+        </p>
+        <a class="cta-linea" href="https://wa.me/584242310021?text=Hola%20SUPULCA%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20escaleras%20diel%C3%A9ctricas.">Cotizar escaleras &rarr;</a>
+      </div>
+      <div class="producto-apps">
+        <p class="apps-titulo">Aplicaciones</p>
+        <ul class="apps">
+          <li>Mantenimiento de líneas y redes energizadas</li>
+          <li>Cuadrillas de distribución eléctrica</li>
+          <li>Subestaciones y salas de transformadores</li>
+          <li>Contratistas de servicios eléctricos e industriales</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="producto reveal">
+      <div class="producto-num" aria-hidden="true">02</div>
+      <div class="producto-info">
+        <h3>Rejillas de poliéster reforzado</h3>
+        <p>
+          Rejillas moldeadas en poliéster reforzado con fibra de vidrio: superficie
+          antirresbalante, resistencia estructural y cero corrosión. La alternativa
+          definitiva a la rejilla metálica en pisos y plataformas expuestos a
+          humedad, químicos o salinidad.
+        </p>
+        <a class="cta-linea" href="https://wa.me/584242310021?text=Hola%20SUPULCA%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20rejillas%20de%20poli%C3%A9ster%20reforzado.">Cotizar rejillas &rarr;</a>
+      </div>
+      <div class="producto-apps">
+        <p class="apps-titulo">Aplicaciones</p>
+        <ul class="apps">
+          <li>Plataformas y pasarelas industriales</li>
+          <li>Pisos de plantas petroleras y químicas</li>
+          <li>Zonas de tanques, drenajes y canales</li>
+          <li>Instalaciones costeras y ambientes salinos</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="producto reveal">
+      <div class="producto-num" aria-hidden="true">03</div>
+      <div class="producto-info">
+        <h3>Perfiles PRFV y bandejas portacables</h3>
+        <p>
+          Perfiles pultruidos estándar y a medida —ángulos, tubos, canales y secciones
+          especiales según tu plano— más bandejas portacables no conductoras para
+          tendidos eléctricos que exigen aislamiento y vida útil sin mantenimiento.
+        </p>
+        <a class="cta-linea" href="https://wa.me/584242310021?text=Hola%20SUPULCA%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20perfiles%20PRFV%20o%20bandejas%20portacables.">Cotizar perfiles &rarr;</a>
+      </div>
+      <div class="producto-apps">
+        <p class="apps-titulo">Aplicaciones</p>
+        <ul class="apps">
+          <li>Estructuras en ambientes corrosivos</li>
+          <li>Tendido y canalización de cableado eléctrico</li>
+          <li>Sustitución de acero galvanizado en planta</li>
+          <li>Proyectos a medida sobre plano del cliente</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- BANDA CREDENCIAL -->
+<section class="banda-amarilla credencial" aria-label="Credencial de planta">
+  <div class="wrap reveal">
+    <span class="etiqueta">Suramericana de Pultrusionados C.A.</span>
+    <h2>La única planta de pultrusión de Venezuela</h2>
+    <p>
+      Lo que antes solo se importaba, hoy se fabrica en Guarenas. SUPULCA produce
+      perfiles pultruidos de fibra de vidrio para todo el país y apunta a ser
+      referencia de la pultrusión en Sudamérica: fabricación propia, entrega local
+      y soporte de ingeniería directo de planta.
+    </p>
+    <div class="dato-planta">
+      <span>Planta propia en Guarenas</span>
+      <span>Fabricación estándar y a medida</span>
+      <span>Sector eléctrico · petrolero · industrial</span>
+    </div>
+  </div>
+</section>
+
+<!-- FICHA TÉCNICA / CONTACTO -->
+<section id="contacto" class="banda-negra seccion">
+  <div class="wrap ficha-grid">
+    <div class="reveal">
+      <span class="etiqueta">Especificación bajo demanda</span>
+      <h2>Pide tu <em>ficha técnica</em> por WhatsApp</h2>
+      <p class="intro">
+        Dinos qué producto necesitas —escaleras, rejillas, perfiles o bandejas— y
+        te enviamos la ficha técnica con dimensiones, variantes y recomendaciones
+        de uso para tu proyecto. Sin vueltas: directo de la planta.
+      </p>
+      <a class="btn btn-wsp" href="https://wa.me/584242310021?text=Hola%20SUPULCA%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20la%20ficha%20t%C3%A9cnica%20de%20un%20producto.">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.04 3C9.06 3 3.4 8.66 3.4 15.64c0 2.23.58 4.4 1.69 6.31L3.3 28.7l6.92-1.75a12.6 12.6 0 0 0 5.82 1.43h.01c6.98 0 12.64-5.66 12.64-12.64C28.69 8.66 23.02 3 16.04 3zm7.36 18.02c-.31.88-1.81 1.68-2.5 1.74-.67.06-1.3.3-4.37-.91-3.7-1.46-6.04-5.25-6.22-5.49-.18-.24-1.48-1.97-1.48-3.76s.94-2.67 1.27-3.03c.33-.36.72-.45.96-.45l.69.01c.22.01.52-.08.81.62.31.72 1.04 2.51 1.13 2.69.09.18.15.4.03.64-.12.24-.18.39-.36.6l-.54.63c-.18.18-.37.38-.16.74.21.36.94 1.55 2.02 2.51 1.39 1.24 2.56 1.62 2.92 1.8.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.81-.18.33.12 2.09.99 2.45 1.17.36.18.6.27.69.42.09.15.09.87-.22 1.75z"/></svg>
+        Pedir ficha técnica
+      </a>
+    </div>
+    <div class="reveal">
+      <ul class="datos">
+        <li>
+          <span class="k">Planta</span>
+          <span class="v"><strong>Urb. Industrial Cloris</strong>, Av. Norte 2, Parcela 84A — Guarenas, Edo. Miranda, Venezuela</span>
+        </li>
+        <li>
+          <span class="k">WhatsApp</span>
+          <span class="v"><a href="https://wa.me/584242310021?text=Hola%20SUPULCA%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20proyecto.">+58 424-2310021</a></span>
+        </li>
+        <li>
+          <span class="k">Teléfono</span>
+          <span class="v"><a href="tel:+584129831417">+58 412-9831417</a></span>
+        </li>
+        <li>
+          <span class="k">Instagram</span>
+          <span class="v"><a href="https://instagram.com/supulca.ve" rel="noopener">@supulca.ve</a></span>
+        </li>
+        <li>
+          <span class="k">Web</span>
+          <span class="v"><a href="https://supulcave.com" rel="noopener">supulcave.com</a></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <span class="foot-logo"><img src="./assets/supulca-logo.png" alt="Logo de SUPULCA"></span>
+        <p>Suramericana de Pultrusionados C.A. Perfiles pultruidos de fibra de vidrio fabricados en Venezuela.</p>
+      </div>
+      <div class="foot-col">
+        <p class="tt">Planta</p>
+        <ul>
+          <li>Urb. Industrial Cloris, Av. Norte 2, Parcela 84A</li>
+          <li>Guarenas, Estado Miranda</li>
+          <li><a href="tel:+584129831417">+58 412-9831417</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <p class="tt">Síguenos</p>
+        <div class="foot-social">
+          <a href="https://instagram.com/supulca.ve" rel="noopener" aria-label="Instagram de SUPULCA">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.26.07 1.64.07 4.85s0 3.6-.07 4.85c-.05 1.17-.25 1.8-.41 2.23a3.7 3.7 0 0 1-.9 1.38c-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.26.06-1.64.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.74 0 8.33 0 7.05.07 5.78.13 4.9.33 4.14.63a5.9 5.9 0 0 0-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05 0 8.33 0 8.74 0 12s0 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.72 1.48 1.38 2.13a5.9 5.9 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67 0 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.15A4 4 0 1 1 16 12a4 4 0 0 1-4 3.99zm7.85-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg>
+          </a>
+          <a href="https://wa.me/584242310021?text=Hola%20SUPULCA%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20proyecto." aria-label="WhatsApp de SUPULCA">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C9.06 3 3.4 8.66 3.4 15.64c0 2.23.58 4.4 1.69 6.31L3.3 28.7l6.92-1.75a12.6 12.6 0 0 0 5.82 1.43h.01c6.98 0 12.64-5.66 12.64-12.64C28.69 8.66 23.02 3 16.04 3zm7.36 18.02c-.31.88-1.81 1.68-2.5 1.74-.67.06-1.3.3-4.37-.91-3.7-1.46-6.04-5.25-6.22-5.49-.18-.24-1.48-1.97-1.48-3.76s.94-2.67 1.27-3.03c.33-.36.72-.45.96-.45l.69.01c.22.01.52-.08.81.62.31.72 1.04 2.51 1.13 2.69.09.18.15.4.03.64-.12.24-.18.39-.36.6l-.54.63c-.18.18-.37.38-.16.74.21.36.94 1.55 2.02 2.51 1.39 1.24 2.56 1.62 2.92 1.8.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.81-.18.33.12 2.09.99 2.45 1.17.36.18.6.27.69.42.09.15.09.87-.22 1.75z"/></svg>
+          </a>
+        </div>
+        <ul style="margin-top:14px">
+          <li><a href="https://supulcave.com" rel="noopener">supulcave.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sello">
+      <span>© SUPULCA — Suramericana de Pultrusionados C.A.</span>
+      <span>Demo diseñada por <a href="https://medine.tech" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FAB WHATSAPP -->
+<a class="fab-wsp" href="https://wa.me/584242310021?text=Hola%20SUPULCA%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20producto." aria-label="Cotizar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C9.06 3 3.4 8.66 3.4 15.64c0 2.23.58 4.4 1.69 6.31L3.3 28.7l6.92-1.75a12.6 12.6 0 0 0 5.82 1.43h.01c6.98 0 12.64-5.66 12.64-12.64C28.69 8.66 23.02 3 16.04 3zm7.36 18.02c-.31.88-1.81 1.68-2.5 1.74-.67.06-1.3.3-4.37-.91-3.7-1.46-6.04-5.25-6.22-5.49-.18-.24-1.48-1.97-1.48-3.76s.94-2.67 1.27-3.03c.33-.36.72-.45.96-.45l.69.01c.22.01.52-.08.81.62.31.72 1.04 2.51 1.13 2.69.09.18.15.4.03.64-.12.24-.18.39-.36.6l-.54.63c-.18.18-.37.38-.16.74.21.36.94 1.55 2.02 2.51 1.39 1.24 2.56 1.62 2.92 1.8.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.81-.18.33.12 2.09.99 2.45 1.17.36.18.6.27.69.42.09.15.09.87-.22 1.75z"/></svg>
+</a>
+
+<script>
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var nodos = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      nodos.forEach(function(n){ n.classList.add('visto'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    nodos.forEach(function(n){ io.observe(n); });
+  })();
+</script>
+
+</body>
+</html>

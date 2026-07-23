@@ -1,0 +1,231 @@
+- generic [active] [ref=f4e1]:
+  - banner [ref=f4e2]:
+    - generic [ref=f4e3]:
+      - link "Tecnotronik — inicio" [ref=f4e4] [cursor=pointer]:
+        - /url: "#"
+        - 'img "Logo Tecnotronik: esfera azul tridimensional" [ref=f4e6]'
+        - generic [ref=f4e7]:
+          - strong [ref=f4e8]: TECNOTRONIK
+          - generic [ref=f4e9]: Tecnología & Seguridad
+      - navigation "Principal"
+      - generic [ref=f4e10]:
+        - link [ref=f4e11] [cursor=pointer]:
+          - /url: https://wa.me/584127001885?text=Hola%20Tecnotronik!%20Vi%20su%20cat%C3%A1logo%20online%20y%20quiero%20preguntar%20por%20un%20producto
+        - button "Abrir menú" [ref=f4e14] [cursor=pointer]
+  - region [ref=f4e17]:
+    - generic [ref=f4e18]:
+      - generic [ref=f4e19]:
+        - paragraph [ref=f4e20]: CC Casa Bera · La Candelaria · Caracas
+        - heading [level=1] [ref=f4e21]:
+          - text: Tecnología y
+          - emphasis [ref=f4e22]: seguridad
+          - text: para tu casa y tu negocio
+        - paragraph [ref=f4e23]: En plena Candelaria · Delivery en toda Caracas. Cámaras WiFi, TV boxes, artículos de hogar, belleza y emprendimiento — con precio en tasa BCV y precio promocional en divisas.
+        - generic [ref=f4e24]:
+          - link "Escríbenos" [ref=f4e25] [cursor=pointer]:
+            - /url: https://wa.me/584127001885?text=Hola%20Tecnotronik!%20Vi%20su%20cat%C3%A1logo%20online%20y%20quiero%20preguntar%20por%20un%20producto
+          - link "Ver catálogo" [ref=f4e28] [cursor=pointer]:
+            - /url: "#catalogo"
+        - generic [ref=f4e29]:
+          - generic [ref=f4e30]:
+            - generic [ref=f4e31]: Instagram
+            - strong [ref=f4e32]: "@tecnotronik · 54K seguidores"
+          - generic [ref=f4e33]:
+            - generic [ref=f4e34]: Horario
+            - strong [ref=f4e35]: Lun–Sáb · 10:00 AM–5:30 PM
+      - generic "Productos destacados" [ref=f4e36]:
+        - article [ref=f4e37]:
+          - generic [ref=f4e38]: Más pedido
+          - generic [ref=f4e43]:
+            - heading "Soporte de TV" [level=3] [ref=f4e44]
+            - generic [ref=f4e45]: Para pantallas de 14" a 55"
+          - generic [ref=f4e46]: $12
+        - article [ref=f4e47]:
+          - generic [ref=f4e53]:
+            - heading "Máquina de coser portátil" [level=3] [ref=f4e54]
+            - generic [ref=f4e55]: Ideal para emprender
+          - generic [ref=f4e56]: $13
+        - article [ref=f4e57]:
+          - generic [ref=f4e62]:
+            - heading "Drill de uñas profesional" [level=3] [ref=f4e63]
+            - generic [ref=f4e64]: Precio por WhatsApp
+          - generic [ref=f4e65]: 35.000RPM
+  - generic [ref=f4e68]:
+    - generic [ref=f4e69]: Seguridad
+    - generic [ref=f4e70]: TV & Video
+    - generic [ref=f4e71]: Hogar
+    - generic [ref=f4e72]: Belleza
+    - generic [ref=f4e73]: Emprendimiento
+    - generic [ref=f4e74]: Salud
+    - generic [ref=f4e75]: Seguridad
+    - generic [ref=f4e76]: TV & Video
+    - generic [ref=f4e77]: Hogar
+    - generic [ref=f4e78]: Belleza
+    - generic [ref=f4e79]: Emprendimiento
+    - generic [ref=f4e80]: Salud
+  - region [ref=f4e81]:
+    - generic [ref=f4e82]:
+      - generic [ref=f4e83]:
+        - generic [ref=f4e84]: 01 / Catálogo
+        - heading "Todo en una sola tienda" [level=2] [ref=f4e85]
+        - paragraph [ref=f4e86]: Seis líneas de producto que rotan cada semana. Si lo viste en nuestro Instagram, lo tenemos en el local — y si no está, te lo conseguimos.
+      - generic [ref=f4e87]:
+        - article [ref=f4e88]:
+          - generic [ref=f4e89]: /01
+          - heading "Seguridad" [level=3] [ref=f4e94]
+          - paragraph [ref=f4e95]: Cámaras de seguridad WiFi para vigilar tu casa o negocio desde el teléfono, estés donde estés.
+        - article [ref=f4e96]:
+          - generic [ref=f4e97]: /02
+          - heading "TV & Video" [level=3] [ref=f4e102]
+          - paragraph [ref=f4e103]: TV boxes para convertir tu televisor en smart TV, soportes de 14" a 55" y lentes de realidad virtual.
+        - article [ref=f4e104]:
+          - generic [ref=f4e105]: /03
+          - heading "Hogar" [level=3] [ref=f4e110]
+          - paragraph [ref=f4e111]: Hidrojet para limpieza a presión y variedades que resuelven en la casa sin gastar de más.
+        - article [ref=f4e112]:
+          - generic [ref=f4e113]: /04
+          - heading "Belleza" [level=3] [ref=f4e117]
+          - paragraph [ref=f4e118]: Drill de uñas de 35.000 RPM y equipos para manicuristas que trabajan en serio.
+        - article [ref=f4e119]:
+          - generic [ref=f4e120]: /05
+          - heading "Emprendimiento" [level=3] [ref=f4e125]
+          - paragraph [ref=f4e126]: Máquinas de coser portátiles y herramientas para arrancar tu negocio desde casa.
+        - article [ref=f4e127]:
+          - generic [ref=f4e128]: /06
+          - heading "Salud" [level=3] [ref=f4e133]
+          - paragraph [ref=f4e134]: Glucómetros para controlar el azúcar en casa y artículos de cuidado personal como el corrector de juanetes.
+  - region [ref=f4e135]:
+    - generic [ref=f4e136]:
+      - generic [ref=f4e137]:
+        - generic [ref=f4e138]:
+          - generic [ref=f4e139]: 02 / Precios
+          - heading "Doble precio, cero sorpresas" [level=2] [ref=f4e140]
+        - paragraph [ref=f4e141]: "En Tecnotronik cada producto tiene dos precios publicados: el precio a tasa BCV si pagas en bolívares, y un precio promocional en divisas si pagas en efectivo o Zelle. Tú eliges cómo pagar — el precio lo ves antes, no en la caja."
+        - list [ref=f4e142]:
+          - listitem [ref=f4e143]:
+            - generic [ref=f4e144]: "Tasa BCV del día para pagos en bolívares: punto de venta o pago móvil."
+          - listitem [ref=f4e145]:
+            - generic [ref=f4e146]: "Precio promocional en divisas: siempre más bajo, ideal si manejas efectivo."
+          - listitem [ref=f4e147]:
+            - generic [ref=f4e148]: Ambos precios van publicados en cada producto, en tienda y en Instagram.
+      - article "Ejemplo de doble precio" [ref=f4e149]:
+        - text: Ejemplo real de etiqueta
+        - heading "Corrector de juanetes" [level=3] [ref=f4e150]
+        - paragraph [ref=f4e151]: Salud · cuidado del pie
+        - generic [ref=f4e152]:
+          - generic [ref=f4e153]:
+            - generic [ref=f4e154]: Tasa BCV
+            - strong [ref=f4e155]: $6
+          - generic [ref=f4e156]:
+            - generic [ref=f4e157]: –33%
+            - generic [ref=f4e158]: En divisas
+            - strong [ref=f4e159]: $4
+        - paragraph [ref=f4e160]: Mismo producto, mismo día, dos formas de pagar. Así etiquetamos todo el catálogo.
+  - region [ref=f4e161]:
+    - generic [ref=f4e162]:
+      - generic [ref=f4e163]:
+        - generic [ref=f4e164]: 03 / Envíos
+        - heading "Te lo llevamos donde estés" [level=2] [ref=f4e165]
+        - paragraph [ref=f4e166]: Compra por WhatsApp o Instagram y recibe sin moverte del sitio.
+      - generic [ref=f4e167]:
+        - article [ref=f4e168]:
+          - heading "Delivery en moto — Caracas" [level=3] [ref=f4e175]
+          - paragraph [ref=f4e176]: Cobertura en toda Caracas, el mismo día según disponibilidad. Coordinamos la entrega por WhatsApp apenas confirmes tu pedido.
+          - generic [ref=f4e177]:
+            - generic [ref=f4e178]: Toda Caracas
+            - generic [ref=f4e179]: Coordinación por WhatsApp
+        - article [ref=f4e180]:
+          - heading "Envíos nacionales — Zoom y MRW" [level=3] [ref=f4e186]
+          - paragraph [ref=f4e187]: ¿Estás en el interior? Despachamos a cualquier estado de Venezuela por la agencia de tu preferencia, con comprobante de envío.
+          - generic [ref=f4e188]:
+            - generic [ref=f4e189]: Zoom
+            - generic [ref=f4e190]: MRW
+            - generic [ref=f4e191]: Todo el país
+  - region [ref=f4e192]:
+    - generic [ref=f4e193]:
+      - generic [ref=f4e194]:
+        - generic [ref=f4e195]:
+          - generic [ref=f4e196]: 04 / Visítanos
+          - heading "En plena Candelaria" [level=2] [ref=f4e197]
+        - list [ref=f4e198]:
+          - listitem [ref=f4e199]:
+            - generic [ref=f4e200]: Centro
+            - generic [ref=f4e201]: CC Casa Bera · Nivel Mezzanina · Local M-101
+          - listitem [ref=f4e202]:
+            - generic [ref=f4e203]: Dirección
+            - generic [ref=f4e204]: Av. Urdaneta, La Candelaria, Caracas
+          - listitem [ref=f4e205]:
+            - generic [ref=f4e206]: Referencia
+            - generic [ref=f4e207]: A pocos pasos del bulevar de La Candelaria, zona de fácil acceso en metro y a pie
+          - listitem [ref=f4e208]:
+            - generic [ref=f4e209]: WhatsApp
+            - link "0412-700-18-85" [ref=f4e211] [cursor=pointer]:
+              - /url: https://wa.me/584127001885
+          - listitem [ref=f4e212]:
+            - generic [ref=f4e213]: Instagram
+            - generic [ref=f4e214]:
+              - link "@tecnotronik" [ref=f4e215] [cursor=pointer]:
+                - /url: https://www.instagram.com/tecnotronik
+              - text: · 54K seguidores
+      - complementary "Horario de atención" [ref=f4e216]:
+        - heading "Horario de atención" [level=3] [ref=f4e217]
+        - generic [ref=f4e218]:
+          - generic [ref=f4e219]:
+            - generic [ref=f4e220]: Lunes a Sábado
+            - generic [ref=f4e221]: 10:00 AM – 5:30 PM
+          - generic [ref=f4e222]:
+            - generic [ref=f4e223]: Domingo
+            - generic [ref=f4e224]: Cerrado
+        - link "Escríbenos por WhatsApp" [ref=f4e225] [cursor=pointer]:
+          - /url: https://wa.me/584127001885?text=Hola%20Tecnotronik!%20Vi%20su%20cat%C3%A1logo%20online%20y%20quiero%20preguntar%20por%20un%20producto
+        - link "Cómo llegar" [ref=f4e228] [cursor=pointer]:
+          - /url: https://www.google.com/maps/search/?api=1&query=CC+Casa+Bera+Av+Urdaneta+La+Candelaria+Caracas
+  - contentinfo [ref=f4e229]:
+    - generic [ref=f4e230]:
+      - generic [ref=f4e231]:
+        - generic [ref=f4e232]:
+          - link "Tecnotronik — volver arriba" [ref=f4e233] [cursor=pointer]:
+            - /url: "#"
+            - 'img "Logo Tecnotronik: esfera azul tridimensional" [ref=f4e235]'
+            - generic [ref=f4e236]:
+              - strong [ref=f4e237]: TECNOTRONIK
+              - generic [ref=f4e238]: Tecnología & Seguridad
+          - paragraph [ref=f4e239]: Tienda de tecnología, seguridad y variedades para el hogar y el emprendimiento, en el corazón de La Candelaria.
+          - generic [ref=f4e240]:
+            - link "Instagram de Tecnotronik" [ref=f4e241] [cursor=pointer]:
+              - /url: https://www.instagram.com/tecnotronik
+            - link "Threads de Tecnotronik" [ref=f4e244] [cursor=pointer]:
+              - /url: https://www.threads.net/@tecnotronik
+            - link "WhatsApp de Tecnotronik" [ref=f4e247] [cursor=pointer]:
+              - /url: https://wa.me/584127001885
+        - generic [ref=f4e250]:
+          - generic [ref=f4e251]: Tienda
+          - list [ref=f4e252]:
+            - listitem [ref=f4e253]:
+              - link "Catálogo" [ref=f4e254] [cursor=pointer]:
+                - /url: "#catalogo"
+            - listitem [ref=f4e255]:
+              - link "Doble precio" [ref=f4e256] [cursor=pointer]:
+                - /url: "#precios"
+            - listitem [ref=f4e257]:
+              - link "Delivery" [ref=f4e258] [cursor=pointer]:
+                - /url: "#delivery"
+            - listitem [ref=f4e259]:
+              - link "Ubicación" [ref=f4e260] [cursor=pointer]:
+                - /url: "#ubicacion"
+        - generic [ref=f4e261]:
+          - generic [ref=f4e262]: Contacto
+          - list [ref=f4e263]:
+            - listitem [ref=f4e264]: CC Casa Bera, Mezzanina, Local M-101
+            - listitem [ref=f4e265]: Av. Urdaneta, La Candelaria, Caracas
+            - listitem [ref=f4e266]:
+              - link "WhatsApp 0412-700-18-85" [ref=f4e267] [cursor=pointer]:
+                - /url: https://wa.me/584127001885
+            - listitem [ref=f4e268]: Lun–Sáb · 10:00 AM–5:30 PM
+      - paragraph [ref=f4e269]:
+        - text: Demo diseñada por
+        - link "Medine.tech" [ref=f4e270] [cursor=pointer]:
+          - /url: https://medine.tech
+        - text: · Esta es una propuesta de diseño — no es el sitio oficial.
+  - link "Escríbenos por WhatsApp" [ref=f4e271] [cursor=pointer]:
+    - /url: https://wa.me/584127001885?text=Hola%20Tecnotronik!%20Vi%20su%20cat%C3%A1logo%20online%20y%20quiero%20preguntar%20por%20un%20producto

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Detective de Productos — Lo buscamos, lo encontramos</title>
+<meta name="description" content="Dime qué producto buscas y lo cazo por ti en los anaqueles de los supermercados. Casos resueltos en video para 24K seguidores.">
+<meta property="og:title" content="Detective de Productos — ¿No lo encuentras? Yo sí.">
+<meta property="og:description" content="Pídele una búsqueda al cazador de productos: lo localiza en supermercados, muestra dónde está y a qué precio, y lo reseña en video.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_EC">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%23FFC54A%22/><circle cx=%2244%22 cy=%2244%22 r=%2218%22 fill=%22none%22 stroke=%22%2326140A%22 stroke-width=%229%22/><line x1=%2258%22 y1=%2258%22 x2=%2278%22 y2=%2278%22 stroke=%22%2326140A%22 stroke-width=%2211%22 stroke-linecap=%22round%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ambar:#FFC54A;
+    --choco:#26140A;
+    --naranja:#E8641B;
+    --naranja-tinta:#B8480D; /* naranja oscurecido para texto pequeño sobre fondos claros (AA) */
+    --blanco:#FFFFFF;
+    --papel:#FFF8EC;
+    --display:'Archivo Black',sans-serif;
+    --texto:'Inter',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--texto);
+    color:var(--choco);
+    background:var(--papel);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img,svg{max-width:100%}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--choco);outline-offset:3px;border-radius:2px}
+  .marcas :focus-visible,footer :focus-visible,.fab:focus-visible{outline-color:var(--ambar)}
+  ::selection{background:var(--choco);color:var(--ambar)}
+
+  /* ---------- utilidades ---------- */
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .kicker{
+    font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:.6em;
+  }
+  .kicker::before{content:"";display:inline-block;width:2.2em;height:2px;background:currentColor}
+  .num{
+    font-family:var(--display);font-size:.85rem;
+    border:2px solid currentColor;border-radius:50%;
+    width:2.4em;height:2.4em;display:inline-flex;align-items:center;justify-content:center;
+    flex:none;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;
+    font-family:var(--display);font-size:1rem;text-transform:uppercase;letter-spacing:.02em;
+    text-decoration:none;cursor:pointer;border:3px solid var(--choco);
+    padding:.9em 1.5em;border-radius:14px;
+    background:var(--choco);color:var(--ambar);
+    box-shadow:5px 5px 0 rgba(38,20,10,.28);
+    transition:transform .15s ease,box-shadow .15s ease;
+  }
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(38,20,10,.28)}
+  .btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 rgba(38,20,10,.28)}
+  .btn-linea{background:transparent;color:var(--choco);box-shadow:5px 5px 0 rgba(38,20,10,.15)}
+  .btn svg{flex:none}
+
+  /* stickers / sellos */
+  .sticker{
+    display:inline-block;font-family:var(--display);text-transform:uppercase;
+    font-size:.78rem;letter-spacing:.05em;
+    border:2px dashed var(--choco);border-radius:10px;
+    padding:.45em .9em;background:var(--blanco);
+    box-shadow:3px 3px 0 rgba(38,20,10,.2);
+  }
+  .sticker.ok{border-color:#1B7A3D;color:#1B7A3D;background:#EAF7EE}
+  .sticker.naranja{border-color:var(--naranja);color:var(--naranja-tinta);background:#FDEFE4}
+
+  /* reveal on scroll — solo con JS activo y sin reduced-motion */
+  @media (prefers-reduced-motion:no-preference){
+    html.js .rev{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+    html.js .rev.vis{opacity:1;transform:none}
+    html.js .form-caso.rev{transform:rotate(.6deg) translateY(22px)}
+    html.js .form-caso.rev.vis{transform:rotate(.6deg)}
+    html.js .tarjeta-stats.rev{transform:rotate(-1.2deg) translateY(22px)}
+    html.js .tarjeta-stats.rev.vis{transform:rotate(-1.2deg)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .btn,.canal,.fab{transition:none}
+    .cinta-pista{animation:none !important}
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--ambar);
+    border-bottom:3px solid var(--choco);
+  }
+  .nav-inner{
+    max-width:1100px;margin:0 auto;padding:10px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .chip-lupa{
+    width:42px;height:42px;border-radius:50%;flex:none;
+    background:var(--choco);
+    display:flex;align-items:center;justify-content:center;
+    border:2px solid var(--choco);
+  }
+  .marca-texto{
+    font-family:var(--display);font-size:.82rem;line-height:1.05;text-transform:uppercase;
+  }
+  .marca-texto small{display:block;font-family:var(--texto);font-weight:700;font-size:.58rem;letter-spacing:.24em}
+  .nav .btn{font-size:.78rem;padding:.7em 1.1em;border-radius:10px}
+  @media (max-width:430px){
+    .marca-texto{font-size:.7rem}
+    .nav .btn span{display:none}
+    .nav .btn{padding:.7em .8em}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    background:var(--ambar);
+    background-image:radial-gradient(rgba(38,20,10,.14) 1.6px,transparent 1.6px);
+    background-size:22px 22px;
+    border-bottom:3px solid var(--choco);
+    padding:56px 0 96px;
+  }
+  .hero-inner{max-width:1100px;margin:0 auto;padding:0 20px;position:relative}
+  .sello{
+    width:132px;height:132px;display:block;margin-bottom:28px;
+    animation:girar 24s linear infinite;
+  }
+  @keyframes girar{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.sello{animation:none}}
+  .hero h1{
+    font-family:var(--display);
+    font-size:clamp(2.7rem,9.5vw,8.2rem);
+    line-height:.95;text-transform:uppercase;
+    transform:rotate(-2deg);
+    max-width:11ch;
+    margin:0 0 30px;
+  }
+  .hero h1 .grito{
+    color:var(--naranja);
+    -webkit-text-stroke:2px var(--choco);
+    white-space:nowrap;
+  }
+  .hero-sub{
+    font-size:clamp(1.05rem,2.4vw,1.4rem);font-weight:600;max-width:32ch;
+    margin-bottom:34px;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .hero-stick-1,.hero-stick-2,.hero-tag{position:absolute}
+  .hero-stick-1{top:14px;right:16px;transform:rotate(6deg)}
+  .hero-stick-2{bottom:-52px;right:44px;transform:rotate(-5deg)}
+  .hero-tag{top:150px;right:28px;transform:rotate(8deg)}
+  @media (max-width:760px){
+    .hero{padding:40px 0 84px}
+    .hero-tag{display:none}
+    .hero-stick-2{right:16px;bottom:-48px}
+    .sello{width:104px;height:104px}
+  }
+
+  /* precio-tag de góndola */
+  .tag-precio{
+    display:inline-block;background:var(--blanco);border:3px solid var(--choco);
+    border-radius:8px;padding:.35em .8em .35em 1.5em;position:relative;
+    font-family:var(--display);
+    box-shadow:4px 4px 0 rgba(38,20,10,.25);
+  }
+  .tag-precio::before{
+    content:"";position:absolute;left:.5em;top:50%;transform:translateY(-50%);
+    width:.55em;height:.55em;border-radius:50%;
+    background:var(--papel);border:2.5px solid var(--choco);
+  }
+  .tag-precio .tp-num{font-size:1.5rem;line-height:1}
+  .tag-precio .tp-lbl{display:block;font-family:var(--texto);font-weight:700;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase}
+
+  /* ---------- cinta lema ---------- */
+  .cinta{
+    background:var(--choco);color:var(--ambar);
+    border-bottom:3px solid var(--choco);
+    overflow:hidden;white-space:nowrap;padding:12px 0;
+  }
+  .cinta-pista{
+    display:inline-block;
+    font-family:var(--display);font-size:.95rem;text-transform:uppercase;letter-spacing:.06em;
+    animation:cinta 26s linear infinite;
+  }
+  .cinta-pista span{margin:0 1.4em}
+  .cinta-pista .punto{color:var(--naranja)}
+  @keyframes cinta{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- secciones ---------- */
+  .seccion{padding:84px 0}
+  .cab-seccion{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+  .titulo{
+    font-family:var(--display);text-transform:uppercase;
+    font-size:clamp(1.9rem,5.5vw,3.4rem);line-height:1.02;
+    margin-bottom:18px;
+  }
+  .intro-seccion{max-width:52ch;font-size:1.05rem;margin-bottom:44px}
+
+  /* ---------- casos ---------- */
+  .casos-grid{display:grid;gap:26px;grid-template-columns:repeat(3,1fr)}
+  @media (max-width:900px){.casos-grid{grid-template-columns:1fr;max-width:520px}}
+  .caso{
+    background:var(--blanco);border:3px solid var(--choco);border-radius:18px;
+    padding:26px 22px 24px;position:relative;
+    box-shadow:7px 7px 0 rgba(38,20,10,.16);
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .caso:nth-child(1){transform:rotate(-1.2deg)}
+  .caso:nth-child(2){transform:rotate(.8deg)}
+  .caso:nth-child(3){transform:rotate(-.6deg)}
+  .caso-num{
+    font-family:var(--display);font-size:.72rem;letter-spacing:.14em;
+    color:var(--naranja-tinta);text-transform:uppercase;
+  }
+  .caso h3{
+    font-family:var(--display);font-size:1.5rem;line-height:1.05;text-transform:uppercase;
+  }
+  .caso .marca-prod{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(38,20,10,.65)}
+  .caso .dato{
+    display:flex;gap:.5em;font-size:.95rem;align-items:baseline;
+  }
+  .caso .dato b{font-weight:700}
+  .caso .sello-caso{
+    position:absolute;top:-14px;right:14px;transform:rotate(7deg);
+  }
+  .caso .pie-caso{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .btn-video{
+    display:inline-flex;align-items:center;gap:.5em;
+    font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.06em;
+    text-decoration:none;color:var(--choco);
+    border-bottom:3px solid var(--naranja);padding-bottom:2px;
+  }
+  .btn-video:hover{color:var(--naranja-tinta)}
+  .linea-punteada{border:none;border-top:2px dashed rgba(38,20,10,.3)}
+
+  /* ---------- pedido ---------- */
+  .pedido{
+    background:var(--ambar);
+    background-image:radial-gradient(rgba(38,20,10,.12) 1.6px,transparent 1.6px);
+    background-size:22px 22px;
+    border-top:3px solid var(--choco);border-bottom:3px solid var(--choco);
+  }
+  .pedido-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+  @media (max-width:860px){.pedido-grid{grid-template-columns:1fr;gap:36px}}
+  .form-caso{
+    background:var(--blanco);border:3px solid var(--choco);border-radius:18px;
+    padding:30px 26px;box-shadow:8px 8px 0 rgba(38,20,10,.22);
+    transform:rotate(.6deg);
+  }
+  .form-caso .encabezado-exp{
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+    margin-bottom:20px;padding-bottom:14px;border-bottom:2px dashed rgba(38,20,10,.3);
+  }
+  .form-caso .encabezado-exp b{font-family:var(--display);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+  .campo{margin-bottom:18px}
+  .campo label{
+    display:block;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    margin-bottom:7px;
+  }
+  .campo input{
+    width:100%;font-family:var(--texto);font-size:1.05rem;font-weight:600;color:var(--choco);
+    background:var(--papel);border:2.5px solid var(--choco);border-radius:10px;
+    padding:.75em .9em;
+  }
+  .campo input::placeholder{color:rgba(38,20,10,.4);font-weight:500}
+  .campo input:focus-visible{outline:3px solid var(--naranja);outline-offset:2px}
+  .nota-dm{font-size:.85rem;margin-top:14px;color:rgba(38,20,10,.75)}
+  .panel-listo{
+    display:none;margin-top:18px;border:2px dashed #1B7A3D;background:#EAF7EE;
+    border-radius:12px;padding:16px;color:#14512A;font-size:.92rem;
+  }
+  .panel-listo.abierto{display:block}
+  .panel-listo b{display:block;font-family:var(--display);font-size:.85rem;text-transform:uppercase;margin-bottom:6px;color:#1B7A3D}
+  .panel-listo .msg-copiado{
+    background:var(--blanco);border:2px solid #1B7A3D;border-radius:8px;
+    padding:10px 12px;margin:10px 0;font-weight:600;color:var(--choco);
+  }
+  .panel-listo .acciones{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .btn-mini{
+    display:inline-flex;align-items:center;gap:.45em;text-decoration:none;
+    font-family:var(--display);font-size:.75rem;text-transform:uppercase;
+    background:var(--choco);color:var(--ambar);border-radius:8px;padding:.65em 1em;
+    border:2px solid var(--choco);
+  }
+  .btn-mini.claro{background:var(--blanco);color:var(--choco)}
+  .pasos{list-style:none;display:grid;gap:22px;counter-reset:paso}
+  .pasos li{display:flex;gap:16px;align-items:flex-start}
+  .pasos .p-num{
+    counter-increment:paso;flex:none;
+    width:2.5em;height:2.5em;border-radius:50%;
+    background:var(--choco);color:var(--ambar);
+    font-family:var(--display);display:flex;align-items:center;justify-content:center;
+  }
+  .pasos .p-num::before{content:counter(paso)}
+  .pasos h3{font-family:var(--display);font-size:1.05rem;text-transform:uppercase;margin-bottom:4px}
+  .pasos p{font-size:.95rem}
+
+  /* ---------- marcas ---------- */
+  .marcas{background:var(--choco);color:var(--blanco);position:relative;overflow:hidden}
+  .marcas .kicker{color:var(--ambar)}
+  .marcas .titulo{color:var(--ambar);max-width:18ch}
+  .marcas .titulo em{font-style:normal;color:var(--naranja)}
+  .marcas-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:52px;align-items:center}
+  @media (max-width:860px){.marcas-grid{grid-template-columns:1fr;gap:36px}}
+  .bullets-marcas{list-style:none;display:grid;gap:18px;margin:30px 0 36px}
+  .bullets-marcas li{display:flex;gap:14px;align-items:flex-start;font-size:1.02rem}
+  .bullets-marcas svg{flex:none;margin-top:3px}
+  .bullets-marcas b{color:var(--ambar)}
+  .marcas .btn{background:var(--ambar);color:var(--choco);border-color:var(--ambar);box-shadow:5px 5px 0 rgba(232,100,27,.5)}
+  .tarjeta-stats{
+    border:2px dashed rgba(255,197,74,.6);border-radius:18px;padding:30px 26px;
+    transform:rotate(-1.2deg);display:grid;gap:22px;
+  }
+  .stat .stat-num{font-family:var(--display);font-size:clamp(2.2rem,5vw,3.2rem);color:var(--ambar);line-height:1}
+  .stat .stat-lbl{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-top:4px}
+  .stat .stat-num .arroba{font-size:.45em;color:var(--naranja);display:block;font-family:var(--texto);font-weight:700;letter-spacing:.04em;text-transform:none;margin-top:6px}
+
+  /* ---------- contacto ---------- */
+  .contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media (max-width:760px){.contacto-grid{grid-template-columns:1fr}}
+  .canal{
+    border:3px solid var(--choco);border-radius:18px;background:var(--blanco);
+    padding:26px 24px;display:flex;gap:16px;align-items:flex-start;text-decoration:none;
+    box-shadow:6px 6px 0 rgba(38,20,10,.15);
+    transition:transform .15s ease,box-shadow .15s ease;
+  }
+  .canal:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 rgba(38,20,10,.15)}
+  .canal .icono{
+    flex:none;width:52px;height:52px;border-radius:14px;background:var(--choco);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .canal h3{font-family:var(--display);font-size:1.05rem;text-transform:uppercase}
+  .canal .handle{color:var(--naranja-tinta);font-weight:700}
+  .canal p{font-size:.9rem;margin-top:4px}
+  .nota-cobertura{
+    margin-top:30px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+    font-size:.92rem;font-weight:600;
+  }
+
+  /* ---------- footer ---------- */
+  footer{background:var(--choco);color:rgba(255,255,255,.85);padding:48px 0 110px}
+  .foot-grid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-start}
+  .foot-marca{display:flex;align-items:center;gap:12px}
+  .foot-marca .chip-lupa{background:var(--ambar)}
+  .foot-marca .marca-texto{color:var(--blanco)}
+  .foot-lema{font-size:.9rem;margin-top:10px;color:var(--ambar);max-width:30ch}
+  .foot-redes{display:flex;gap:12px}
+  .foot-redes a{
+    width:44px;height:44px;border:2px solid rgba(255,197,74,.55);border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .foot-redes a:hover{background:rgba(255,197,74,.14)}
+  .sello-medine{
+    margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.16);
+    font-size:.78rem;color:rgba(255,255,255,.55);
+  }
+  .sello-medine a{color:var(--ambar);text-decoration:none;font-weight:600}
+  .sello-medine a:hover{text-decoration:underline}
+
+  /* ---------- FAB TikTok ---------- */
+  .fab{
+    position:fixed;right:18px;bottom:18px;z-index:60;
+    width:60px;height:60px;border-radius:50%;
+    background:var(--choco);border:3px solid var(--ambar);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 22px rgba(38,20,10,.4);
+    transition:transform .15s ease;
+  }
+  .fab:hover{transform:scale(1.07)}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Principal">
+  <div class="nav-inner">
+    <a class="marca" href="#inicio" aria-label="Detective de Productos — inicio">
+      <span class="chip-lupa" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFC54A" stroke-width="2.6" stroke-linecap="round">
+          <circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/>
+        </svg>
+      </span>
+      <span class="marca-texto">Detective<br>de Productos<small>Cazador de anaqueles</small></span>
+    </a>
+    <a class="btn" href="https://www.tiktok.com/@detectivedeproductos" target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.6 6.7a5.6 5.6 0 0 1-3.4-3.5A5.7 5.7 0 0 1 16 2h-3.5v13.6a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.2a6.4 6.4 0 0 0-.9-.06 6.4 6.4 0 1 0 6.4 6.4V8.7a9 9 0 0 0 5 1.5V6.9c-.5 0-1-.06-1.4-.2z"/></svg>
+      <span>Pedir una búsqueda</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="inicio">
+  <div class="hero-inner">
+    <span class="sticker naranja hero-stick-1" aria-hidden="true">Caso #023 · Abierto</span>
+    <span class="tag-precio hero-tag" aria-hidden="true">
+      <span class="tp-lbl">Hallado a</span>
+      <span class="tp-num">$4.99</span>
+    </span>
+
+    <!-- Sello-logo -->
+    <svg class="sello" viewBox="0 0 132 132" role="img" aria-label="Sello del Detective de Productos">
+      <defs>
+        <path id="arco" d="M 66,66 m -48,0 a 48,48 0 1,1 96,0 a 48,48 0 1,1 -96,0"/>
+      </defs>
+      <circle cx="66" cy="66" r="64" fill="#26140A"/>
+      <circle cx="66" cy="66" r="58" fill="none" stroke="#FFC54A" stroke-width="2" stroke-dasharray="5 5"/>
+      <text font-family="Archivo Black, sans-serif" font-size="12.5" fill="#FFC54A" letter-spacing="2">
+        <textPath href="#arco">DETECTIVE DE PRODUCTOS · CASOS RESUELTOS ·</textPath>
+      </text>
+      <circle cx="61" cy="61" r="16" fill="none" stroke="#FFC54A" stroke-width="7"/>
+      <line x1="73" y1="73" x2="88" y2="88" stroke="#E8641B" stroke-width="9" stroke-linecap="round"/>
+    </svg>
+
+    <h1>¿No lo encuentras? <span class="grito">Yo sí.</span></h1>
+    <p class="hero-sub">Dime qué producto buscas y lo cazo por ti en los anaqueles. Te muestro dónde está, a qué precio, y te doy el veredicto en video.</p>
+    <div class="hero-ctas">
+      <a class="btn" href="https://www.tiktok.com/@detectivedeproductos" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.6 6.7a5.6 5.6 0 0 1-3.4-3.5A5.7 5.7 0 0 1 16 2h-3.5v13.6a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.2a6.4 6.4 0 0 0-.9-.06 6.4 6.4 0 1 0 6.4 6.4V8.7a9 9 0 0 0 5 1.5V6.9c-.5 0-1-.06-1.4-.2z"/></svg>
+        Pedir una búsqueda
+      </a>
+      <a class="btn btn-linea" href="https://ig.me/m/detectivedeproductosec" target="_blank" rel="noopener">DM en Instagram</a>
+    </div>
+
+    <span class="sticker ok hero-stick-2" aria-hidden="true">Encontrado ✓</span>
+  </div>
+</header>
+
+<!-- ============ CINTA LEMA ============ -->
+<div class="cinta" aria-hidden="true">
+  <div class="cinta-pista">
+    <span>Lo buscamos</span><span class="punto">●</span><span>Lo encontramos</span><span class="punto">●</span><span>O lo intentamos 😅</span><span class="punto">●</span><span>24K detectives en TikTok</span><span class="punto">●</span>
+    <span>Lo buscamos</span><span class="punto">●</span><span>Lo encontramos</span><span class="punto">●</span><span>O lo intentamos 😅</span><span class="punto">●</span><span>24K detectives en TikTok</span><span class="punto">●</span>
+  </div>
+</div>
+
+<!-- ============ 01 CASOS RESUELTOS ============ -->
+<section class="seccion" id="casos" aria-labelledby="t-casos">
+  <div class="wrap">
+    <div class="cab-seccion rev">
+      <span class="num" aria-hidden="true">01</span>
+      <span class="kicker">Expedientes del archivo</span>
+    </div>
+    <h2 class="titulo rev" id="t-casos">Casos resueltos</h2>
+    <p class="intro-seccion rev">Productos que la gente daba por perdidos — y que aparecieron frente a la cámara, con pasillo, precio y veredicto incluidos.</p>
+
+    <div class="casos-grid">
+      <article class="caso rev">
+        <span class="sticker ok sello-caso">Encontrado ✓</span>
+        <span class="caso-num">Expediente · Snack proteico</span>
+        <h3>Protein Manicho</h3>
+        <p class="marca-prod">Urban Nutrition</p>
+        <hr class="linea-punteada">
+        <p class="dato"><b>Localizado en:</b> Almacenes Tía</p>
+        <p>El chocolate que todos pedían en versión proteica. Rastreado pasillo por pasillo hasta dar con él.</p>
+        <div class="pie-caso">
+          <span class="tag-precio"><span class="tp-lbl">Precio hallado</span><span class="tp-num">$4.99</span></span>
+          <a class="btn-video" href="https://www.tiktok.com/@detectivedeproductos" target="_blank" rel="noopener">Ver el video
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="caso rev">
+        <span class="sticker ok sello-caso">Encontrado ✓</span>
+        <span class="caso-num">Expediente · Helado</span>
+        <h3>Tango Xtreme</h3>
+        <p class="marca-prod">Nestlé</p>
+        <hr class="linea-punteada">
+        <p class="dato"><b>Misión:</b> reseña completa</p>
+        <p>El clásico en su versión más extrema, puesto a prueba frente a la cámara. El veredicto, sin filtro, está en el video.</p>
+        <div class="pie-caso">
+          <span class="sticker">Veredicto en video</span>
+          <a class="btn-video" href="https://www.tiktok.com/@detectivedeproductos" target="_blank" rel="noopener">Ver el video
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="caso rev">
+        <span class="sticker ok sello-caso">Encontrado ✓</span>
+        <span class="caso-num">Expediente · Listo para comer</span>
+        <h3>Pollo ahumado</h3>
+        <p class="marca-prod">Tiendas TuTi</p>
+        <hr class="linea-punteada">
+        <p class="dato"><b>Misión:</b> probarlo en vivo</p>
+        <p>¿Vale la pena el pollo ahumado de TuTi? Comprado, probado y reseñado para que no gastes a ciegas.</p>
+        <div class="pie-caso">
+          <span class="sticker">Probado y reseñado</span>
+          <a class="btn-video" href="https://www.tiktok.com/@detectivedeproductos" target="_blank" rel="noopener">Ver el video
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 PIDE TU BÚSQUEDA ============ -->
+<section class="seccion pedido" id="pedir" aria-labelledby="t-pedir">
+  <div class="wrap">
+    <div class="cab-seccion rev">
+      <span class="num" aria-hidden="true">02</span>
+      <span class="kicker">Abre tu expediente</span>
+    </div>
+    <h2 class="titulo rev" id="t-pedir">Pide tu búsqueda</h2>
+
+    <div class="pedido-grid">
+      <form class="form-caso rev" id="form-caso" autocomplete="off">
+        <div class="encabezado-exp">
+          <b>Nuevo caso</b>
+          <span class="sticker naranja">Por resolver</span>
+        </div>
+        <div class="campo">
+          <label for="producto">¿Qué producto buscas?</label>
+          <input type="text" id="producto" name="producto" placeholder="Ej: Protein Manicho" required>
+        </div>
+        <div class="campo">
+          <label for="ciudad">¿En qué ciudad?</label>
+          <input type="text" id="ciudad" name="ciudad" placeholder="Ej: Guayaquil" required>
+        </div>
+        <button type="submit" class="btn" style="width:100%;justify-content:center">Enviar mi caso al detective</button>
+        <p class="nota-dm">Esta demo no envía formularios: al pulsar, tu pedido queda listo para pegarlo en el DM — el detective responde por TikTok o Instagram.</p>
+        <div class="panel-listo" id="panel-listo" role="status">
+          <b>Caso redactado ✓</b>
+          <p id="texto-estado">Copia este mensaje y pégalo en el DM:</p>
+          <p class="msg-copiado" id="msg-caso"></p>
+          <div class="acciones">
+            <a class="btn-mini" id="link-tiktok-dm" href="https://www.tiktok.com/@detectivedeproductos" target="_blank" rel="noopener">Abrir TikTok</a>
+            <a class="btn-mini claro" href="https://ig.me/m/detectivedeproductosec" target="_blank" rel="noopener">DM en Instagram</a>
+          </div>
+        </div>
+      </form>
+
+      <ol class="pasos rev">
+        <li>
+          <span class="p-num" aria-hidden="true"></span>
+          <div><h3>Cuéntale el caso</h3><p>Escríbele por DM qué producto llevas tiempo buscando y en qué ciudad estás.</p></div>
+        </li>
+        <li>
+          <span class="p-num" aria-hidden="true"></span>
+          <div><h3>Él sale a cazar</h3><p>Recorre los anaqueles de los supermercados hasta dar con el producto — o agotar las pistas.</p></div>
+        </li>
+        <li>
+          <span class="p-num" aria-hidden="true"></span>
+          <div><h3>Caso resuelto en video</h3><p>Te muestra dónde está, cuánto cuesta y si vale la pena, en un video para toda la comunidad.</p></div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 PARA MARCAS ============ -->
+<section class="seccion marcas" id="marcas" aria-labelledby="t-marcas">
+  <div class="wrap">
+    <div class="cab-seccion rev">
+      <span class="num" aria-hidden="true">03</span>
+      <span class="kicker">Para marcas y supermercados</span>
+    </div>
+    <div class="marcas-grid">
+      <div>
+        <h2 class="titulo rev" id="t-marcas">¿Quieres que tu producto sea el <em>próximo caso</em>?</h2>
+        <ul class="bullets-marcas rev">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFC54A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span><b>24K seguidores en TikTok</b> que llegan justo cuando deciden qué comprar.</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFC54A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span><b>Videos en anaquel real:</b> tu producto aparece en el pasillo, con precio y punto de venta a la vista.</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFC54A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span><b>Audiencia que pregunta "¿dónde lo compro?"</b> — la respuesta puede ser tu góndola.</span>
+          </li>
+        </ul>
+        <a class="btn rev" href="https://ig.me/m/detectivedeproductosec" target="_blank" rel="noopener">Trabajemos juntos</a>
+      </div>
+      <div class="tarjeta-stats rev" aria-label="Cifras del canal">
+        <div class="stat">
+          <div class="stat-num">24K<span class="arroba">@detectivedeproductos · TikTok</span></div>
+          <div class="stat-lbl">Seguidores</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">6.6K<span class="arroba">@detectivedeproductosec · Instagram</span></div>
+          <div class="stat-lbl">Comunidad IG</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-lbl">Grabado en tienda real</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 CONTACTO ============ -->
+<section class="seccion" id="contacto" aria-labelledby="t-contacto">
+  <div class="wrap">
+    <div class="cab-seccion rev">
+      <span class="num" aria-hidden="true">04</span>
+      <span class="kicker">Canales del detective</span>
+    </div>
+    <h2 class="titulo rev" id="t-contacto">Todo pasa por el DM</h2>
+    <p class="intro-seccion rev">Pedidos de búsqueda, colaboraciones con marcas y saludos: todo llega por mensaje directo en sus redes.</p>
+
+    <div class="contacto-grid">
+      <a class="canal rev" href="https://www.tiktok.com/@detectivedeproductos" target="_blank" rel="noopener">
+        <span class="icono" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC54A"><path d="M19.6 6.7a5.6 5.6 0 0 1-3.4-3.5A5.7 5.7 0 0 1 16 2h-3.5v13.6a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.2a6.4 6.4 0 0 0-.9-.06 6.4 6.4 0 1 0 6.4 6.4V8.7a9 9 0 0 0 5 1.5V6.9c-.5 0-1-.06-1.4-.2z"/></svg>
+        </span>
+        <span>
+          <h3>TikTok — canal principal</h3>
+          <span class="handle">@detectivedeproductos</span>
+          <p>24K seguidores · aquí caen los casos y se publican los veredictos.</p>
+        </span>
+      </a>
+      <a class="canal rev" href="https://www.instagram.com/detectivedeproductosec" target="_blank" rel="noopener">
+        <span class="icono" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFC54A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.3" fill="#FFC54A" stroke="none"/></svg>
+        </span>
+        <span>
+          <h3>Instagram — DM abierto</h3>
+          <span class="handle">@detectivedeproductosec</span>
+          <p>Ideal para marcas y colaboraciones. Escríbele directo al buzón.</p>
+        </span>
+      </a>
+    </div>
+
+    <div class="nota-cobertura rev">
+      <span class="sticker">Zona de operaciones</span>
+      <span>Supermercados y autoservicios de Ecuador — Almacenes Tía, Tiendas TuTi y donde haga falta buscar.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-marca">
+          <span class="chip-lupa" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#26140A" stroke-width="2.6" stroke-linecap="round">
+              <circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/>
+            </svg>
+          </span>
+          <span class="marca-texto">Detective<br>de Productos<small>Cazador de anaqueles</small></span>
+        </div>
+        <p class="foot-lema">"Lo buscamos, lo encontramos (o lo intentamos 😅)"</p>
+      </div>
+      <div class="foot-redes">
+        <a href="https://www.tiktok.com/@detectivedeproductos" target="_blank" rel="noopener" aria-label="TikTok de Detective de Productos">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFC54A"><path d="M19.6 6.7a5.6 5.6 0 0 1-3.4-3.5A5.7 5.7 0 0 1 16 2h-3.5v13.6a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.2a6.4 6.4 0 0 0-.9-.06 6.4 6.4 0 1 0 6.4 6.4V8.7a9 9 0 0 0 5 1.5V6.9c-.5 0-1-.06-1.4-.2z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/detectivedeproductosec" target="_blank" rel="noopener" aria-label="Instagram de Detective de Productos">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFC54A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.3" fill="#FFC54A" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <p class="sello-medine">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial.</p>
+  </div>
+</footer>
+
+<!-- ============ FAB TikTok ============ -->
+<a class="fab" href="https://www.tiktok.com/@detectivedeproductos" target="_blank" rel="noopener" aria-label="Pedir una búsqueda por TikTok">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#FFC54A" aria-hidden="true"><path d="M19.6 6.7a5.6 5.6 0 0 1-3.4-3.5A5.7 5.7 0 0 1 16 2h-3.5v13.6a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.2a6.4 6.4 0 0 0-.9-.06 6.4 6.4 0 1 0 6.4 6.4V8.7a9 9 0 0 0 5 1.5V6.9c-.5 0-1-.06-1.4-.2z"/></svg>
+</a>
+
+<script>
+  // Reveal on scroll (respeta prefers-reduced-motion vía CSS)
+  (function(){
+    var els = document.querySelectorAll('.rev');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(e){ e.classList.add('vis'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add('vis'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function(e){ io.observe(e); });
+  })();
+
+  // Formulario "Pide tu búsqueda": redacta el caso y lo deja listo para el DM
+  (function(){
+    var form = document.getElementById('form-caso');
+    var panel = document.getElementById('panel-listo');
+    var msg = document.getElementById('msg-caso');
+    var estado = document.getElementById('texto-estado');
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var producto = document.getElementById('producto').value.trim();
+      var ciudad = document.getElementById('ciudad').value.trim();
+      if (!producto || !ciudad) return;
+      var texto = 'Hola detective 🔍 Te pido una búsqueda: "' + producto + '" en ' + ciudad + '. ¿Lo puedes cazar?';
+      msg.textContent = texto;
+      panel.classList.add('abierto');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(texto).then(function(){
+          estado.textContent = 'Mensaje copiado al portapapeles — solo pégalo en el DM:';
+        }).catch(function(){
+          estado.textContent = 'Copia este mensaje y pégalo en el DM:';
+        });
+      }
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  })();
+</script>
+</body>
+</html>

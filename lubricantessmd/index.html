@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Distribuidora SMD — Mayorista de Lubricantes en Carabobo</title>
+<meta name="description" content="Distribuidora SMD, C.A. — 40 años como mayorista de lubricantes en San Diego, Carabobo. Distribuidores exclusivos de LMV, KRS, Gulf, Cardoc, Samoa y Rodanol. Venta al mayor y detal.">
+<meta property="og:title" content="Distribuidora SMD — Las marcas que mueven a Venezuela">
+<meta property="og:description" content="40 años como mayorista de lubricantes en Carabobo. LMV · KRS · Gulf · Cardoc · Samoa · Rodanol. Venta al mayor y detal.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="./assets/logo-smd.png">
+<link rel="icon" type="image/png" href="./assets/logo-smd.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,700;0,800;0,900;1,800;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#D90000;
+  --red-hi:#E01800;
+  --carbon:#1A1A1A;
+  --carbon-deep:#111111;
+  --amber:#E8A020;
+  --amber-soft:#F2B84B;
+  --paper:#FFFFFF;
+  --paper-dim:#F5F4F2;
+  --ink:#1A1A1A;
+  --ink-soft:#4A4A4A;
+  --line:#E3E0DB;
+  --line-dark:#2E2C29;
+  --wa:#25D366;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,.display{font-family:'Archivo',sans-serif;text-transform:uppercase;line-height:1.02;letter-spacing:-.01em}
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:2px}
+
+/* ===== labels / kickers ===== */
+.kicker{
+  display:inline-flex;align-items:center;gap:.65rem;
+  font-family:'Archivo',sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:.72rem;letter-spacing:.22em;
+}
+.kicker::before{content:"";width:26px;height:2px;background:var(--red);flex:none}
+.secnum{
+  font-family:'Archivo',sans-serif;font-weight:900;font-size:.78rem;
+  letter-spacing:.18em;color:var(--red);
+}
+.sechead{display:flex;align-items:baseline;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:1.1rem;margin-bottom:2.2rem;flex-wrap:wrap}
+.sechead h2{font-size:clamp(1.7rem,4.5vw,2.6rem);font-weight:900}
+.sechead .sub{font-size:.92rem;color:var(--ink-soft);margin-left:auto;max-width:34ch}
+
+/* ===== nav ===== */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(17,17,17,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line-dark);
+}
+.nav-in{display:flex;align-items:center;gap:1rem;height:64px}
+.nav-logo img{height:34px;width:auto}
+.nav-links{display:none;gap:1.6rem;margin-left:auto;list-style:none}
+.nav-links a{
+  color:#CFCBC5;text-decoration:none;font-size:.8rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.12em;transition:color .2s;
+}
+.nav-links a:hover{color:#fff}
+.nav-cta{
+  margin-left:auto;
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--red);color:#fff;text-decoration:none;
+  font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;
+  font-size:.74rem;letter-spacing:.1em;
+  padding:.65rem 1rem;border-radius:3px;
+  transition:background .2s,transform .2s;
+}
+.nav-cta:hover{background:var(--red-hi);transform:translateY(-1px)}
+.nav-burger{
+  display:inline-flex;flex-direction:column;justify-content:center;gap:5px;
+  width:42px;height:42px;padding:0 9px;background:none;border:1px solid var(--line-dark);
+  border-radius:3px;cursor:pointer;
+}
+.nav-burger span{height:2px;background:#fff;display:block;transition:transform .25s,opacity .25s}
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile{
+  display:none;background:var(--carbon-deep);border-bottom:1px solid var(--line-dark);
+}
+.nav-mobile.open{display:block}
+.nav-mobile ul{list-style:none;padding:1rem 0 1.4rem}
+.nav-mobile a{
+  display:block;padding:.75rem 0;color:#E8E5E0;text-decoration:none;
+  font-family:'Archivo',sans-serif;font-weight:700;text-transform:uppercase;
+  letter-spacing:.14em;font-size:.85rem;border-bottom:1px solid var(--line-dark);
+}
+@media(min-width:900px){
+  .nav-links{display:flex}
+  .nav-cta{margin-left:1.4rem}
+  .nav-burger{display:none}
+  .nav-mobile{display:none!important}
+}
+
+/* ===== hero ===== */
+.hero{
+  position:relative;background:var(--carbon-deep);color:#fff;
+  overflow:hidden;isolation:isolate;
+}
+.hero::before{ /* macro de aceite: radial dorado sobre negro */
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:
+    radial-gradient(58% 52% at 88% 8%, rgba(232,160,32,.52) 0%, rgba(232,160,32,.18) 38%, transparent 68%),
+    radial-gradient(36% 30% at 74% 30%, rgba(242,184,75,.28) 0%, transparent 70%),
+    radial-gradient(30% 26% at 96% 42%, rgba(217,0,0,.22) 0%, transparent 70%),
+    radial-gradient(120% 90% at 20% 90%, #161513 0%, #111111 60%);
+}
+.hero::after{ /* trama fina del rubro */
+  content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cpath d='M-14 70 42 14M0 84 56 28M14 98 70 42' stroke='%23ffffff' stroke-opacity='.035' stroke-width='1'/%3E%3C/svg%3E");
+}
+.hero-in{padding:5.2rem 0 4.6rem;position:relative}
+.hero .kicker{color:var(--amber)}
+.hero h1{
+  margin:1.3rem 0 1.6rem;
+  font-weight:900;
+  font-size:clamp(2.55rem,8.6vw,6.9rem);
+  max-width:14ch;
+}
+.hero h1 em{font-style:italic;color:var(--amber)}
+.hero p.lead{
+  max-width:52ch;color:#C9C5BF;font-size:clamp(.98rem,2.6vw,1.12rem);
+  margin-bottom:2.2rem;
+}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;
+  font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;
+  letter-spacing:.1em;font-size:.82rem;
+  padding:1rem 1.7rem;border-radius:3px;
+  transition:background .2s,transform .2s,border-color .2s;
+}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-hi);transform:translateY(-2px)}
+.btn-ghost{border:1px solid #4A4742;color:#E8E5E0}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+.hero-strip{
+  border-top:1px solid var(--line-dark);
+  margin-top:3.6rem;padding-top:1.4rem;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem 2rem;
+}
+.hero-strip div b{
+  display:block;font-family:'Archivo',sans-serif;font-weight:900;
+  font-size:1.35rem;color:#fff;letter-spacing:.01em;
+}
+.hero-strip div span{font-size:.74rem;text-transform:uppercase;letter-spacing:.14em;color:#96918A}
+@media(min-width:760px){
+  .hero-in{padding:7.5rem 0 6rem}
+  .hero-strip{grid-template-columns:repeat(4,1fr)}
+}
+
+/* ===== brand wall ===== */
+.brands{padding:4.5rem 0 4rem;background:var(--paper)}
+.brand-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:640px){.brand-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.brand-grid{grid-template-columns:repeat(3,1fr)}}
+.brand-card{
+  position:relative;border:1px solid var(--line);border-radius:4px;
+  padding:1.7rem 1.5rem 1.5rem;background:#fff;
+  display:flex;flex-direction:column;gap:.9rem;min-height:180px;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
+}
+.brand-card:hover{border-color:var(--carbon);transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(26,26,26,.35)}
+.brand-card::after{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--red);opacity:0;transition:opacity .25s;
+}
+.brand-card:hover::after{opacity:1}
+.brand-tag{
+  align-self:flex-start;
+  font-family:'Archivo',sans-serif;font-weight:800;font-size:.6rem;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--red);border:1px solid rgba(217,0,0,.35);
+  padding:.28rem .55rem;border-radius:2px;
+}
+.brand-name{
+  font-family:'Archivo',sans-serif;font-weight:900;text-transform:uppercase;
+  font-size:clamp(1.9rem,5.5vw,2.5rem);letter-spacing:.02em;color:var(--carbon);
+  line-height:1;
+}
+.brand-name.italica{font-style:italic;letter-spacing:.04em}
+.brand-line{font-size:.9rem;color:var(--ink-soft);margin-top:auto}
+.brands-minor{
+  margin-top:2.4rem;border-top:1px solid var(--line);padding-top:1.5rem;
+}
+.brands-minor p{
+  font-size:.72rem;text-transform:uppercase;letter-spacing:.2em;
+  color:var(--ink-soft);font-weight:600;margin-bottom:1rem;
+}
+.minor-row{display:flex;flex-wrap:wrap;gap:.6rem}
+.minor-chip{
+  border:1px solid var(--line);border-radius:3px;
+  padding:.6rem .95rem;background:var(--paper-dim);
+  font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;
+  font-size:.82rem;letter-spacing:.06em;color:var(--carbon);
+}
+.minor-chip small{
+  display:block;font-family:'Inter',sans-serif;font-weight:500;
+  text-transform:none;letter-spacing:0;font-size:.7rem;color:var(--ink-soft);
+}
+
+/* ===== segmentos ===== */
+.segments{padding:4.2rem 0;background:var(--carbon);color:#fff;position:relative;overflow:hidden}
+.segments::before{
+  content:"";position:absolute;inset:0;opacity:.6;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cpath d='M45 18c8 11 13 18 13 25a13 13 0 1 1-26 0c0-7 5-14 13-25Z' fill='none' stroke='%23ffffff' stroke-opacity='.05'/%3E%3C/svg%3E");
+}
+.segments .sechead{border-color:var(--line-dark)}
+.segments .sub{color:#A7A29B}
+.seg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;position:relative}
+@media(min-width:720px){.seg-grid{grid-template-columns:repeat(4,1fr)}}
+.seg{
+  border:1px solid var(--line-dark);border-radius:3px;
+  padding:1.1rem 1.1rem 1rem;background:rgba(255,255,255,.02);
+  transition:border-color .25s,background .25s;
+}
+.seg:hover{border-color:var(--amber);background:rgba(232,160,32,.06)}
+.seg i{
+  display:block;font-style:normal;font-family:'Archivo',sans-serif;
+  font-weight:900;color:var(--amber);font-size:.72rem;letter-spacing:.16em;margin-bottom:.35rem;
+}
+.seg b{
+  font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;
+  font-size:.95rem;letter-spacing:.04em;
+}
+.seg-note{margin-top:1.6rem;font-size:.9rem;color:#A7A29B;max-width:60ch}
+.seg-note strong{color:#fff}
+
+/* ===== B2B ===== */
+.b2b{padding:4.5rem 0;background:var(--paper-dim)}
+.b2b-grid{display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:860px){.b2b-grid{grid-template-columns:repeat(3,1fr)}}
+.b2b-item{
+  background:#fff;border:1px solid var(--line);border-radius:4px;
+  padding:1.7rem 1.5rem;
+}
+.b2b-item .n{
+  font-family:'Archivo',sans-serif;font-weight:900;color:var(--red);
+  font-size:.8rem;letter-spacing:.16em;
+}
+.b2b-item h3{font-size:1.15rem;font-weight:800;margin:.5rem 0 .6rem}
+.b2b-item p{font-size:.92rem;color:var(--ink-soft)}
+.b2b-cta{
+  margin-top:2rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem;
+  background:var(--carbon);border-radius:4px;padding:1.6rem 1.5rem;color:#fff;
+}
+.b2b-cta p{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:1.05rem;max-width:26ch}
+.b2b-cta .btn{margin-left:auto}
+@media(max-width:640px){.b2b-cta .btn{margin-left:0}}
+
+/* ===== samoa ===== */
+.samoa{
+  position:relative;background:var(--carbon-deep);color:#fff;overflow:hidden;
+  padding:4.5rem 0;isolation:isolate;
+}
+.samoa::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(48% 60% at 6% 100%, rgba(232,160,32,.32) 0%, transparent 70%),
+    radial-gradient(40% 44% at 90% 0%, rgba(217,0,0,.14) 0%, transparent 70%);
+}
+.samoa-in{display:grid;gap:2.2rem;grid-template-columns:1fr}
+@media(min-width:900px){.samoa-in{grid-template-columns:1.1fr .9fr;align-items:center}}
+.samoa .kicker{color:var(--amber)}
+.samoa h2{font-size:clamp(1.9rem,5.5vw,3.1rem);font-weight:900;margin:1.1rem 0 .9rem}
+.samoa p{color:#C9C5BF;max-width:50ch}
+.samoa-list{list-style:none;margin-top:1.6rem;display:grid;gap:.8rem}
+.samoa-list li{
+  display:flex;gap:.9rem;align-items:flex-start;
+  border:1px solid var(--line-dark);border-radius:3px;padding:1rem 1.1rem;
+  background:rgba(255,255,255,.02);
+}
+.samoa-list svg{flex:none;margin-top:.15rem}
+.samoa-list b{font-family:'Archivo',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.92rem;display:block}
+.samoa-list span{font-size:.85rem;color:#A7A29B}
+.samoa-mark{
+  border:1px solid var(--line-dark);border-radius:4px;padding:2.2rem 1.8rem;
+  background:rgba(255,255,255,.02);text-align:center;
+}
+.samoa-mark .brand-tag{border-color:rgba(232,160,32,.5);color:var(--amber);align-self:center;display:inline-block}
+.samoa-mark .wordmark{
+  font-family:'Archivo',sans-serif;font-weight:900;font-style:italic;
+  text-transform:uppercase;font-size:clamp(2.6rem,9vw,4rem);letter-spacing:.06em;
+  margin:.8rem 0 .4rem;color:#fff;line-height:1;
+}
+.samoa-mark p{font-size:.85rem;color:#A7A29B;max-width:none}
+
+/* ===== ubicación ===== */
+.contact{padding:4.5rem 0;background:var(--paper)}
+.contact-grid{display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:860px){.contact-grid{grid-template-columns:1.15fr .85fr}}
+.card{border:1px solid var(--line);border-radius:4px;padding:1.7rem 1.5rem;background:#fff}
+.card h3{font-size:1rem;font-weight:800;letter-spacing:.06em;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.card h3::after{content:"";flex:1;height:1px;background:var(--line)}
+.addr{font-style:normal;font-size:.95rem;color:var(--ink-soft);display:grid;gap:.85rem}
+.addr b{color:var(--ink)}
+.addr a{color:var(--ink);text-decoration:none;font-weight:600}
+.addr a:hover{color:var(--red)}
+.hours{display:grid;gap:.6rem;font-size:.95rem}
+.hours .row{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px dashed var(--line);padding-bottom:.55rem}
+.hours .row span:first-child{color:var(--ink-soft)}
+.hours .row b{font-variant-numeric:tabular-nums}
+.hours .note{font-size:.82rem;color:var(--ink-soft)}
+.contact .btn-red{margin-top:1.4rem;width:100%;justify-content:center}
+@media(min-width:860px){.contact .btn-red{width:auto}}
+
+/* ===== footer ===== */
+.footer{background:var(--carbon-deep);color:#B5B0A9;padding:3.2rem 0 2rem;border-top:3px solid var(--red)}
+.foot-grid{display:grid;gap:2rem;grid-template-columns:1fr}
+@media(min-width:760px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
+.foot-grid img{height:30px;width:auto;margin-bottom:1rem}
+.foot-grid p{font-size:.88rem;max-width:34ch}
+.foot-h{
+  font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;
+  letter-spacing:.16em;font-size:.72rem;color:#fff;margin-bottom:.9rem;
+}
+.foot-list{list-style:none;display:grid;gap:.55rem;font-size:.88rem}
+.foot-list a{color:#B5B0A9;text-decoration:none}
+.foot-list a:hover{color:#fff}
+.foot-social{display:flex;gap:.7rem;margin-top:1rem}
+.foot-social a{
+  display:inline-flex;width:38px;height:38px;border:1px solid var(--line-dark);
+  border-radius:3px;align-items:center;justify-content:center;transition:border-color .2s;
+}
+.foot-social a:hover{border-color:var(--amber)}
+.foot-seal{
+  margin-top:2.6rem;padding-top:1.3rem;border-top:1px solid var(--line-dark);
+  display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;
+  font-size:.75rem;color:#807B74;
+}
+.foot-seal a{color:#A7A29B;text-decoration:underline}
+.foot-seal a:hover{color:#fff}
+
+/* ===== FAB ===== */
+.wa-fab{
+  position:fixed;right:1.1rem;bottom:1.1rem;z-index:70;
+  width:56px;height:56px;border-radius:50%;
+  background:var(--wa);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+  transition:transform .2s;
+}
+.wa-fab:hover{transform:scale(1.07)}
+
+/* ===== reveal ===== */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="nav-logo" aria-label="Distribuidora SMD — inicio">
+      <img src="./assets/logo-smd.png" alt="Distribuidora SMD" width="168" height="34">
+    </a>
+    <nav aria-label="Principal" style="display:contents">
+      <ul class="nav-links">
+        <li><a href="#marcas">Marcas</a></li>
+        <li><a href="#segmentos">Segmentos</a></li>
+        <li><a href="#negocios">Tu negocio</a></li>
+        <li><a href="#samoa">Equipos</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor">Cotiza al mayor</a>
+    <button class="nav-burger" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="menu-movil">
+    <div class="wrap">
+      <ul>
+        <li><a href="#marcas">Marcas</a></li>
+        <li><a href="#segmentos">Segmentos</a></li>
+        <li><a href="#negocios">Tu negocio</a></li>
+        <li><a href="#samoa">Equipos</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <p class="kicker">Mayorista de lubricantes · 40 años en Carabobo</p>
+    <h1>Las marcas que mueven a <em>Venezuela</em>, en un solo distribuidor.</h1>
+    <p class="lead">Distribuidora SMD, C.A. — cuatro décadas surtiendo talleres, flotas e industria desde la Zona Industrial Castillito, San Diego. Venta al mayor y detal, con despacho serio y precio de distribuidor.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-red" href="https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor">Cotiza al mayor</a>
+      <a class="btn btn-ghost" href="#marcas">Ver las marcas</a>
+    </div>
+    <div class="hero-strip">
+      <div><b>40 años</b><span>De trayectoria</span></div>
+      <div><b>6 marcas</b><span>Distribución exclusiva</span></div>
+      <div><b>8 segmentos</b><span>De lubricación</span></div>
+      <div><b>Mayor y detal</b><span>Modalidad de venta</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND WALL -->
+<section class="brands" id="marcas">
+  <div class="wrap">
+    <div class="sechead rv">
+      <span class="secnum">01</span>
+      <h2>El muro de marcas</h2>
+      <p class="sub">Nuestro verdadero activo: distribución exclusiva de seis casas de lubricación.</p>
+    </div>
+    <div class="brand-grid">
+      <article class="brand-card rv">
+        <span class="brand-tag">Distribuidor exclusivo</span>
+        <p class="brand-name">LMV</p>
+        <p class="brand-line">Lubricantes para automotriz liviano, pesado e industrial.</p>
+      </article>
+      <article class="brand-card rv">
+        <span class="brand-tag">Distribuidor exclusivo</span>
+        <p class="brand-name">KRS</p>
+        <p class="brand-line">Línea de lubricación para motor y transmisión.</p>
+      </article>
+      <article class="brand-card rv">
+        <span class="brand-tag">Distribuidor exclusivo</span>
+        <p class="brand-name italica">Gulf</p>
+        <p class="brand-line">Para toda Venezuela, en todas sus presentaciones.</p>
+      </article>
+      <article class="brand-card rv">
+        <span class="brand-tag">Distribuidor exclusivo</span>
+        <p class="brand-name">Cardoc</p>
+        <p class="brand-line">Lubricantes y grasas de tradición venezolana.</p>
+      </article>
+      <article class="brand-card rv">
+        <span class="brand-tag">Distribuidor exclusivo</span>
+        <p class="brand-name italica">Samoa</p>
+        <p class="brand-line">Equipos de lubricación: bombas neumáticas y enrolladores de manguera.</p>
+      </article>
+      <article class="brand-card rv">
+        <span class="brand-tag">Distribuidor exclusivo</span>
+        <p class="brand-name">Rodanol</p>
+        <p class="brand-line">Lubricantes para el sector automotriz e industrial.</p>
+      </article>
+    </div>
+    <div class="brands-minor rv">
+      <p>También distribuimos</p>
+      <div class="minor-row">
+        <span class="minor-chip">Castrol Marine<small>Línea marina</small></span>
+        <span class="minor-chip">Celta<small>Lubricantes</small></span>
+        <span class="minor-chip">Perfect<small>Amortiguadores</small></span>
+        <span class="minor-chip">A1<small>Filtros</small></span>
+        <span class="minor-chip">Eclipse<small>Pilas de gasolina</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEGMENTOS -->
+<section class="segments" id="segmentos">
+  <div class="wrap">
+    <div class="sechead rv">
+      <span class="secnum">02</span>
+      <h2 style="color:#fff">Cobertura total de lubricación</h2>
+      <p class="sub">Un solo proveedor para cada punto de fricción de tu operación.</p>
+    </div>
+    <div class="seg-grid">
+      <div class="seg rv"><i>A/01</i><b>Automotriz liviano</b></div>
+      <div class="seg rv"><i>A/02</i><b>Servicio pesado</b></div>
+      <div class="seg rv"><i>A/03</i><b>Industrial</b></div>
+      <div class="seg rv"><i>A/04</i><b>Marino</b></div>
+      <div class="seg rv"><i>A/05</i><b>Motos</b></div>
+      <div class="seg rv"><i>A/06</i><b>Grasas</b></div>
+      <div class="seg rv"><i>A/07</i><b>Refrigerantes</b></div>
+      <div class="seg rv"><i>A/08</i><b>Líquido de frenos</b></div>
+    </div>
+    <p class="seg-note rv"><strong>Venta al mayor y detal.</strong> Arma tu pedido combinando marcas, viscosidades y presentaciones — cotizamos por WhatsApp en horario de oficina.</p>
+  </div>
+</section>
+
+<!-- B2B -->
+<section class="b2b" id="negocios">
+  <div class="wrap">
+    <div class="sechead rv">
+      <span class="secnum">03</span>
+      <h2>Atendemos tu negocio</h2>
+      <p class="sub">Cuarenta años despachando a quienes viven de esto.</p>
+    </div>
+    <div class="b2b-grid">
+      <article class="b2b-item rv">
+        <span class="n">B/01</span>
+        <h3>Talleres y lubricentros</h3>
+        <p>Surtido completo de aceites, filtros y grasas al precio del mayorista, para que tu servicio nunca se detenga por falta de producto.</p>
+      </article>
+      <article class="b2b-item rv">
+        <span class="n">B/02</span>
+        <h3>Flotas</h3>
+        <p>Lubricación de servicio pesado y liviano para flotas de transporte y reparto: una sola cotización, todas las marcas.</p>
+      </article>
+      <article class="b2b-item rv">
+        <span class="n">B/03</span>
+        <h3>Industria</h3>
+        <p>Lubricantes industriales, grasas y equipos de lubricación Samoa para plantas y maquinaria en producción continua.</p>
+      </article>
+    </div>
+    <div class="b2b-cta rv">
+      <p>¿Compras por volumen? Hablemos de precio.</p>
+      <a class="btn btn-red" href="https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor">Habla con ventas</a>
+    </div>
+  </div>
+</section>
+
+<!-- SAMOA -->
+<section class="samoa" id="samoa">
+  <div class="wrap samoa-in">
+    <div>
+      <p class="kicker rv">Equipos de lubricación</p>
+      <h2 class="rv">No solo el aceite: también el equipo para moverlo.</h2>
+      <p class="rv">Como distribuidores exclusivos de Samoa, equipamos tu taller o planta con sistemas profesionales de lubricación.</p>
+      <ul class="samoa-list">
+        <li class="rv">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11" stroke="#E8A020" stroke-width="1.6"/><path d="M9 20v-6h6v6" stroke="#E8A020" stroke-width="1.6"/></svg>
+          <div><b>Bombas neumáticas</b><span>Trasiego de aceites y grasas con presión constante para servicio continuo.</span></div>
+        </li>
+        <li class="rv">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="#E8A020" stroke-width="1.6"/><path d="M12 12l5 5" stroke="#E8A020" stroke-width="1.6"/><circle cx="12" cy="12" r="2.5" stroke="#E8A020" stroke-width="1.6"/></svg>
+          <div><b>Enrolladores de manguera</b><span>Puestos de lubricación ordenados y seguros en cada bahía de servicio.</span></div>
+        </li>
+      </ul>
+    </div>
+    <div class="samoa-mark rv">
+      <span class="brand-tag">Distribuidor exclusivo</span>
+      <p class="wordmark">Samoa</p>
+      <p>Equipos profesionales de lubricación para talleres, lubricentros e industria.</p>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section class="contact" id="ubicacion">
+  <div class="wrap">
+    <div class="sechead rv">
+      <span class="secnum">04</span>
+      <h2>Dónde estamos</h2>
+      <p class="sub">Zona Industrial Castillito — a la orden de lunes a viernes.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="card rv">
+        <h3>Dirección y contacto</h3>
+        <address class="addr">
+          <div>
+            <b>Distribuidora SMD, C.A.</b><br>
+            Zona Industrial Castillito, Av. 64 Nº 97-320,<br>
+            San Diego, estado Carabobo.
+          </div>
+          <div>
+            WhatsApp: <a href="https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor">0414-420-7346</a><br>
+            Teléfono: <a href="tel:+584244387958">0424-438-7958</a><br>
+            Correo: <a href="mailto:lubricantessmd@gmail.com">lubricantessmd@gmail.com</a><br>
+            Instagram: <a href="https://instagram.com/lubricantes_smd" rel="noopener">@lubricantes_smd</a>
+          </div>
+        </address>
+        <a class="btn btn-red" href="https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor">Escríbenos por WhatsApp</a>
+      </div>
+      <div class="card rv">
+        <h3>Horario</h3>
+        <div class="hours">
+          <div class="row"><span>Lunes a viernes</span><b>8:00 a. m. – 12:00 m.</b></div>
+          <div class="row"><span>&nbsp;</span><b>1:00 p. m. – 5:00 p. m.</b></div>
+          <div class="row"><span>Sábado y domingo</span><b>Cerrado</b></div>
+          <p class="note">Recibimos pedidos por WhatsApp en cualquier momento y los procesamos en horario de oficina.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="./assets/logo-smd.png" alt="Distribuidora SMD">
+        <p>Mayorista de lubricantes con 40 años de trayectoria en Carabobo. Distribuidores exclusivos de LMV, KRS, Gulf, Cardoc, Samoa y Rodanol.</p>
+        <div class="foot-social">
+          <a href="https://instagram.com/lubricantes_smd" rel="noopener" aria-label="Instagram de Distribuidora SMD">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#B5B0A9" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" stroke="#B5B0A9" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.2" fill="#B5B0A9"/></svg>
+          </a>
+          <a href="https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor" aria-label="WhatsApp de Distribuidora SMD">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="#B5B0A9" stroke-width="1.6"/><path d="M9 8.5c-.4 2.6 3.9 6.9 6.5 6.5l.6-1.7-2-1-.9.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.9-1-2-1.7.6Z" fill="#B5B0A9"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="foot-h">Contacto</p>
+        <ul class="foot-list">
+          <li><a href="https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor">WhatsApp 0414-420-7346</a></li>
+          <li><a href="tel:+584244387958">0424-438-7958</a></li>
+          <li><a href="mailto:lubricantessmd@gmail.com">lubricantessmd@gmail.com</a></li>
+          <li>Lun–Vie · 8 a 12 / 1 a 5</li>
+        </ul>
+      </div>
+      <div>
+        <p class="foot-h">Ubicación</p>
+        <ul class="foot-list">
+          <li>Zona Industrial Castillito</li>
+          <li>Av. 64 Nº 97-320</li>
+          <li>San Diego, Carabobo</li>
+          <li>Venezuela</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-seal">
+      <span>© Distribuidora SMD, C.A. · RIF y datos fiscales disponibles en tienda.</span>
+      <span>Demo diseñada por <a href="https://medine.tech" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FAB WhatsApp -->
+<a class="wa-fab" href="https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor" aria-label="Cotizar por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
+    <path fill="#FFFFFF" d="M16 4.5c-6.3 0-11.4 5.1-11.4 11.4 0 2 .5 4 1.5 5.7L4.5 27.5l6.1-1.6c1.7.9 3.5 1.4 5.4 1.4 6.3 0 11.4-5.1 11.4-11.4S22.3 4.5 16 4.5Zm0 20.7c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.6 1 1-3.5-.2-.4a9.3 9.3 0 0 1-1.4-4.9c0-5.1 4.2-9.3 9.3-9.3s9.3 4.2 9.3 9.3-4.2 9.3-9.3 9.3Zm5.1-7c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3Z"/>
+  </svg>
+</a>
+
+<script>
+// Menú móvil
+(function(){
+  var burger=document.querySelector('.nav-burger');
+  var menu=document.getElementById('menu-movil');
+  burger.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');
+  });
+  menu.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+  });
+})();
+// Reveal on scroll
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.classList.add('on');});return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}
+    });
+  },{threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>JASH CAPITAL — Tu cuenta bancaria en Estados Unidos, sin salir de Venezuela</title>
+<meta name="description" content="Apertura de cuenta bancaria personal en USA desde Venezuela, 100% remota. 15 días hábiles, acceso a Zelle y tarjeta de débito Visa/Mastercard. Valencia, Carabobo.">
+<meta property="og:title" content="JASH CAPITAL — Tu cuenta en Estados Unidos, sin salir de Venezuela">
+<meta property="og:description" content="Cuenta personal en USA en 15 días hábiles: Zelle, tarjeta de débito Visa/Mastercard y garantía de devolución del 100%. Atención desde Valencia, Venezuela.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="./assets/jash-logo.png">
+<link rel="icon" type="image/png" href="./assets/jash-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0A12;
+    --bg-card:#10101A;
+    --oro:#D4AF37;
+    --oro-1:#C5A028;
+    --oro-2:#F4D03F;
+    --humo:#F3F3F5;
+    --gris:#9C9CAB;
+    --gris-deep:#717182;
+    --linea:rgba(212,175,55,.35);
+    --linea-suave:rgba(243,243,245,.10);
+    --serif:'Playfair Display',Georgia,serif;
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--humo);
+    font-family:var(--sans);
+    font-size:1rem;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--oro);color:var(--bg)}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  :focus-visible{outline:2px solid var(--oro);outline-offset:3px;border-radius:2px}
+
+  /* ---------- utilidades editoriales ---------- */
+  .col{max-width:720px;margin:0 auto;padding:0 1.375rem}
+  .col-wide{max-width:1080px;margin:0 auto;padding:0 1.375rem}
+  .regla{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--linea),transparent);margin:0}
+  .eyebrow{
+    font-size:.72rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--oro);
+  }
+  .num-romano{
+    font-family:var(--serif);font-size:.95rem;font-style:italic;color:var(--oro);
+    letter-spacing:.12em;
+  }
+  .sec-head{display:flex;align-items:baseline;gap:1.1rem;margin-bottom:.65rem}
+  .sec-head::after{content:"";flex:1;height:1px;background:var(--linea);transform:translateY(-4px)}
+  .sec-title{
+    font-family:var(--serif);font-weight:600;color:var(--humo);
+    font-size:clamp(1.7rem,4.6vw,2.4rem);line-height:1.2;margin-bottom:1rem;
+  }
+  section{padding:4.5rem 0}
+  @media(min-width:768px){section{padding:6.5rem 0}}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    *,*::before,*::after{transition-duration:.001s!important;animation-duration:.001s!important}
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,10,18,.88);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--linea-suave);
+  }
+  .nav-inner{
+    max-width:1080px;margin:0 auto;padding:.7rem 1.375rem;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  }
+  .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+  .brand img{width:40px;height:40px;border-radius:50%}
+  .brand-name{
+    font-family:var(--serif);font-weight:600;letter-spacing:.14em;font-size:.95rem;
+    color:var(--humo);white-space:nowrap;
+  }
+  .nav-links{display:none;gap:1.8rem;list-style:none}
+  .nav-links a{
+    text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--gris);transition:color .25s;
+  }
+  .nav-links a:hover{color:var(--oro)}
+  @media(min-width:860px){.nav-links{display:flex}}
+  .btn-nav{
+    display:inline-block;text-decoration:none;
+    font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--oro);border:1px solid var(--oro);
+    padding:.55rem 1.1rem;transition:background .25s,color .25s;white-space:nowrap;
+  }
+  .btn-nav:hover{background:var(--oro);color:var(--bg)}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;text-align:center;
+    padding:5.5rem 0 5rem;
+  }
+  @media(min-width:768px){.hero{padding:8rem 0 7.5rem}}
+  .hero::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse 65% 45% at 50% 8%,rgba(212,175,55,.10),transparent 70%);
+  }
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:.9rem;margin-bottom:2.2rem;
+  }
+  .hero-eyebrow::before,.hero-eyebrow::after{
+    content:"";width:2.4rem;height:1px;background:var(--linea);
+  }
+  .hero h1{
+    font-family:var(--serif);font-weight:700;
+    font-size:clamp(2.6rem,9vw,5.6rem);
+    line-height:1.08;letter-spacing:-.01em;
+    margin:0 auto 1.6rem;max-width:15ch;
+  }
+  .hero h1 em{font-style:italic;font-weight:500}
+  .hero-sub{
+    color:var(--gris);font-size:clamp(1rem,2.6vw,1.15rem);
+    max-width:34rem;margin:0 auto 2.6rem;
+  }
+  .hero-sub strong{color:var(--humo);font-weight:500}
+  .btn-oro{
+    display:inline-block;text-decoration:none;
+    background:linear-gradient(135deg,var(--oro-1),var(--oro-2));
+    color:#0A0A12;font-weight:600;font-size:.92rem;letter-spacing:.06em;
+    padding:1rem 2.4rem;
+    box-shadow:0 0 0 1px rgba(212,175,55,.4),0 14px 34px -14px rgba(212,175,55,.45);
+    transition:transform .25s,box-shadow .25s;
+  }
+  .btn-oro:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(212,175,55,.55),0 20px 40px -14px rgba(212,175,55,.55)}
+  .hero-micro{
+    margin-top:1.2rem;font-size:.8rem;color:var(--gris-deep);letter-spacing:.02em;
+  }
+  .hero-micro b{color:var(--gris);font-weight:500}
+  .hero-marcas{
+    margin-top:3.4rem;display:flex;justify-content:center;flex-wrap:wrap;
+    gap:.6rem 2rem;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--gris-deep);
+  }
+  .hero-marcas span{display:flex;align-items:center;gap:.55rem}
+  .hero-marcas i{width:4px;height:4px;background:var(--oro);border-radius:50%;display:inline-block}
+
+  /* ---------- pasos ---------- */
+  .pasos{list-style:none;position:relative;margin-top:2.8rem}
+  .paso{
+    position:relative;display:grid;grid-template-columns:3.4rem 1fr;gap:1.2rem;
+    padding-bottom:2.8rem;
+  }
+  .paso:last-child{padding-bottom:0}
+  .paso::before{
+    content:"";position:absolute;left:1.7rem;top:3.6rem;bottom:.4rem;width:1px;
+    background:linear-gradient(180deg,var(--linea),rgba(212,175,55,.08));
+  }
+  .paso:last-child::before{display:none}
+  .paso-num{
+    width:3.4rem;height:3.4rem;border:1px solid var(--linea);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-size:1.05rem;color:var(--oro);
+    background:var(--bg);position:relative;z-index:1;
+  }
+  .paso h3{
+    font-family:var(--serif);font-weight:600;font-size:1.25rem;margin:.55rem 0 .4rem;
+  }
+  .paso p{color:var(--gris);font-size:.95rem;max-width:32rem}
+  .paso p strong{color:var(--humo);font-weight:500}
+
+  /* ---------- precios ---------- */
+  .planes{
+    display:grid;gap:1.25rem;margin-top:3rem;
+    grid-template-columns:1fr;
+  }
+  @media(min-width:860px){.planes{grid-template-columns:repeat(3,1fr);align-items:stretch}}
+  .plan{
+    border:1px solid var(--linea-suave);background:var(--bg-card);
+    padding:2.2rem 1.8rem;display:flex;flex-direction:column;position:relative;
+  }
+  .plan-destacado{border-color:var(--oro)}
+  .plan-tag{
+    position:absolute;top:-.75rem;left:50%;transform:translateX(-50%);
+    background:linear-gradient(135deg,var(--oro-1),var(--oro-2));color:#0A0A12;
+    font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+    padding:.3rem .9rem;white-space:nowrap;
+  }
+  .plan-nombre{
+    font-size:.72rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--gris);margin-bottom:1.1rem;
+  }
+  .plan-precio{
+    font-family:var(--serif);color:var(--oro);font-weight:600;
+    font-size:2.6rem;line-height:1;letter-spacing:-.01em;
+  }
+  .plan-precio small{
+    display:block;font-family:var(--sans);font-size:.72rem;font-weight:500;
+    letter-spacing:.08em;color:var(--gris-deep);margin-bottom:.45rem;
+  }
+  .plan-plazo{
+    font-size:.8rem;color:var(--gris);margin-top:.55rem;padding-bottom:1.3rem;
+    border-bottom:1px solid var(--linea-suave);
+  }
+  .plan ul{list-style:none;margin:1.3rem 0 1.8rem;flex:1}
+  .plan li{
+    position:relative;padding-left:1.35rem;font-size:.9rem;color:var(--gris);
+    margin-bottom:.65rem;
+  }
+  .plan li::before{
+    content:"";position:absolute;left:0;top:.62em;width:.65rem;height:1px;background:var(--oro);
+  }
+  .plan li strong{color:var(--humo);font-weight:500}
+  .plan-cta{
+    display:block;text-align:center;text-decoration:none;
+    font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+    border:1px solid var(--linea);color:var(--oro);padding:.8rem 1rem;
+    transition:background .25s,color .25s;
+  }
+  .plan-cta:hover{background:var(--oro);color:var(--bg)}
+  .plan-destacado .plan-cta{
+    background:linear-gradient(135deg,var(--oro-1),var(--oro-2));color:#0A0A12;border-color:transparent;
+  }
+  .plan-destacado .plan-cta:hover{filter:brightness(1.08)}
+  .garantia{
+    margin-top:2.4rem;border:1px solid var(--linea);
+    padding:1.5rem 1.6rem;display:flex;gap:1rem;align-items:flex-start;
+    background:rgba(212,175,55,.04);
+  }
+  .garantia svg{flex-shrink:0;margin-top:.2rem}
+  .garantia p{font-size:.92rem;color:var(--gris)}
+  .garantia p strong{color:var(--humo);font-weight:600}
+
+  /* ---------- cifras ---------- */
+  .cifras{
+    display:grid;grid-template-columns:1fr;gap:0;text-align:center;margin-top:2.6rem;
+  }
+  .cifra{padding:2.2rem 1rem;border-top:1px solid var(--linea-suave)}
+  .cifra:first-child{border-top:none}
+  @media(min-width:768px){
+    .cifras{grid-template-columns:repeat(3,1fr)}
+    .cifra{border-top:none;border-left:1px solid var(--linea-suave);padding:1.4rem 1rem}
+    .cifra:first-child{border-left:none}
+  }
+  .cifra-num{
+    font-family:var(--serif);font-weight:700;color:var(--oro);
+    font-size:clamp(3rem,8vw,4.2rem);line-height:1;
+  }
+  .cifra-label{
+    margin-top:.7rem;font-size:.72rem;font-weight:600;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--gris);
+  }
+
+  /* ---------- faq ---------- */
+  .faq{margin-top:2.4rem;border-top:1px solid var(--linea-suave)}
+  .faq details{border-bottom:1px solid var(--linea-suave)}
+  .faq summary{
+    list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:1rem;
+    padding:1.35rem 0;font-family:var(--serif);font-size:1.1rem;font-weight:600;
+    transition:color .25s;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:hover{color:var(--oro)}
+  .faq summary::after{
+    content:"+";margin-left:auto;font-family:var(--sans);font-weight:400;
+    font-size:1.3rem;color:var(--oro);line-height:1;transition:transform .3s;
+  }
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{color:var(--gris);font-size:.95rem;padding:0 2.4rem 1.5rem 0;max-width:36rem}
+  .faq details p strong{color:var(--humo);font-weight:500}
+
+  /* ---------- contacto ---------- */
+  .contacto{text-align:center}
+  .contacto-dir{color:var(--gris);font-size:.95rem;margin-bottom:2rem}
+  .contacto-dir strong{color:var(--humo);font-weight:500}
+  .redes{display:flex;justify-content:center;gap:1rem;margin-top:2.4rem;flex-wrap:wrap}
+  .red{
+    width:2.9rem;height:2.9rem;border:1px solid var(--linea-suave);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;color:var(--gris);
+    transition:color .25s,border-color .25s;
+  }
+  .red:hover{color:var(--oro);border-color:var(--oro)}
+  .red svg{width:1.15rem;height:1.15rem;fill:currentColor}
+  .contacto-nota{margin-top:1.6rem;font-size:.8rem;color:var(--gris-deep)}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--linea-suave);padding:2.6rem 0 6.5rem;text-align:center;
+  }
+  .foot-brand{display:flex;justify-content:center;align-items:center;gap:.6rem;margin-bottom:.9rem}
+  .foot-brand img{width:34px;height:34px;border-radius:50%}
+  .foot-brand span{font-family:var(--serif);letter-spacing:.14em;font-size:.85rem}
+  footer p{font-size:.78rem;color:var(--gris-deep)}
+  .sello{margin-top:1.4rem;font-size:.72rem;color:var(--gris-deep)}
+  .sello a{color:var(--gris);text-decoration:none;border-bottom:1px solid var(--linea)}
+  .sello a:hover{color:var(--oro)}
+
+  /* ---------- FAB whatsapp ---------- */
+  .fab-wa{
+    position:fixed;right:1.1rem;bottom:1.1rem;z-index:60;
+    width:3.5rem;height:3.5rem;border-radius:50%;background:#25D366;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 26px -8px rgba(37,211,102,.6);
+    transition:transform .25s;
+  }
+  .fab-wa:hover{transform:scale(1.08)}
+  .fab-wa svg{width:1.9rem;height:1.9rem;fill:#fff}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="JASH CAPITAL — inicio">
+      <img src="./assets/jash-logo.png" alt="Logo de JASH CAPITAL" width="40" height="40">
+      <span class="brand-name">JASH&nbsp;CAPITAL</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <a class="btn-nav" href="https://wa.me/584244739506?text=Hola%20Jash%20Capital%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20cuenta%20personal%20en%20USA" target="_blank" rel="noopener">Escríbenos</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="col">
+      <p class="hero-eyebrow"><span class="eyebrow">Valencia · Venezuela</span></p>
+      <h1>Tu cuenta en <em>Estados Unidos</em>, sin salir de Venezuela.</h1>
+      <p class="hero-sub">
+        Apertura de cuenta bancaria personal en USA, 100% remota, en
+        <strong>15 días hábiles</strong>. Con acceso a <strong>Zelle</strong> y tu
+        <strong>tarjeta de débito Visa o Mastercard</strong>, entregada en una sesión por Zoom.
+      </p>
+      <a class="btn-oro" href="https://wa.me/584244739506?text=Hola%20Jash%20Capital%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20cuenta%20personal%20en%20USA" target="_blank" rel="noopener">Quiero mi cuenta en USA</a>
+      <p class="hero-micro"><b>Garantía de devolución del 100%</b> si el banco rechaza tu solicitud.</p>
+      <div class="hero-marcas" aria-label="Beneficios clave">
+        <span><i></i>Sin viajar</span>
+        <span><i></i>Zelle incluido</span>
+        <span><i></i>Visa · Mastercard</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="regla" aria-hidden="true">
+
+  <!-- CÓMO FUNCIONA -->
+  <section id="como-funciona">
+    <div class="col">
+      <div class="sec-head reveal"><span class="num-romano">I.</span><span class="eyebrow">Cómo funciona</span></div>
+      <h2 class="sec-title reveal">Tres pasos, cero vuelos.</h2>
+      <p class="reveal" style="color:var(--gris);max-width:34rem">
+        Todo el proceso se gestiona de forma remota desde Venezuela. Tú pones los documentos;
+        nosotros, la gestión ante el banco.
+      </p>
+      <ol class="pasos">
+        <li class="paso reveal">
+          <span class="paso-num" aria-hidden="true">01</span>
+          <div>
+            <h3>Consulta por WhatsApp</h3>
+            <p>Conversamos tu caso, te indicamos los requisitos y confirmamos que calificas.
+            Con una <strong>tasa de aprobación del 95%</strong>, la respuesta casi siempre es sí.</p>
+          </div>
+        </li>
+        <li class="paso reveal">
+          <span class="paso-num" aria-hidden="true">02</span>
+          <div>
+            <h3>Gestionamos la apertura</h3>
+            <p>Tramitamos tu cuenta personal ante el banco en Estados Unidos.
+            <strong>No necesitas viajar</strong> ni presentarte en ninguna agencia: todo se resuelve a distancia.</p>
+          </div>
+        </li>
+        <li class="paso reveal">
+          <span class="paso-num" aria-hidden="true">03</span>
+          <div>
+            <h3>Recibes tu cuenta en 15 días hábiles</h3>
+            <p>Te entregamos los accesos en una <strong>videollamada por Zoom</strong>: cuenta activa,
+            <strong>Zelle</strong> operativo y tu <strong>tarjeta de débito Visa o Mastercard</strong> lista para usar.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <hr class="regla" aria-hidden="true">
+
+  <!-- SERVICIOS / PRECIOS -->
+  <section id="servicios">
+    <div class="col">
+      <div class="sec-head reveal"><span class="num-romano">II.</span><span class="eyebrow">Servicios y honorarios</span></div>
+      <h2 class="sec-title reveal">Precios claros, sin letra pequeña.</h2>
+    </div>
+    <div class="col-wide">
+      <div class="planes">
+        <article class="plan reveal">
+          <h3 class="plan-nombre">Cuenta personal</h3>
+          <p class="plan-precio">$1.250</p>
+          <p class="plan-plazo">Entrega en 15 días hábiles</p>
+          <ul>
+            <li><strong>Cuenta bancaria personal</strong> en Estados Unidos</li>
+            <li>Acceso a <strong>Zelle</strong> para enviar y recibir dólares</li>
+            <li>Tarjeta de débito <strong>Visa o Mastercard</strong></li>
+            <li>Entrega y activación acompañada por Zoom</li>
+            <li>100% remoto, sin viajar</li>
+          </ul>
+          <a class="plan-cta" href="https://wa.me/584244739506?text=Hola%20Jash%20Capital%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20cuenta%20personal%20en%20USA" target="_blank" rel="noopener">Abrir mi cuenta</a>
+        </article>
+
+        <article class="plan reveal">
+          <h3 class="plan-nombre">Cuenta jurídica</h3>
+          <p class="plan-precio"><small>Desde</small>$2.850</p>
+          <p class="plan-plazo">Entrega en 7 a 30 días hábiles</p>
+          <ul>
+            <li><strong>Cuenta empresarial</strong> en Estados Unidos</li>
+            <li>Para empresas que facturan en dólares</li>
+            <li>Gestión completa ante el banco</li>
+            <li>Acompañamiento durante todo el proceso</li>
+            <li>100% remoto, sin viajar</li>
+          </ul>
+          <a class="plan-cta" href="https://wa.me/584244739506?text=Hola%20Jash%20Capital%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20cuenta%20jur%C3%ADdica%20en%20USA" target="_blank" rel="noopener">Consultar</a>
+        </article>
+
+        <article class="plan plan-destacado reveal">
+          <span class="plan-tag">Ahorras $200</span>
+          <h3 class="plan-nombre">LLC + Cuenta</h3>
+          <p class="plan-precio"><small>Desde</small>$3.798</p>
+          <p class="plan-plazo">LLC en 7 a 21 días hábiles</p>
+          <ul>
+            <li><strong>Constitución de LLC</strong> en Estados Unidos</li>
+            <li><strong>EIN</strong> y <strong>Registered Agent</strong> incluidos</li>
+            <li>Cuenta bancaria empresarial para tu LLC</li>
+            <li>Un solo paquete, un solo interlocutor</li>
+            <li>100% remoto, sin viajar</li>
+          </ul>
+          <a class="plan-cta" href="https://wa.me/584244739506?text=Hola%20Jash%20Capital%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20paquete%20LLC%20%2B%20cuenta%20en%20USA" target="_blank" rel="noopener">Quiero el paquete</a>
+        </article>
+      </div>
+
+      <div class="garantia reveal">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.4" aria-hidden="true">
+          <path d="M12 2l8 3.5v5.2c0 5-3.4 9.5-8 11.3-4.6-1.8-8-6.3-8-11.3V5.5L12 2z"/>
+          <path d="M8.5 12l2.4 2.4 4.6-4.8"/>
+        </svg>
+        <p><strong>Garantía de devolución del 100%.</strong> Si el banco rechaza tu solicitud,
+        te devolvemos la totalidad de lo pagado. Así de seguros estamos del proceso.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="regla" aria-hidden="true">
+
+  <!-- CIFRAS -->
+  <section id="confianza">
+    <div class="col">
+      <div class="sec-head reveal"><span class="num-romano">III.</span><span class="eyebrow">Resultados</span></div>
+      <h2 class="sec-title reveal">Los números hablan por nosotros.</h2>
+    </div>
+    <div class="col-wide">
+      <div class="cifras">
+        <div class="cifra reveal">
+          <p class="cifra-num">95%</p>
+          <p class="cifra-label">Tasa de aprobación</p>
+        </div>
+        <div class="cifra reveal">
+          <p class="cifra-num">+500</p>
+          <p class="cifra-label">Clientes atendidos</p>
+        </div>
+        <div class="cifra reveal">
+          <p class="cifra-num">100%</p>
+          <p class="cifra-label">Garantía de devolución</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="regla" aria-hidden="true">
+
+  <!-- FAQ -->
+  <section id="preguntas">
+    <div class="col">
+      <div class="sec-head reveal"><span class="num-romano">IV.</span><span class="eyebrow">Preguntas frecuentes</span></div>
+      <h2 class="sec-title reveal">Lo que todos nos preguntan.</h2>
+      <div class="faq reveal">
+        <details>
+          <summary>¿Tengo que viajar a Estados Unidos?</summary>
+          <p>No. El proceso es <strong>100% remoto desde Venezuela</strong>: gestionamos la apertura
+          ante el banco por ti y no necesitas presentarte en ninguna agencia ni tomar un vuelo.</p>
+        </details>
+        <details>
+          <summary>¿Cómo recibo mi tarjeta de débito?</summary>
+          <p>Tu tarjeta <strong>Visa o Mastercard</strong> se te entrega en una
+          <strong>videollamada por Zoom</strong>, donde te acompañamos paso a paso en la activación
+          para que salgas de la sesión con todo funcionando.</p>
+        </details>
+        <details>
+          <summary>¿Puedo usar Zelle con esta cuenta?</summary>
+          <p>Sí. La cuenta personal incluye <strong>acceso a Zelle</strong>, para que envíes y recibas
+          dólares con la misma facilidad que cualquier titular en Estados Unidos.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si el banco rechaza mi solicitud?</summary>
+          <p>Te devolvemos el <strong>100% de lo pagado</strong>. Nuestra tasa de aprobación es del 95%,
+          así que es poco frecuente — pero si ocurre, la garantía te cubre por completo.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <hr class="regla" aria-hidden="true">
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <div class="col">
+      <div class="sec-head reveal" style="justify-content:center"><span class="num-romano">V.</span><span class="eyebrow">Contacto</span></div>
+      <h2 class="sec-title reveal">Empecemos hoy.</h2>
+      <p class="contacto-dir reveal">
+        Atendemos desde <strong>Valencia, estado Carabobo — Venezuela</strong>, a clientes de todo el país.<br>
+        WhatsApp: <strong>+58 424-473.9506</strong>
+      </p>
+      <p class="reveal">
+        <a class="btn-oro" href="https://wa.me/584244739506?text=Hola%20Jash%20Capital%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20cuenta%20personal%20en%20USA" target="_blank" rel="noopener">Cotiza por WhatsApp</a>
+      </p>
+      <div class="redes reveal">
+        <a class="red" href="https://www.instagram.com/jashcapital_/" target="_blank" rel="noopener" aria-label="Instagram de JASH CAPITAL">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.8.1-1.1.1-1.5.2-1.8.3-.5.2-.8.4-1.1.7-.3.3-.5.6-.7 1.1-.1.3-.3.8-.3 1.8-.1 1.2-.1 1.6-.1 4.8s0 3.5.1 4.8c.1 1.1.2 1.5.3 1.8.2.5.4.8.7 1.1.3.3.6.5 1.1.7.3.1.8.3 1.8.3 1.2.1 1.6.1 4.8.1s3.5 0 4.8-.1c1.1-.1 1.5-.2 1.8-.3.5-.2.8-.4 1.1-.7.3-.3.5-.6.7-1.1.1-.3.3-.8.3-1.8.1-1.2.1-1.6.1-4.8s0-3.5-.1-4.8c-.1-1.1-.2-1.5-.3-1.8-.2-.5-.4-.8-.7-1.1-.3-.3-.6-.5-1.1-.7-.3-.1-.8-.3-1.8-.3-1.2-.1-1.6-.1-4.8-.1zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8.1a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.2-8.3a1.1 1.1 0 11-2.3 0 1.1 1.1 0 012.3 0z"/></svg>
+        </a>
+        <a class="red" href="https://www.tiktok.com/@jashcapital_" target="_blank" rel="noopener" aria-label="TikTok de JASH CAPITAL">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+        <a class="red" href="https://www.youtube.com/@JASHCAPITAL" target="_blank" rel="noopener" aria-label="Canal de YouTube JASHCAPITAL">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.3 7.2a3 3 0 00-2.1-2.1C19.4 4.6 12 4.6 12 4.6s-7.4 0-9.2.5A3 3 0 00.7 7.2C.2 9 .2 12.7.2 12.7s0 3.7.5 5.5a3 3 0 002.1 2.1c1.8.5 9.2.5 9.2.5s7.4 0 9.2-.5a3 3 0 002.1-2.1c.5-1.8.5-5.5.5-5.5s0-3.7-.5-5.5zM9.7 16.1V9.3l6.2 3.4-6.2 3.4z"/></svg>
+        </a>
+        <a class="red" href="https://wa.me/584244739506?text=Hola%20Jash%20Capital%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20cuenta%20personal%20en%20USA" target="_blank" rel="noopener" aria-label="WhatsApp de JASH CAPITAL">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8h0a9.8 9.8 0 01-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 1118.1-5.2 9.8 9.8 0 01-9.8 9.8zM12 .3A11.7 11.7 0 00.3 12c0 2.1.5 4.1 1.6 5.9L.2 23.8l6-1.6a11.7 11.7 0 005.8 1.5A11.7 11.7 0 0023.7 12 11.7 11.7 0 0012 .3z"/></svg>
+        </a>
+      </div>
+      <p class="contacto-nota reveal">@jashcapital_ en Instagram y TikTok · Canal JASHCAPITAL en YouTube</p>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="col">
+    <div class="foot-brand">
+      <img src="./assets/jash-logo.png" alt="Logo de JASH CAPITAL" width="34" height="34">
+      <span>JASH&nbsp;CAPITAL</span>
+    </div>
+    <p>Soluciones financieras · Valencia, Carabobo — Venezuela</p>
+    <p>Cuentas bancarias en USA · Constitución de LLC · EIN y Registered Agent</p>
+    <p class="sello">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial</p>
+  </div>
+</footer>
+
+<!-- FAB WHATSAPP -->
+<a class="fab-wa" href="https://wa.me/584244739506?text=Hola%20Jash%20Capital%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20cuenta%20personal%20en%20USA" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8h0a9.8 9.8 0 01-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 1118.1-5.2 9.8 9.8 0 01-9.8 9.8zM12 .3A11.7 11.7 0 00.3 12c0 2.1.5 4.1 1.6 5.9L.2 23.8l6-1.6a11.7 11.7 0 005.8 1.5A11.7 11.7 0 0023.7 12 11.7 11.7 0 0012 .3z"/></svg>
+</a>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

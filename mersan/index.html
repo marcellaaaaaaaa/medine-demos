@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>MERSAN — Alimentos Balanceados · Pedido rápido por WhatsApp</title>
+<meta name="description" content="50 años alimentando al campo venezolano. Pide el alimento de tu granja por WhatsApp: aves, cerdos, bovinos, ovinos, equinos, conejos y caninos. Red de agrotiendas en Maracaibo, San Carlos, Maracay y Valencia.">
+<meta property="og:title" content="MERSAN — El alimento de tu granja, pedido en un mensaje">
+<meta property="og:description" content="Catálogo de pedido rápido por WhatsApp. 50 años de alimentos balanceados desde Tinaquillo, Cojedes.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_VE">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BE%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#021d49;
+  --blue:#67addf;
+  --sky:#67c3df;
+  --gray:#4d4d4d;
+  --bg:#f4f4f4;
+  --white:#ffffff;
+  --green:#1ebf45;
+  --line:rgba(2,29,73,.14);
+  --radius:14px;
+  --font-display:"Inter Tight",Helvetica,Arial,sans-serif;
+  --font-body:"Inter",Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  font-family:var(--font-body);
+  color:var(--navy);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:4px}
+.container{width:min(1160px,100% - 2.5rem);margin-inline:auto}
+
+/* ---------- etiquetas artesanales ---------- */
+.kicker{
+  display:flex;align-items:center;gap:.75rem;
+  font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gray);margin-bottom:1rem;
+}
+.kicker .num{color:var(--navy);font-family:var(--font-display)}
+.kicker::after{content:"";flex:0 0 3rem;height:1px;background:var(--line)}
+.section-title{
+  font-family:var(--font-display);font-weight:800;letter-spacing:-.02em;
+  font-size:clamp(1.85rem,4.5vw,2.9rem);line-height:1.08;margin-bottom:.75rem;
+}
+.section-sub{color:var(--gray);max-width:56ch}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0}
+.nav-logo img{height:22px;width:auto}
+.nav-links{display:none;align-items:center;gap:1.6rem;list-style:none}
+.nav-links a{
+  text-decoration:none;font-size:.88rem;font-weight:600;color:var(--navy);
+  border-bottom:2px solid transparent;padding-bottom:2px;
+}
+.nav-links a:hover{border-color:var(--sky)}
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-weight:700;text-decoration:none;border-radius:999px;
+  padding:.78rem 1.5rem;font-size:.95rem;line-height:1;
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-wa{background:var(--green);color:var(--navy);box-shadow:0 6px 18px rgba(30,191,69,.28)}
+.btn-ghost{border:1.5px solid var(--line);color:var(--navy);background:transparent}
+.btn-ghost:hover{border-color:var(--blue)}
+.btn svg{flex:0 0 auto}
+.nav .btn-wa{padding:.6rem 1.1rem;font-size:.85rem}
+.nav-toggle{
+  display:inline-flex;flex-direction:column;justify-content:center;gap:5px;
+  width:44px;height:44px;padding:10px;background:none;border:1.5px solid var(--line);
+  border-radius:10px;cursor:pointer;
+}
+.nav-toggle span{display:block;height:2px;background:var(--navy);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{
+  display:none;border-bottom:1px solid var(--line);background:var(--white);
+}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;padding:.5rem 0 1rem}
+.mobile-menu a{
+  display:block;padding:.8rem 0;text-decoration:none;font-weight:600;
+  border-bottom:1px solid rgba(2,29,73,.06);
+}
+@media (min-width:880px){
+  .nav-links{display:flex}
+  .nav-toggle{display:none}
+}
+
+/* ---------- hero ---------- */
+.hero{
+  background-color:var(--bg);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23021d49' stroke-width='1.4' stroke-linecap='round' opacity='.07'%3E%3Cpath d='M35 118V78'/%3E%3Cpath d='M35 86c-9-2-13-9-13-17 8 0 13 5 13 13'/%3E%3Cpath d='M35 86c9-2 13-9 13-17-8 0-13 5-13 13'/%3E%3Cpath d='M35 72c-8-2-12-8-12-16 8 0 12 5 12 12'/%3E%3Cpath d='M35 72c8-2 12-8 12-16-8 0-12 5-12 12'/%3E%3Cpath d='M35 58c-2-8 0-14 5-19 3 7 2 13-5 19'/%3E%3C/g%3E%3Cg fill='%23021d49' opacity='.06'%3E%3Ccircle cx='96' cy='34' r='3'/%3E%3Ccircle cx='110' cy='46' r='2.4'/%3E%3Ccircle cx='99' cy='58' r='2'/%3E%3Ccircle cx='118' cy='104' r='3'/%3E%3Ccircle cx='104' cy='116' r='2.2'/%3E%3Ccircle cx='14' cy='22' r='2.4'/%3E%3Ccircle cx='26' cy='12' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.hero-inner{
+  display:grid;gap:2.5rem;
+  padding:3.4rem 0 3.8rem;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.6rem;
+  border:1.5px solid var(--navy);border-radius:999px;
+  padding:.42rem 1rem;font-size:.68rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;background:var(--white);
+}
+.hero-badge svg{flex:0 0 auto}
+.hero h1{
+  font-family:var(--font-display);font-weight:800;
+  font-size:clamp(2.65rem,8.4vw,6.4rem);
+  line-height:.98;letter-spacing:-.035em;
+  margin:1.4rem 0 1.2rem;text-wrap:balance;
+}
+.hero h1 em{
+  font-style:normal;color:inherit;
+  background:linear-gradient(transparent 64%,rgba(103,195,223,.55) 64%);
+}
+.hero-sub{color:var(--gray);font-size:clamp(1rem,2vw,1.15rem);max-width:52ch;margin-bottom:1.8rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
+.hero-note{
+  margin-top:1.6rem;font-size:.85rem;color:var(--gray);
+  display:flex;align-items:center;gap:.5rem;
+}
+.hero-note s{opacity:.65}
+.hero-note strong{color:var(--navy)}
+
+/* pasos */
+.steps-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.6rem 1.5rem;box-shadow:0 18px 40px rgba(2,29,73,.07);
+  align-self:center;
+}
+.steps-card h2{
+  font-family:var(--font-display);font-size:1rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.1rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.steps-card h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.step{display:flex;gap:1rem;padding:.75rem 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.step-n{
+  flex:0 0 2.1rem;height:2.1rem;border-radius:50%;
+  background:var(--navy);color:var(--white);
+  font-family:var(--font-display);font-weight:700;font-size:.95rem;
+  display:grid;place-items:center;
+}
+.step p{font-size:.93rem;color:var(--gray)}
+.step p strong{color:var(--navy);display:block;font-size:.98rem}
+@media (min-width:960px){
+  .hero-inner{grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);align-items:center;padding:4.6rem 0 5rem}
+}
+
+/* ---------- especies ---------- */
+.section{padding:4.2rem 0}
+.species-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:2.2rem}
+.species-grid{
+  display:grid;gap:1rem;
+  grid-template-columns:repeat(auto-fill,minmax(255px,1fr));
+}
+.sp-card{
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.5rem 1.4rem 1.4rem;background:var(--white);
+  display:flex;flex-direction:column;gap:.9rem;
+  transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease;
+  position:relative;
+}
+.sp-card:hover{border-color:var(--blue);box-shadow:0 14px 34px rgba(2,29,73,.09);transform:translateY(-3px)}
+.sp-icon{
+  width:66px;height:66px;border-radius:16px;background:var(--bg);
+  display:grid;place-items:center;
+}
+.sp-icon svg{width:44px;height:44px;stroke:var(--navy);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.sp-icon .dot{fill:var(--navy);stroke:none}
+.sp-card h3{font-family:var(--font-display);font-size:1.3rem;font-weight:700;letter-spacing:-.01em}
+.sp-card .lines{font-size:.85rem;color:var(--gray);min-height:2.6em}
+.sp-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto}
+.btn-order{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:var(--green);color:var(--navy);font-weight:700;font-size:.88rem;
+  padding:.6rem 1.15rem;border-radius:999px;text-decoration:none;line-height:1;
+  transition:transform .15s ease;
+}
+.btn-order:hover{transform:translateY(-1px)}
+.btn-order.alt{background:transparent;border:1.5px solid var(--green);}
+.sp-tag{
+  position:absolute;top:1.1rem;right:1.1rem;
+  font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gray);
+}
+
+/* ---------- franja red ---------- */
+.band{
+  background:var(--navy);color:var(--white);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%2367addf' opacity='.10'%3E%3Ccircle cx='20' cy='30' r='2.5'/%3E%3Ccircle cx='60' cy='14' r='2'/%3E%3Ccircle cx='110' cy='40' r='3'/%3E%3Ccircle cx='84' cy='90' r='2.2'/%3E%3Ccircle cx='30' cy='110' r='2.6'/%3E%3Ccircle cx='126' cy='120' r='2'/%3E%3C/g%3E%3C/svg%3E");
+}
+.band-inner{
+  padding:3.6rem 0;display:grid;gap:1.8rem;
+}
+.band .kicker{color:var(--sky)}
+.band .kicker .num{color:var(--sky)}
+.band .kicker::after{background:rgba(103,195,223,.35)}
+.band h2{
+  font-family:var(--font-display);font-weight:800;letter-spacing:-.02em;
+  font-size:clamp(1.9rem,5vw,3.1rem);line-height:1.05;
+}
+.band p{color:#c8d6ea;max-width:58ch}
+.band-cta{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.band-cta .hint{font-size:.85rem;color:var(--sky);letter-spacing:.05em}
+@media (min-width:960px){
+  .band-inner{grid-template-columns:1.4fr 1fr;align-items:center;padding:4.4rem 0}
+  .band-cta{justify-content:flex-end}
+}
+
+/* ---------- agrotiendas ---------- */
+.stores{background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stores-grid{
+  display:grid;gap:1rem;margin-top:2.2rem;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+}
+.store-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.5rem 1.4rem;display:flex;flex-direction:column;gap:.55rem;
+}
+.store-city{font-family:var(--font-display);font-size:1.25rem;font-weight:700;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.store-new{
+  font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--sky);color:var(--navy);padding:.22rem .6rem;border-radius:999px;
+}
+.store-card .addr{font-size:.9rem;color:var(--gray)}
+.store-card .hours{
+  font-size:.8rem;color:var(--gray);display:flex;align-items:center;gap:.45rem;
+  padding-top:.35rem;
+}
+.store-card .hours svg{stroke:var(--blue)}
+.store-card .btn-order{margin-top:.9rem;align-self:flex-start}
+
+/* ---------- líneas complementarias ---------- */
+.extra-list{margin-top:2rem;border-top:1px solid var(--line)}
+.extra-item{
+  display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:baseline;
+  padding:1.5rem 0;border-bottom:1px solid var(--line);
+}
+.extra-item .n{
+  font-family:var(--font-display);font-weight:700;color:var(--navy);
+  font-size:1rem;letter-spacing:.08em;
+}
+.extra-item h3{font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:.25rem}
+.extra-item p{color:var(--gray);font-size:.95rem;max-width:62ch}
+.extra-item .go{
+  font-size:.85rem;font-weight:700;text-decoration:none;color:var(--navy);
+  border-bottom:2px solid var(--sky);padding-bottom:2px;white-space:nowrap;
+  grid-column:2;justify-self:start;
+}
+@media (min-width:760px){
+  .extra-item{grid-template-columns:5rem 1fr auto}
+  .extra-item .go{grid-column:auto;justify-self:end;align-self:center}
+}
+
+/* ---------- contacto ---------- */
+.contact-grid{display:grid;gap:1rem;margin-top:2.2rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.contact-card{
+  border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;
+  display:flex;flex-direction:column;gap:.4rem;background:var(--white);
+}
+.contact-card .lbl{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gray)}
+.contact-card .val{font-family:var(--font-display);font-weight:700;font-size:1.05rem;word-break:break-word}
+.contact-card a{text-decoration:none}
+.contact-card a:hover{color:var(--blue)}
+
+/* ---------- footer ---------- */
+.footer{background:var(--navy);color:#c8d6ea;padding:3.2rem 0 2rem}
+.footer-top{display:grid;gap:2rem;padding-bottom:2.2rem;border-bottom:1px solid rgba(103,173,223,.22)}
+.footer-word{
+  font-family:var(--font-display);font-weight:800;font-size:2rem;letter-spacing:.04em;
+  color:var(--white);line-height:1;
+}
+.footer-word span{color:var(--sky)}
+.footer p{font-size:.9rem;max-width:38ch}
+.footer h4{
+  color:var(--white);font-size:.72rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:.9rem;font-family:var(--font-display);
+}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.footer ul a{text-decoration:none;font-size:.92rem}
+.footer ul a:hover{color:var(--sky)}
+.social-row{display:flex;gap:.8rem;margin-top:1rem}
+.social-row a{
+  width:42px;height:42px;border:1.5px solid rgba(103,173,223,.4);border-radius:50%;
+  display:grid;place-items:center;transition:border-color .15s ease,background .15s ease;
+}
+.social-row a:hover{border-color:var(--sky);background:rgba(103,195,223,.12)}
+.social-row svg{fill:#c8d6ea}
+.footer-bottom{
+  padding-top:1.6rem;display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;
+  font-size:.78rem;color:#8fa5c4;
+}
+.footer-bottom a{color:var(--sky);text-decoration:none}
+.footer-bottom a:hover{text-decoration:underline}
+@media (min-width:880px){
+  .footer-top{grid-template-columns:1.4fr 1fr 1fr}
+}
+
+/* ---------- FAB whatsapp ---------- */
+.wa-fab{
+  position:fixed;right:1.1rem;bottom:1.1rem;z-index:80;
+  width:60px;height:60px;border-radius:50%;
+  background:var(--green);display:grid;place-items:center;
+  box-shadow:0 10px 26px rgba(30,191,69,.42);
+  transition:transform .15s ease;
+}
+.wa-fab:hover{transform:scale(1.06)}
+.wa-fab svg{width:32px;height:32px;fill:var(--navy)}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none}
+}
+</style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#inicio" class="nav-logo" aria-label="MERSAN — inicio">
+      <img src="./assets/mersan-logo.png" alt="MERSAN" width="180" height="27">
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#especies">Pide por especie</a></li>
+        <li><a href="#red">Únete a la red</a></li>
+        <li><a href="#agrotiendas">Agrotiendas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex;align-items:center;gap:.7rem">
+      <a class="btn btn-wa" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20hacer%20un%20pedido%20de%20alimento%20balanceado." target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5 0-1.1.2-3.7-.8-3.1-1.2-5.1-4.4-5.3-4.6-.1-.2-1.2-1.7-1.2-3.2s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2.1.9 2.2.1.2.1.4 0 .6l-.4.6c-.2.2-.4.4-.2.8.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1-1.1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.3 1.2Z"/></svg>
+        Pedir ahora
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="menu-movil">
+    <div class="container">
+      <ul>
+        <li><a href="#especies">Pide por especie</a></li>
+        <li><a href="#red">Únete a la red</a></li>
+        <li><a href="#agrotiendas">Agrotiendas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#021d49" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21V8"/><path d="M12 12c-3.5-.8-5-3-5-6 3 0 5 2 5 5"/><path d="M12 12c3.5-.8 5-3 5-6-3 0-5 2-5 5"/></svg>
+        50 años alimentando al campo venezolano
+      </span>
+      <h1>El alimento de tu granja, <em>pedido en un mensaje.</em></h1>
+      <p class="hero-sub">Alimentos balanceados MERSAN para cada especie, fabricados en nuestra planta de Tinaquillo y disponibles en nuestra red de agrotiendas: Maracaibo, San Carlos, Maracay y Valencia.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-wa" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20hacer%20un%20pedido%20de%20alimento%20balanceado." target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5 0-1.1.2-3.7-.8-3.1-1.2-5.1-4.4-5.3-4.6-.1-.2-1.2-1.7-1.2-3.2s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2.1.9 2.2.1.2.1.4 0 .6l-.4.6c-.2.2-.4.4-.2.8.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1-1.1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.3 1.2Z"/></svg>
+          Pedir por WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#especies">Ver el catálogo por especie</a>
+      </div>
+      <p class="hero-note"><s>Formulario web que responde mañana.</s> <strong>Un mensaje, y listo.</strong></p>
+    </div>
+    <aside class="steps-card reveal" aria-label="Cómo pedir">
+      <h2>Así de fácil</h2>
+      <div class="step">
+        <span class="step-n">1</span>
+        <p><strong>Elige tu especie</strong>Aves, cerdos, bovinos, ovinos, equinos, conejos o caninos.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">2</span>
+        <p><strong>Envía el mensaje</strong>El pedido llega prellenado a nuestro WhatsApp. Sin formularios.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">3</span>
+        <p><strong>Retira o coordina despacho</strong>En la agrotienda más cercana o directo con nuestro equipo.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ ESPECIES ============ -->
+<section class="section" id="especies">
+  <div class="container">
+    <div class="species-head reveal">
+      <div>
+        <p class="kicker"><span class="num">01</span> Catálogo</p>
+        <h2 class="section-title">Pide por especie</h2>
+        <p class="section-sub">Toca «Pedir» y el mensaje sale armado con tu línea de alimento. Nuestro equipo te confirma presentación, disponibilidad y precio del día.</p>
+      </div>
+    </div>
+    <div class="species-grid">
+
+      <!-- AVES -->
+      <article class="sp-card reveal">
+        <span class="sp-tag">2 líneas</span>
+        <div class="sp-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M27 15c1-4 5-6 8-5-2 2-2 3-1 5 3-2 6-1 7 1-2 1-3 2-4 3"/>
+            <path d="M24 27c1-7 7-12 14-11 6 1 10 6 10 12 0 8-6 14-14 14-4 0-8-2-10-5"/>
+            <path d="M47 27l7 3-7 3"/>
+            <path d="M38 42c0 3-1 5-3 6"/>
+            <path d="M24 27c-4 5-4 11 0 15"/>
+            <path d="M30 48v7M37 47v8"/>
+            <circle class="dot" cx="39" cy="25" r="1.8"/>
+          </svg>
+        </div>
+        <h3>Aves</h3>
+        <p class="lines">Línea de engorde y línea ponedora, para cada etapa del lote.</p>
+        <div class="sp-actions">
+          <a class="btn-order" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20pedir%20alimento%20para%20aves%20de%20engorde." target="_blank" rel="noopener">Pedir engorde</a>
+          <a class="btn-order alt" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20pedir%20alimento%20para%20aves%20ponedoras." target="_blank" rel="noopener">Pedir ponedora</a>
+        </div>
+      </article>
+
+      <!-- CERDOS -->
+      <article class="sp-card reveal">
+        <div class="sp-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M19 21c-3-5-1-10 4-11 1 3 1 6-1 9"/>
+            <path d="M45 21c3-5 1-10-4-11-1 3-1 6 1 9"/>
+            <path d="M16 32c0-9 7-16 16-16s16 7 16 16-7 17-16 17-16-8-16-17z"/>
+            <ellipse cx="32" cy="37" rx="7.5" ry="5.5"/>
+            <circle class="dot" cx="29" cy="37" r="1.4"/>
+            <circle class="dot" cx="35" cy="37" r="1.4"/>
+            <circle class="dot" cx="24.5" cy="26.5" r="1.7"/>
+            <circle class="dot" cx="39.5" cy="26.5" r="1.7"/>
+          </svg>
+        </div>
+        <h3>Cerdos</h3>
+        <p class="lines">Crecimiento y desarrollo para todas las fases de la piara.</p>
+        <div class="sp-actions">
+          <a class="btn-order" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20pedir%20alimento%20para%20cerdos." target="_blank" rel="noopener">Pedir</a>
+        </div>
+      </article>
+
+      <!-- BOVINOS -->
+      <article class="sp-card reveal">
+        <div class="sp-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M17 16c-3-5 0-10 5-10 0 4-1 7-3 9"/>
+            <path d="M47 16c3-5 0-10-5-10 0 4 1 7 3 9"/>
+            <path d="M13 25c-4 0-6 3-5 6 3 1 6 0 8-2"/>
+            <path d="M51 25c4 0 6 3 5 6-3 1-6 0-8-2"/>
+            <path d="M21 15c3-3 7-4 11-4s8 1 11 4c2 3 3 8 2 12l-2 8c-1 6-5 11-11 11s-10-5-11-11l-2-8c-1-4 0-9 2-12z"/>
+            <path d="M24 37h16"/>
+            <circle class="dot" cx="27.5" cy="42.5" r="1.6"/>
+            <circle class="dot" cx="36.5" cy="42.5" r="1.6"/>
+            <circle class="dot" cx="25.5" cy="27" r="1.7"/>
+            <circle class="dot" cx="38.5" cy="27" r="1.7"/>
+          </svg>
+        </div>
+        <h3>Bovinos</h3>
+        <p class="lines">Carne y leche: nutrición para levante, ceba y ordeño.</p>
+        <div class="sp-actions">
+          <a class="btn-order" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20pedir%20alimento%20para%20bovinos." target="_blank" rel="noopener">Pedir</a>
+        </div>
+      </article>
+
+      <!-- OVINOS -->
+      <article class="sp-card reveal">
+        <div class="sp-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M18 22c-3-1-4-5-1-7-1-3 2-6 5-5 1-3 5-4 7-2 2-3 6-3 8 0 3-2 7-1 7 2 3-1 5 2 4 5 3 2 2 6-1 7"/>
+            <path d="M18 24c-4 0-7 2-7 5 2 2 6 2 8 0"/>
+            <path d="M46 24c4 0 7 2 7 5-2 2-6 2-8 0"/>
+            <path d="M22 22c2-3 6-5 10-5s8 2 10 5c2 5 0 13-3 17-2 3-4 5-7 5s-5-2-7-5c-3-4-5-12-3-17z"/>
+            <circle class="dot" cx="27" cy="29" r="1.6"/>
+            <circle class="dot" cx="37" cy="29" r="1.6"/>
+            <path d="M30 37h4l-2 2.5z"/>
+          </svg>
+        </div>
+        <h3>Ovinos</h3>
+        <p class="lines">Rebaños sanos con la energía y fibra que exige el trópico.</p>
+        <div class="sp-actions">
+          <a class="btn-order" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20pedir%20alimento%20para%20ovinos." target="_blank" rel="noopener">Pedir</a>
+        </div>
+      </article>
+
+      <!-- EQUINOS -->
+      <article class="sp-card reveal">
+        <div class="sp-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M30 12l4-7 4 6"/>
+            <path d="M27 14c7-4 14-1 16 6 1 4 4 8 7 11 2 2 1 5-2 6l-6 2c-1 5-6 9-11 9-8 0-13-6-13-13 0-9 3-17 9-21z"/>
+            <path d="M28 14c-4 5-7 11-7 17"/>
+            <circle class="dot" cx="39" cy="26" r="1.8"/>
+            <circle class="dot" cx="45" cy="35" r="1.5"/>
+          </svg>
+        </div>
+        <h3>Equinos</h3>
+        <p class="lines">Rendimiento y pelaje: alimento para caballos de trabajo y cría.</p>
+        <div class="sp-actions">
+          <a class="btn-order" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20pedir%20alimento%20para%20equinos." target="_blank" rel="noopener">Pedir</a>
+        </div>
+      </article>
+
+      <!-- CONEJOS -->
+      <article class="sp-card reveal">
+        <div class="sp-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M25 26c-4-7-4-15 0-19 4 3 6 10 5 17"/>
+            <path d="M39 26c4-7 4-15 0-19-4 3-6 10-5 17"/>
+            <path d="M20 35c0-7 5-12 12-12s12 5 12 12-5 15-12 15-12-8-12-15z"/>
+            <circle class="dot" cx="27" cy="35" r="1.6"/>
+            <circle class="dot" cx="37" cy="35" r="1.6"/>
+            <path d="M30 41h4l-2 2.5z"/>
+            <path d="M32 43.5v3"/>
+          </svg>
+        </div>
+        <h3>Conejos</h3>
+        <p class="lines">Cunicultura productiva: crecimiento parejo y buena conversión.</p>
+        <div class="sp-actions">
+          <a class="btn-order" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20pedir%20alimento%20para%20conejos." target="_blank" rel="noopener">Pedir</a>
+        </div>
+      </article>
+
+      <!-- CANINOS -->
+      <article class="sp-card reveal">
+        <div class="sp-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M18 19c-5 2-7 9-5 15 3 1 6-1 7-4"/>
+            <path d="M46 19c5 2 7 9 5 15-3 1-6-1-7-4"/>
+            <path d="M20 17c3-4 8-6 12-6s9 2 12 6c2 3 3 7 2 11-1 8-6 16-14 16s-13-8-14-16c-1-4 0-8 2-11z"/>
+            <path d="M29.5 35h5l-2.5 3z"/>
+            <path d="M32 38v4"/>
+            <path d="M32 42c-1.5 2-3.5 2.2-5 1M32 42c1.5 2 3.5 2.2 5 1"/>
+            <circle class="dot" cx="26" cy="27" r="1.7"/>
+            <circle class="dot" cx="38" cy="27" r="1.7"/>
+          </svg>
+        </div>
+        <h3>Caninos</h3>
+        <p class="lines">Alimento completo para los guardianes de la finca y de la casa.</p>
+        <div class="sp-actions">
+          <a class="btn-order" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20pedir%20alimento%20para%20caninos." target="_blank" rel="noopener">Pedir</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FRANJA RED ============ -->
+<section class="band" id="red">
+  <div class="container band-inner">
+    <div class="reveal">
+      <p class="kicker"><span class="num">02</span> Red MERSAN</p>
+      <h2>¿Productor o distribuidor? Únete a la red.</h2>
+      <p>Atendemos desde el productor pequeño en nuestras agrotiendas hasta el mediano y grande en nuestros agrocentros. Si tienes un negocio agropecuario y quieres distribuir MERSAN en tu zona, hablemos.</p>
+    </div>
+    <div class="band-cta reveal">
+      <a class="btn btn-wa" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20informaci%C3%B3n%20para%20unirme%20a%20su%20red%20de%20distribuci%C3%B3n." target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5 0-1.1.2-3.7-.8-3.1-1.2-5.1-4.4-5.3-4.6-.1-.2-1.2-1.7-1.2-3.2s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2.1.9 2.2.1.2.1.4 0 .6l-.4.6c-.2.2-.4.4-.2.8.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1-1.1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.3 1.2Z"/></svg>
+        Quiero distribuir MERSAN
+      </a>
+      <span class="hint">Respaldo de Grupo Merino · Planta en Tinaquillo, Cojedes</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AGROTIENDAS ============ -->
+<section class="section stores" id="agrotiendas">
+  <div class="container">
+    <div class="reveal">
+      <p class="kicker"><span class="num">03</span> Dónde comprar</p>
+      <h2 class="section-title">Nuestras agrotiendas</h2>
+      <p class="section-sub">Retira tu pedido o compra directo en la tienda de tu zona. Escríbenos y te confirmamos disponibilidad antes de que salgas de la granja.</p>
+    </div>
+    <div class="stores-grid">
+      <article class="store-card reveal">
+        <h3 class="store-city">Maracaibo</h3>
+        <p class="addr">Av. Los Haticos #258, Maracaibo, Zulia.</p>
+        <p class="hours">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Lun – Sáb, horario comercial
+        </p>
+        <a class="btn-order" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20hacer%20un%20pedido%20en%20la%20agrotienda%20de%20Maracaibo." target="_blank" rel="noopener">Pedir en Maracaibo</a>
+      </article>
+      <article class="store-card reveal">
+        <h3 class="store-city">San Carlos</h3>
+        <p class="addr">San Carlos, estado Cojedes — a minutos de nuestra planta de Tinaquillo.</p>
+        <p class="hours">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Lun – Sáb, horario comercial
+        </p>
+        <a class="btn-order" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20hacer%20un%20pedido%20en%20la%20agrotienda%20de%20San%20Carlos." target="_blank" rel="noopener">Pedir en San Carlos</a>
+      </article>
+      <article class="store-card reveal">
+        <h3 class="store-city">Maracay <span class="store-new">Nueva sede</span></h3>
+        <p class="addr">Maracay, estado Aragua — llegamos en 2025 para atender el centro del país.</p>
+        <p class="hours">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Lun – Sáb, horario comercial
+        </p>
+        <a class="btn-order" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20hacer%20un%20pedido%20en%20la%20nueva%20sede%20de%20Maracay." target="_blank" rel="noopener">Pedir en Maracay</a>
+      </article>
+      <article class="store-card reveal">
+        <h3 class="store-city">Valencia</h3>
+        <p class="addr">Valencia, estado Carabobo — presencia MERSAN para la región central.</p>
+        <p class="hours">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Lun – Sáb, horario comercial
+        </p>
+        <a class="btn-order" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20hacer%20un%20pedido%20en%20Valencia." target="_blank" rel="noopener">Pedir en Valencia</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LÍNEAS COMPLEMENTARIAS ============ -->
+<section class="section" id="lineas">
+  <div class="container">
+    <div class="reveal">
+      <p class="kicker"><span class="num">04</span> Más que alimento</p>
+      <h2 class="section-title">Líneas complementarias</h2>
+      <p class="section-sub">Todo lo que tu producción necesita, en la misma parada.</p>
+    </div>
+    <div class="extra-list">
+      <div class="extra-item reveal">
+        <span class="n">4.1</span>
+        <div>
+          <h3>Materias primas</h3>
+          <p>Insumos para productores que formulan en finca: la base de una buena ración, con el respaldo de nuestra planta.</p>
+        </div>
+        <a class="go" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20consultar%20por%20materias%20primas." target="_blank" rel="noopener">Consultar →</a>
+      </div>
+      <div class="extra-item reveal">
+        <span class="n">4.2</span>
+        <div>
+          <h3>Bioseguridad</h3>
+          <p>Productos para proteger tu galpón, tu cochinera y tu rebaño. Prevenir siempre sale más barato que curar.</p>
+        </div>
+        <a class="go" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20consultar%20por%20productos%20de%20bioseguridad." target="_blank" rel="noopener">Consultar →</a>
+      </div>
+      <div class="extra-item reveal">
+        <span class="n">4.3</span>
+        <div>
+          <h3>Medicina veterinaria</h3>
+          <p>Línea veterinaria disponible en nuestras agrotiendas, para acompañar la sanidad de tu producción.</p>
+        </div>
+        <a class="go" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20consultar%20por%20medicina%20veterinaria." target="_blank" rel="noopener">Consultar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="section" id="contacto" style="padding-top:0">
+  <div class="container">
+    <div class="reveal">
+      <p class="kicker"><span class="num">05</span> Contacto</p>
+      <h2 class="section-title">Escríbenos</h2>
+      <p class="section-sub">Cincuenta años de trabajo serio desde Tinaquillo. Estamos a un mensaje de distancia.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <span class="lbl">WhatsApp</span>
+        <span class="val"><a href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20hacer%20un%20pedido%20de%20alimento%20balanceado." target="_blank" rel="noopener">+58 424-456-5819</a></span>
+      </div>
+      <div class="contact-card reveal">
+        <span class="lbl">Planta principal</span>
+        <span class="val">Tinaquillo, estado Cojedes</span>
+      </div>
+      <div class="contact-card reveal">
+        <span class="lbl">Instagram</span>
+        <span class="val"><a href="https://instagram.com/mersan.ve" target="_blank" rel="noopener">@mersan.ve</a></span>
+      </div>
+      <div class="contact-card reveal">
+        <span class="lbl">Facebook</span>
+        <span class="val"><a href="https://facebook.com/mersan.com.ve" target="_blank" rel="noopener">mersan.com.ve</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <p class="footer-word">MERSAN<span>.</span></p>
+        <p style="margin-top:1rem">Fabricante venezolano de alimentos balanceados. 50 años alimentando al campo, desde Tinaquillo, Cojedes. Una empresa de Grupo Merino.</p>
+        <div class="social-row">
+          <a href="https://instagram.com/mersan.ve" target="_blank" rel="noopener" aria-label="Instagram de MERSAN">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1Zm0 1.8c-3.1 0-3.5 0-4.8.1-1.1.1-1.5.2-1.9.3-.5.2-.8.4-1.1.7-.3.3-.6.6-.7 1.1-.1.4-.3.8-.3 1.9-.1 1.3-.1 1.7-.1 4.8s0 3.5.1 4.8c.1 1.1.2 1.5.3 1.9.2.5.4.8.7 1.1.3.3.6.6 1.1.7.4.1.8.3 1.9.3 1.3.1 1.7.1 4.8.1s3.5 0 4.8-.1c1.1-.1 1.5-.2 1.9-.3.5-.2.8-.4 1.1-.7.3-.3.6-.6.7-1.1.1-.4.3-.8.3-1.9.1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.1-1.1-.2-1.5-.3-1.9-.2-.5-.4-.8-.7-1.1-.3-.3-.6-.6-1.1-.7-.4-.1-.8-.3-1.9-.3-1.3-.1-1.7-.1-4.8-.1Zm0 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Zm5.2-3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>
+          </a>
+          <a href="https://facebook.com/mersan.com.ve" target="_blank" rel="noopener" aria-label="Facebook de MERSAN">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.6V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.3H7.6V13h2.7v8h3.2Z"/></svg>
+          </a>
+          <a href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20hacer%20un%20pedido%20de%20alimento%20balanceado." target="_blank" rel="noopener" aria-label="WhatsApp de MERSAN">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5 0-1.1.2-3.7-.8-3.1-1.2-5.1-4.4-5.3-4.6-.1-.2-1.2-1.7-1.2-3.2s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2.1.9 2.2.1.2.1.4 0 .6l-.4.6c-.2.2-.4.4-.2.8.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1-1.1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.3 1.2Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Especies</h4>
+        <ul>
+          <li><a href="#especies">Aves — engorde y ponedora</a></li>
+          <li><a href="#especies">Cerdos y bovinos</a></li>
+          <li><a href="#especies">Ovinos y equinos</a></li>
+          <li><a href="#especies">Conejos y caninos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Red MERSAN</h4>
+        <ul>
+          <li><a href="#agrotiendas">Agrotienda Maracaibo</a></li>
+          <li><a href="#agrotiendas">Agrotienda San Carlos</a></li>
+          <li><a href="#agrotiendas">Nueva sede Maracay</a></li>
+          <li><a href="#agrotiendas">Valencia</a></li>
+          <li><a href="#red">Únete como distribuidor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MERSAN · Grupo Merino · Tinaquillo, Cojedes, Venezuela</span>
+      <span>Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FAB WHATSAPP ============ -->
+<a class="wa-fab" href="https://wa.me/584244565819?text=Hola%20MERSAN%2C%20quiero%20hacer%20un%20pedido%20de%20alimento%20balanceado." target="_blank" rel="noopener" aria-label="Pedir por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5 0-1.1.2-3.7-.8-3.1-1.2-5.1-4.4-5.3-4.6-.1-.2-1.2-1.7-1.2-3.2s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2.1.9 2.2.1.2.1.4 0 .6l-.4.6c-.2.2-.4.4-.2.8.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1-1.1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.3 1.2Z"/></svg>
+</a>
+
+<script>
+(function(){
+  // Menú móvil
+  var toggle=document.querySelector('.nav-toggle');
+  var menu=document.getElementById('menu-movil');
+  toggle.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+    toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  // Reveal on scroll (respeta prefers-reduced-motion)
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items=document.querySelectorAll('.reveal');
+  if(reduced||!('IntersectionObserver' in window)){
+    items.forEach(function(el){el.classList.add('in')});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+    });
+  },{threshold:.12});
+  items.forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>

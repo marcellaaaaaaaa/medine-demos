@@ -1,0 +1,231 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - link "Distribuidora SMD — inicio" [ref=f3e4] [cursor=pointer]:
+        - /url: "#"
+        - img "Distribuidora SMD" [ref=f3e5]
+      - link "Cotiza al mayor" [ref=f3e6] [cursor=pointer]:
+        - /url: https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor
+      - button "Abrir menú" [ref=f3e7] [cursor=pointer]
+  - generic [ref=f3e12]:
+    - paragraph [ref=f3e13]: Mayorista de lubricantes · 40 años en Carabobo
+    - heading [level=1] [ref=f3e14]:
+      - text: Las marcas que mueven a
+      - emphasis [ref=f3e15]: Venezuela
+      - text: ", en un solo distribuidor."
+    - paragraph [ref=f3e16]: Distribuidora SMD, C.A. — cuatro décadas surtiendo talleres, flotas e industria desde la Zona Industrial Castillito, San Diego. Venta al mayor y detal, con despacho serio y precio de distribuidor.
+    - generic [ref=f3e17]:
+      - link "Cotiza al mayor" [ref=f3e18] [cursor=pointer]:
+        - /url: https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor
+      - link "Ver las marcas" [ref=f3e19] [cursor=pointer]:
+        - /url: "#marcas"
+    - generic [ref=f3e20]:
+      - generic [ref=f3e21]:
+        - generic [ref=f3e22]: 40 años
+        - text: De trayectoria
+      - generic [ref=f3e23]:
+        - generic [ref=f3e24]: 6 marcas
+        - text: Distribución exclusiva
+      - generic [ref=f3e25]:
+        - generic [ref=f3e26]: 8 segmentos
+        - text: De lubricación
+      - generic [ref=f3e27]:
+        - generic [ref=f3e28]: Mayor y detal
+        - text: Modalidad de venta
+  - generic [ref=f3e30]:
+    - generic [ref=f3e31]:
+      - generic [ref=f3e32]: "01"
+      - heading "El muro de marcas" [level=2] [ref=f3e33]
+      - paragraph [ref=f3e34]: "Nuestro verdadero activo: distribución exclusiva de seis casas de lubricación."
+    - generic [ref=f3e35]:
+      - article [ref=f3e36]:
+        - generic [ref=f3e37]: Distribuidor exclusivo
+        - paragraph [ref=f3e38]: LMV
+        - paragraph [ref=f3e39]: Lubricantes para automotriz liviano, pesado e industrial.
+      - article [ref=f3e40]:
+        - generic [ref=f3e41]: Distribuidor exclusivo
+        - paragraph [ref=f3e42]: KRS
+        - paragraph [ref=f3e43]: Línea de lubricación para motor y transmisión.
+      - article [ref=f3e44]:
+        - generic [ref=f3e45]: Distribuidor exclusivo
+        - paragraph [ref=f3e46]: Gulf
+        - paragraph [ref=f3e47]: Para toda Venezuela, en todas sus presentaciones.
+      - article [ref=f3e48]:
+        - generic [ref=f3e49]: Distribuidor exclusivo
+        - paragraph [ref=f3e50]: Cardoc
+        - paragraph [ref=f3e51]: Lubricantes y grasas de tradición venezolana.
+      - article [ref=f3e52]:
+        - generic [ref=f3e53]: Distribuidor exclusivo
+        - paragraph [ref=f3e54]: Samoa
+        - paragraph [ref=f3e55]: "Equipos de lubricación: bombas neumáticas y enrolladores de manguera."
+      - article [ref=f3e56]:
+        - generic [ref=f3e57]: Distribuidor exclusivo
+        - paragraph [ref=f3e58]: Rodanol
+        - paragraph [ref=f3e59]: Lubricantes para el sector automotriz e industrial.
+    - generic [ref=f3e60]:
+      - paragraph [ref=f3e61]: También distribuimos
+      - generic [ref=f3e62]:
+        - generic [ref=f3e63]:
+          - text: Castrol Marine
+          - generic [ref=f3e64]: Línea marina
+        - generic [ref=f3e65]:
+          - text: Celta
+          - generic [ref=f3e66]: Lubricantes
+        - generic [ref=f3e67]:
+          - text: Perfect
+          - generic [ref=f3e68]: Amortiguadores
+        - generic [ref=f3e69]:
+          - text: A1
+          - generic [ref=f3e70]: Filtros
+        - generic [ref=f3e71]:
+          - text: Eclipse
+          - generic [ref=f3e72]: Pilas de gasolina
+  - generic [ref=f3e74]:
+    - generic [ref=f3e75]:
+      - generic [ref=f3e76]: "02"
+      - heading "Cobertura total de lubricación" [level=2] [ref=f3e77]
+      - paragraph [ref=f3e78]: Un solo proveedor para cada punto de fricción de tu operación.
+    - generic [ref=f3e79]:
+      - generic [ref=f3e80]:
+        - generic [ref=f3e81]: A/01
+        - text: Automotriz liviano
+      - generic [ref=f3e82]:
+        - generic [ref=f3e83]: A/02
+        - text: Servicio pesado
+      - generic [ref=f3e84]:
+        - generic [ref=f3e85]: A/03
+        - text: Industrial
+      - generic [ref=f3e86]:
+        - generic [ref=f3e87]: A/04
+        - text: Marino
+      - generic [ref=f3e88]:
+        - generic [ref=f3e89]: A/05
+        - text: Motos
+      - generic [ref=f3e90]:
+        - generic [ref=f3e91]: A/06
+        - text: Grasas
+      - generic [ref=f3e92]:
+        - generic [ref=f3e93]: A/07
+        - text: Refrigerantes
+      - generic [ref=f3e94]:
+        - generic [ref=f3e95]: A/08
+        - text: Líquido de frenos
+    - paragraph [ref=f3e96]:
+      - strong [ref=f3e97]: Venta al mayor y detal.
+      - text: Arma tu pedido combinando marcas, viscosidades y presentaciones — cotizamos por WhatsApp en horario de oficina.
+  - generic [ref=f3e99]:
+    - generic [ref=f3e100]:
+      - generic [ref=f3e101]: "03"
+      - heading "Atendemos tu negocio" [level=2] [ref=f3e102]
+      - paragraph [ref=f3e103]: Cuarenta años despachando a quienes viven de esto.
+    - generic [ref=f3e104]:
+      - article [ref=f3e105]:
+        - text: B/01
+        - heading "Talleres y lubricentros" [level=3] [ref=f3e106]
+        - paragraph [ref=f3e107]: Surtido completo de aceites, filtros y grasas al precio del mayorista, para que tu servicio nunca se detenga por falta de producto.
+      - article [ref=f3e108]:
+        - text: B/02
+        - heading "Flotas" [level=3] [ref=f3e109]
+        - paragraph [ref=f3e110]: "Lubricación de servicio pesado y liviano para flotas de transporte y reparto: una sola cotización, todas las marcas."
+      - article [ref=f3e111]:
+        - text: B/03
+        - heading "Industria" [level=3] [ref=f3e112]
+        - paragraph [ref=f3e113]: Lubricantes industriales, grasas y equipos de lubricación Samoa para plantas y maquinaria en producción continua.
+    - generic [ref=f3e114]:
+      - paragraph [ref=f3e115]: ¿Compras por volumen? Hablemos de precio.
+      - link "Habla con ventas" [ref=f3e116] [cursor=pointer]:
+        - /url: https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor
+  - generic [ref=f3e118]:
+    - generic [ref=f3e119]:
+      - paragraph [ref=f3e120]: Equipos de lubricación
+      - 'heading "No solo el aceite: también el equipo para moverlo." [level=2] [ref=f3e121]'
+      - paragraph [ref=f3e122]: Como distribuidores exclusivos de Samoa, equipamos tu taller o planta con sistemas profesionales de lubricación.
+      - list [ref=f3e123]:
+        - listitem [ref=f3e124]:
+          - generic [ref=f3e128]:
+            - generic [ref=f3e129]: Bombas neumáticas
+            - text: Trasiego de aceites y grasas con presión constante para servicio continuo.
+        - listitem [ref=f3e130]:
+          - generic [ref=f3e135]:
+            - generic [ref=f3e136]: Enrolladores de manguera
+            - text: Puestos de lubricación ordenados y seguros en cada bahía de servicio.
+    - generic [ref=f3e137]:
+      - generic [ref=f3e138]: Distribuidor exclusivo
+      - paragraph [ref=f3e139]: Samoa
+      - paragraph [ref=f3e140]: Equipos profesionales de lubricación para talleres, lubricentros e industria.
+  - generic [ref=f3e142]:
+    - generic [ref=f3e143]:
+      - generic [ref=f3e144]: "04"
+      - heading "Dónde estamos" [level=2] [ref=f3e145]
+      - paragraph [ref=f3e146]: Zona Industrial Castillito — a la orden de lunes a viernes.
+    - generic [ref=f3e147]:
+      - generic [ref=f3e148]:
+        - heading "Dirección y contacto" [level=3] [ref=f3e149]
+        - generic [ref=f3e150]:
+          - generic [ref=f3e151]: Distribuidora SMD, C.A. Zona Industrial Castillito, Av. 64 Nº 97-320, San Diego, estado Carabobo.
+          - generic [ref=f3e152]:
+            - text: "WhatsApp:"
+            - link "0414-420-7346" [ref=f3e153] [cursor=pointer]:
+              - /url: https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor
+            - text: "Teléfono:"
+            - link "0424-438-7958" [ref=f3e154] [cursor=pointer]:
+              - /url: tel:+584244387958
+            - text: "Correo:"
+            - link "lubricantessmd@gmail.com" [ref=f3e155] [cursor=pointer]:
+              - /url: mailto:lubricantessmd@gmail.com
+            - text: "Instagram:"
+            - link "@lubricantes_smd" [ref=f3e156] [cursor=pointer]:
+              - /url: https://instagram.com/lubricantes_smd
+        - link "Escríbenos por WhatsApp" [ref=f3e157] [cursor=pointer]:
+          - /url: https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor
+      - generic [ref=f3e158]:
+        - heading "Horario" [level=3] [ref=f3e159]
+        - generic [ref=f3e160]:
+          - generic [ref=f3e161]:
+            - generic [ref=f3e162]: Lunes a viernes
+            - generic [ref=f3e163]: 8:00 a. m. – 12:00 m.
+          - generic [ref=f3e164]: 1:00 p. m. – 5:00 p. m.
+          - generic [ref=f3e167]:
+            - generic [ref=f3e168]: Sábado y domingo
+            - generic [ref=f3e169]: Cerrado
+          - paragraph [ref=f3e170]: Recibimos pedidos por WhatsApp en cualquier momento y los procesamos en horario de oficina.
+  - contentinfo [ref=f3e171]:
+    - generic [ref=f3e172]:
+      - generic [ref=f3e173]:
+        - generic [ref=f3e174]:
+          - img "Distribuidora SMD" [ref=f3e175]
+          - paragraph [ref=f3e176]: Mayorista de lubricantes con 40 años de trayectoria en Carabobo. Distribuidores exclusivos de LMV, KRS, Gulf, Cardoc, Samoa y Rodanol.
+          - generic [ref=f3e177]:
+            - link "Instagram de Distribuidora SMD" [ref=f3e178] [cursor=pointer]:
+              - /url: https://instagram.com/lubricantes_smd
+            - link "WhatsApp de Distribuidora SMD" [ref=f3e183] [cursor=pointer]:
+              - /url: https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor
+        - generic [ref=f3e187]:
+          - paragraph [ref=f3e188]: Contacto
+          - list [ref=f3e189]:
+            - listitem [ref=f3e190]:
+              - link "WhatsApp 0414-420-7346" [ref=f3e191] [cursor=pointer]:
+                - /url: https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor
+            - listitem [ref=f3e192]:
+              - link "0424-438-7958" [ref=f3e193] [cursor=pointer]:
+                - /url: tel:+584244387958
+            - listitem [ref=f3e194]:
+              - link "lubricantessmd@gmail.com" [ref=f3e195] [cursor=pointer]:
+                - /url: mailto:lubricantessmd@gmail.com
+            - listitem [ref=f3e196]: Lun–Vie · 8 a 12 / 1 a 5
+        - generic [ref=f3e197]:
+          - paragraph [ref=f3e198]: Ubicación
+          - list [ref=f3e199]:
+            - listitem [ref=f3e200]: Zona Industrial Castillito
+            - listitem [ref=f3e201]: Av. 64 Nº 97-320
+            - listitem [ref=f3e202]: San Diego, Carabobo
+            - listitem [ref=f3e203]: Venezuela
+      - generic [ref=f3e204]:
+        - generic [ref=f3e205]: © Distribuidora SMD, C.A. · RIF y datos fiscales disponibles en tienda.
+        - generic [ref=f3e206]:
+          - text: Demo diseñada por
+          - link "Medine.tech" [ref=f3e207] [cursor=pointer]:
+            - /url: https://medine.tech
+          - text: · Esta es una propuesta de diseño — no es el sitio oficial.
+  - link "Cotizar por WhatsApp" [ref=f3e208] [cursor=pointer]:
+    - /url: https://wa.me/584144207346?text=Hola%20Distribuidora%20SMD%2C%20quiero%20cotizar%20lubricantes%20al%20mayor

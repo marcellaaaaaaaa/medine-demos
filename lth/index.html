@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>LTH Venezuela — Baterías LTH | La Garantía Más Larga de Venezuela</title>
+<meta name="description" content="Único distribuidor autorizado de Baterías LTH en Venezuela. Tecnología PowerFrame. Diagnóstico, venta e instalación en nuestras 3 sedes de Caracas: Catia, Quinta Crespo y La Urbina.">
+<meta property="og:title" content="LTH Venezuela — La Garantía Más Larga de Venezuela">
+<meta property="og:description" content="Único distribuidor autorizado de Baterías LTH en Venezuela. Diagnóstico, venta e instalación en Catia, Quinta Crespo y La Urbina. El Alma de tu Automóvil.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_VE">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='4' y='4' width='92' height='92' rx='22' fill='%23E30613'/><text x='50' y='68' font-size='46' font-weight='900' font-family='Arial' font-style='italic' fill='white' text-anchor='middle'>LTH</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#E30613;
+  --black:#141414;
+  --ink:#0D0D0D;
+  --surface:#2A2A2A;
+  --card:#1D1D1D;
+  --line:rgba(255,255,255,.1);
+  --txt:#FFFFFF;
+  --muted:#B9B9B9;
+  --wa:#25D366;
+  --disp:"Barlow Condensed",Arial,sans-serif;
+  --body:"Inter",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  font-family:var(--body);
+  background:var(--black);
+  color:var(--txt);
+  line-height:1.6;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:2px}
+.btn-wa:focus-visible,.btn-dark:focus-visible{outline-color:#fff}
+.skip{position:absolute;left:-999px;top:0;background:var(--red);color:#fff;padding:.6rem 1rem;z-index:200;font-weight:700}
+.skip:focus{left:0}
+
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+
+/* ---------- utilidades de sistema gráfico ---------- */
+.eyebrow{
+  display:flex;align-items:center;gap:.65rem;
+  font-family:var(--disp);font-weight:700;font-size:.95rem;
+  letter-spacing:.28em;text-transform:uppercase;color:#fff;
+}
+.eyebrow::before{content:"";width:34px;height:4px;background:var(--red);transform:skewX(-20deg);flex:none}
+.secnum{
+  font-family:var(--disp);font-weight:900;font-style:italic;
+  font-size:clamp(4.2rem,9vw,7.5rem);line-height:.8;
+  color:transparent;-webkit-text-stroke:2px rgba(227,6,19,.65);
+  user-select:none;
+}
+.h2{
+  font-family:var(--disp);font-weight:800;text-transform:uppercase;
+  font-size:clamp(2.3rem,6vw,4rem);line-height:.95;letter-spacing:.01em;
+}
+.h2 em{font-style:italic;color:var(--red)}
+.lede{color:var(--muted);max-width:56ch;margin-top:1rem}
+.stripes{
+  background-image:repeating-linear-gradient(135deg,rgba(227,6,19,.9) 0 10px,transparent 10px 26px);
+}
+
+/* botones */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  font-family:var(--disp);font-weight:800;font-style:italic;text-transform:uppercase;
+  font-size:1.15rem;letter-spacing:.06em;line-height:1;
+  padding:1rem 1.7rem;border:0;cursor:pointer;
+  clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);
+  transition:transform .18s ease,filter .18s ease;
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn-red{background:var(--red);color:#fff}
+.btn-wa{background:var(--wa);color:#0B1A0F}
+.btn-wa svg{width:20px;height:20px;flex:none}
+.btn-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--red)}
+.btn-dark{background:var(--black);color:#fff}
+
+/* reveal */
+.reveal{opacity:1}
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(13,13,13,.96);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;gap:1.5rem;height:64px}
+.brand{display:flex;align-items:center;gap:.6rem;flex:none}
+.brand-chip{
+  background:var(--red);color:#fff;font-family:var(--disp);
+  font-weight:900;font-style:italic;font-size:1.45rem;line-height:1;
+  padding:.32rem .6rem .38rem .5rem;border-radius:9px;letter-spacing:.02em;
+}
+.brand-word{font-family:var(--disp);font-weight:700;font-size:.9rem;letter-spacing:.42em;text-transform:uppercase;padding-left:.1em}
+.nav-links{display:flex;gap:1.9rem;margin-left:auto}
+.nav-links a{
+  font-family:var(--disp);font-weight:700;text-transform:uppercase;
+  font-size:1rem;letter-spacing:.12em;color:var(--muted);
+  padding:.3rem 0;transition:color .15s ease;
+}
+.nav-links a:hover{color:#fff}
+.nav-cta{margin-left:1.9rem;flex:none;font-size:.95rem;padding:.7rem 1.15rem}
+.burger{
+  display:none;margin-left:auto;background:none;border:1px solid var(--line);
+  width:44px;height:44px;border-radius:8px;cursor:pointer;color:#fff;
+  align-items:center;justify-content:center;
+}
+.burger svg{width:22px;height:22px}
+.mnav{display:none;background:var(--ink);border-bottom:1px solid var(--line)}
+.mnav.open{display:block}
+.mnav a{
+  display:block;padding:.95rem 1.25rem;font-family:var(--disp);font-weight:700;
+  text-transform:uppercase;letter-spacing:.14em;font-size:1.05rem;color:#fff;
+  border-top:1px solid var(--line);
+}
+.mnav a:active{background:var(--surface)}
+@media (max-width:820px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:inline-flex}
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;overflow:hidden;background:var(--ink);
+  padding:clamp(3.2rem,7vw,6rem) 0 clamp(4.5rem,8vw,7rem);
+}
+.hero::before{ /* destello radial rojo */
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(620px 520px at 78% 42%,rgba(227,6,19,.38),transparent 65%),
+    radial-gradient(900px 700px at 90% 110%,rgba(227,6,19,.14),transparent 60%);
+}
+.hero::after{ /* diagonales racing de fondo */
+  content:"";position:absolute;top:-10%;right:-14%;width:56%;height:130%;
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,.028) 0 3px,transparent 3px 60px);
+  transform:skewX(-8deg);pointer-events:none;
+}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:center}
+.hero h1{
+  font-family:var(--disp);font-weight:900;font-style:italic;text-transform:uppercase;
+  font-size:clamp(3.1rem,10.5vw,8.2rem);line-height:.9;letter-spacing:0;
+  margin:1.2rem 0 1.4rem;
+}
+.hero h1 .rojo{color:var(--red)}
+.hero-sub{color:var(--muted);font-size:1.06rem;max-width:44ch}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+.hero-slogan{
+  margin-top:2.4rem;font-family:var(--disp);font-style:italic;font-weight:700;
+  font-size:1.1rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  display:flex;align-items:center;gap:.7rem;
+}
+.hero-slogan::before{content:"";width:52px;height:2px;background:var(--red);flex:none}
+.hero-art{position:relative;display:flex;justify-content:center}
+.hero-art svg{width:min(480px,100%);height:auto;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-art{order:2;margin-top:1rem}
+  .hero-art svg{width:min(340px,88%)}
+}
+
+/* barra de confianza diagonal */
+.trust{background:var(--red);transform:skewY(-2.2deg);margin:-1px 0;position:relative;z-index:2}
+.trust-in{
+  transform:skewY(2.2deg);display:flex;flex-wrap:wrap;justify-content:center;
+  gap:.4rem 2.6rem;padding:1.05rem 1.2rem;
+}
+.trust-in span{
+  font-family:var(--disp);font-weight:800;font-style:italic;text-transform:uppercase;
+  letter-spacing:.14em;font-size:1rem;color:#fff;white-space:nowrap;
+}
+.trust-in span::before{content:"//";margin-right:2.6rem;color:rgba(255,255,255,.55);font-style:normal}
+.trust-in span:first-child::before{content:none}
+@media (max-width:640px){
+  .trust-in{flex-direction:column;align-items:center;gap:.25rem}
+  .trust-in span::before{content:none;margin:0}
+}
+
+/* ---------- SECCIONES BASE ---------- */
+.sec{padding:clamp(4rem,9vw,7.5rem) 0;scroll-margin-top:70px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:1.2rem 1.8rem;align-items:start;margin-bottom:2.8rem}
+.sec-head .txt{padding-top:.5rem}
+@media (max-width:640px){.sec-head{grid-template-columns:1fr}.sec-head .secnum{font-size:4rem}}
+
+/* ---------- 01 BUSCADOR ---------- */
+#bateria{background:var(--black);position:relative}
+#bateria::before{
+  content:"";position:absolute;top:0;right:0;width:38%;height:8px;background:var(--red);
+  clip-path:polygon(18px 0,100% 0,100% 100%,0 100%);
+}
+.finder{
+  background:var(--card);border:1px solid var(--line);
+  padding:clamp(1.6rem,4vw,2.8rem);position:relative;overflow:hidden;
+}
+.finder::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--red) 0 55%,transparent 55%);
+  clip-path:polygon(0 0,55% 0,calc(55% - 12px) 100%,0 100%);
+}
+.finder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.field label{
+  display:block;font-family:var(--disp);font-weight:700;text-transform:uppercase;
+  letter-spacing:.2em;font-size:.85rem;color:var(--muted);margin-bottom:.5rem;
+}
+.field select{
+  width:100%;appearance:none;-webkit-appearance:none;
+  background:var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23E30613' stroke-width='2.4'/%3E%3C/svg%3E") no-repeat right 1rem center;
+  border:1px solid rgba(255,255,255,.16);color:#fff;
+  font-family:var(--body);font-size:1rem;font-weight:500;
+  padding:.95rem 2.6rem .95rem 1rem;border-radius:4px;cursor:pointer;
+}
+.field select:disabled{opacity:.45;cursor:not-allowed}
+.field select option{background:#2A2A2A;color:#fff}
+.field select:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.finder-foot{display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem;margin-top:1.8rem}
+.finder-note{color:var(--muted);font-size:.9rem}
+@media (max-width:760px){.finder-grid{grid-template-columns:1fr}}
+
+/* ---------- 02 SEDES ---------- */
+#sedes{background:var(--ink);position:relative;overflow:hidden}
+#sedes::after{
+  content:"";position:absolute;bottom:-40px;left:-6%;width:46%;height:120px;
+  background:repeating-linear-gradient(135deg,rgba(227,6,19,.16) 0 8px,transparent 8px 26px);
+  transform:skewY(-3deg);pointer-events:none;
+}
+.sedes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.sede{
+  background:var(--card);border:1px solid var(--line);position:relative;
+  padding:2rem 1.6rem 1.8rem;display:flex;flex-direction:column;gap:1rem;
+  transition:transform .2s ease,border-color .2s ease;
+}
+.sede:hover{transform:translateY(-4px);border-color:rgba(227,6,19,.6)}
+.sede::before{
+  content:"";position:absolute;top:0;left:0;width:64px;height:6px;background:var(--red);
+  clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%);
+}
+.sede-num{
+  font-family:var(--disp);font-weight:900;font-style:italic;font-size:2.6rem;line-height:1;
+  color:transparent;-webkit-text-stroke:1.5px rgba(227,6,19,.8);
+}
+.sede h3{
+  font-family:var(--disp);font-weight:800;font-style:italic;text-transform:uppercase;
+  font-size:2rem;line-height:1;letter-spacing:.02em;
+}
+.sede-city{
+  font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.3em;
+  font-size:.8rem;color:var(--muted);margin-top:-.5rem;
+}
+.sede-servicios{display:flex;flex-wrap:wrap;gap:.45rem}
+.sede-servicios li{
+  font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+  font-size:.82rem;color:#fff;background:var(--surface);
+  padding:.32rem .7rem;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);
+}
+.sede .btn{margin-top:auto;font-size:1rem;padding:.85rem 1.2rem}
+@media (max-width:860px){.sedes-grid{grid-template-columns:1fr;max-width:460px;margin-inline:auto}}
+
+/* ---------- PROMO MUNDIAL ---------- */
+.promo{background:var(--red);transform:skewY(-3deg);position:relative;z-index:2;margin:1rem 0}
+.promo-in{transform:skewY(3deg);padding:clamp(3rem,7vw,4.8rem) 0}
+.promo::before{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,.06) 0 4px,transparent 4px 46px);
+  pointer-events:none;
+}
+.promo-grid{display:grid;grid-template-columns:auto 1fr auto;gap:2.2rem;align-items:center}
+.promo-shirt svg{width:120px;height:auto}
+.promo-tag{
+  display:inline-block;background:var(--black);color:#fff;
+  font-family:var(--disp);font-weight:800;font-style:italic;text-transform:uppercase;
+  letter-spacing:.2em;font-size:.9rem;padding:.4rem .9rem;margin-bottom:.9rem;
+  clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+}
+.promo h2{
+  font-family:var(--disp);font-weight:900;font-style:italic;text-transform:uppercase;
+  font-size:clamp(2.2rem,6vw,3.9rem);line-height:.95;color:#fff;
+}
+.promo p{color:#fff;max-width:52ch;margin-top:.9rem;font-weight:500}
+@media (max-width:860px){
+  .promo-grid{grid-template-columns:1fr;text-align:center;gap:1.6rem;justify-items:center}
+  .promo-shirt{order:-1}
+}
+
+/* ---------- 03 SERVICIO PESADO ---------- */
+#pesado{background:var(--ink);position:relative;overflow:hidden}
+#pesado::before{
+  content:"";position:absolute;top:0;bottom:0;right:-10%;width:44%;
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,.03) 0 3px,transparent 3px 44px);
+  transform:skewX(-10deg);pointer-events:none;
+}
+.pesado-grid{display:grid;grid-template-columns:1fr auto;gap:2.5rem;align-items:center;position:relative}
+.pesado-art svg{width:min(340px,100%);height:auto}
+@media (max-width:860px){
+  .pesado-grid{grid-template-columns:1fr}
+  .pesado-art{justify-self:center}
+}
+
+/* ---------- 04 RUTA LTH ---------- */
+#aliados{background:var(--black);position:relative;overflow:hidden}
+.ruta-box{
+  border:1px solid var(--line);background:var(--card);position:relative;
+  padding:clamp(2rem,5vw,3.4rem);
+  display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;
+}
+.ruta-box::before{
+  content:"";position:absolute;top:0;left:0;bottom:0;width:10px;
+  background:repeating-linear-gradient(-45deg,var(--red) 0 10px,var(--black) 10px 20px);
+}
+.hashtag{
+  font-family:var(--disp);font-weight:900;font-style:italic;text-transform:uppercase;
+  font-size:clamp(2.4rem,7vw,4.6rem);line-height:.9;
+}
+.hashtag span{color:var(--red)}
+@media (max-width:760px){.ruta-box{grid-template-columns:1fr}}
+
+/* ---------- CONTACTO / FOOTER ---------- */
+.contact{background:var(--ink);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2.5rem}
+.contact h2{margin-bottom:.8rem}
+.c-col h3{
+  font-family:var(--disp);font-weight:700;text-transform:uppercase;
+  letter-spacing:.24em;font-size:.9rem;color:var(--red);margin-bottom:1rem;
+}
+.c-col li{padding:.35rem 0;color:var(--muted)}
+.c-col li strong{color:#fff;font-weight:600}
+.c-col a:hover{color:#fff}
+.c-num{
+  font-family:var(--disp);font-weight:800;font-style:italic;font-size:1.9rem;color:#fff;
+  display:inline-block;margin:.4rem 0 .8rem;
+}
+.c-num:hover{color:var(--wa)}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr;gap:1.8rem}}
+
+footer{background:#0A0A0A;border-top:1px solid var(--line);padding:2.2rem 0 6.5rem}
+.foot-grid{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem 2rem;justify-content:space-between}
+.foot-brand{display:flex;align-items:center;gap:.6rem}
+.foot-slogan{font-family:var(--disp);font-style:italic;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem;color:var(--muted)}
+.socials{display:flex;gap:.8rem}
+.socials a{
+  width:42px;height:42px;border:1px solid var(--line);border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;color:#fff;
+  transition:border-color .15s ease,color .15s ease;
+}
+.socials a:hover{border-color:var(--red);color:var(--red)}
+.socials svg{width:20px;height:20px}
+.seal{
+  margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.07);
+  font-size:.8rem;color:#8F8F8F;text-align:center;
+}
+.seal a{color:#B9B9B9;text-decoration:underline}
+.seal a:hover{color:#fff}
+
+/* FAB WhatsApp */
+.fab{
+  position:fixed;right:1.1rem;bottom:1.1rem;z-index:120;
+  width:60px;height:60px;border-radius:50%;background:var(--wa);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 26px rgba(0,0,0,.55);
+  transition:transform .18s ease;
+}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:32px;height:32px}
+</style>
+</head>
+<body>
+<a class="skip" href="#bateria">Ir al contenido</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="LTH Venezuela — inicio">
+      <span class="brand-chip">LTH</span>
+      <span class="brand-word">Venezuela</span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#bateria">Tu batería</a>
+      <a href="#sedes">Sedes</a>
+      <a href="#pesado">Servicio Pesado</a>
+      <a href="#aliados">Aliados</a>
+    </nav>
+    <a class="btn btn-wa nav-cta" href="https://wa.me/584143520645?text=Hola%20LTH%2C%20quiero%20cotizar%20una%20bater%C3%ADa%20para%20mi%20carro." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.27-1.23A9.96 9.96 0 0 0 12 22a10 10 0 0 0 0-20zm0 18.2c-1.6 0-3.1-.46-4.36-1.25l-.31-.19-3.13.73.75-3.05-.2-.32A8.16 8.16 0 0 1 3.8 12 8.2 8.2 0 1 1 12 20.2zm4.5-6.13c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-1.97-1.21 7.4 7.4 0 0 1-1.36-1.7c-.14-.24-.02-.37.1-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.16 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.16 1.73 2.64 4.2 3.7.59.26 1.05.41 1.4.52.59.19 1.13.16 1.56.1.47-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+      Cotiza ya
+    </a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mnav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Menú móvil">
+    <a href="#bateria">Tu batería</a>
+    <a href="#sedes">Sedes</a>
+    <a href="#pesado">Servicio Pesado</a>
+    <a href="#aliados">Aliados</a>
+    <a href="https://wa.me/584143520645?text=Hola%20LTH%2C%20quiero%20cotizar%20una%20bater%C3%ADa%20para%20mi%20carro." target="_blank" rel="noopener">WhatsApp → 0414-352.06.45</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Único distribuidor autorizado en Venezuela</p>
+      <h1>La garantía<br>más larga<br><span class="rojo">de Venezuela.</span></h1>
+      <p class="hero-sub">Baterías LTH con tecnología PowerFrame. Diagnóstico, venta e instalación en nuestras 3 sedes de Caracas — te la montamos en el momento.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-red" href="https://wa.me/584143520645?text=Hola%20LTH%2C%20quiero%20cotizar%20una%20bater%C3%ADa%20para%20mi%20carro." target="_blank" rel="noopener">Cotiza por WhatsApp</a>
+        <a class="btn btn-ghost" href="#sedes">Nuestras sedes</a>
+      </div>
+      <p class="hero-slogan">El Alma de tu Automóvil</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <!-- Batería LTH dibujada en SVG -->
+      <svg viewBox="0 0 520 430" role="img" aria-label="">
+        <defs>
+          <linearGradient id="gBody" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#262626"/>
+            <stop offset=".5" stop-color="#191919"/>
+            <stop offset="1" stop-color="#101010"/>
+          </linearGradient>
+          <linearGradient id="gLid" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2f2f2f"/>
+            <stop offset="1" stop-color="#1a1a1a"/>
+          </linearGradient>
+          <linearGradient id="gTerm" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#d9d9d9"/>
+            <stop offset=".55" stop-color="#9a9a9a"/>
+            <stop offset="1" stop-color="#6f6f6f"/>
+          </linearGradient>
+          <linearGradient id="gLabel" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#F31423"/>
+            <stop offset="1" stop-color="#C00511"/>
+          </linearGradient>
+        </defs>
+        <!-- sombra -->
+        <ellipse cx="260" cy="392" rx="205" ry="22" fill="#000" opacity=".5"/>
+        <!-- bornes -->
+        <g>
+          <rect x="118" y="76" width="46" height="38" rx="7" fill="url(#gTerm)"/>
+          <rect x="112" y="66" width="58" height="16" rx="6" fill="#c4c4c4"/>
+          <rect x="356" y="76" width="46" height="38" rx="7" fill="url(#gTerm)"/>
+          <rect x="350" y="66" width="58" height="16" rx="6" fill="#c4c4c4"/>
+        </g>
+        <!-- tapa -->
+        <rect x="52" y="106" width="416" height="52" rx="12" fill="url(#gLid)" stroke="#3a3a3a" stroke-width="1.5"/>
+        <!-- marcas de polaridad -->
+        <text x="141" y="146" text-anchor="middle" font-family="Barlow Condensed, Arial" font-weight="900" font-size="30" fill="#E30613">+</text>
+        <text x="379" y="144" text-anchor="middle" font-family="Barlow Condensed, Arial" font-weight="900" font-size="30" fill="#cfcfcf">−</text>
+        <!-- asa empotrada -->
+        <rect x="216" y="120" width="88" height="10" rx="5" fill="#0c0c0c" stroke="#333" stroke-width="1"/>
+        <!-- cuerpo -->
+        <rect x="46" y="154" width="428" height="222" rx="16" fill="url(#gBody)" stroke="#3a3a3a" stroke-width="1.5"/>
+        <!-- etiqueta roja -->
+        <g>
+          <rect x="46" y="204" width="428" height="98" fill="url(#gLabel)"/>
+          <polygon points="46,204 168,204 128,302 46,302" fill="#ffffff" opacity=".08"/>
+          <text x="76" y="278" font-family="Barlow Condensed, Arial" font-style="italic" font-weight="900" font-size="76" fill="#ffffff" letter-spacing="1">LTH</text>
+          <text x="240" y="243" font-family="Barlow Condensed, Arial" font-weight="700" font-size="21" letter-spacing="3.5" fill="#ffffff">POWERFRAME</text>
+          <text x="240" y="272" font-family="Barlow Condensed, Arial" font-style="italic" font-weight="700" font-size="15" letter-spacing="2" fill="#ffd6d9">EL ALMA DE TU AUTOMÓVIL</text>
+          <rect x="240" y="284" width="150" height="4" fill="#ffffff" opacity=".85" transform="skewX(-20)" transform-origin="240 286"/>
+        </g>
+        <!-- brillo lateral -->
+        <polygon points="72,154 118,154 84,376 60,376" fill="#ffffff" opacity=".05"/>
+        <!-- línea inferior -->
+        <rect x="46" y="336" width="428" height="8" fill="#0b0b0b" opacity=".8"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- barra de confianza -->
+<div class="trust" aria-hidden="false">
+  <div class="trust-in">
+    <span>Tecnología PowerFrame</span>
+    <span>Distribuidor autorizado</span>
+    <span>3 sedes en Caracas</span>
+    <span>Diagnóstico · Venta · Instalación</span>
+  </div>
+</div>
+
+<!-- ============ 01 BUSCADOR ============ -->
+<section class="sec" id="bateria">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="secnum" aria-hidden="true">01</span>
+      <div class="txt">
+        <p class="eyebrow">Encuentra la tuya</p>
+        <h2 class="h2">¿Cuál batería lleva <em>tu carro?</em></h2>
+        <p class="lede">Dinos marca, modelo y año. Te respondemos por WhatsApp con la batería LTH exacta para tu vehículo y te la instalamos en la sede que te quede más cerca.</p>
+      </div>
+    </div>
+    <form class="finder reveal" id="finder">
+      <div class="finder-grid">
+        <div class="field">
+          <label for="marca">Marca</label>
+          <select id="marca" name="marca">
+            <option value="">Selecciona la marca</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="modelo">Modelo</label>
+          <select id="modelo" name="modelo" disabled>
+            <option value="">Primero elige la marca</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="anio">Año</label>
+          <select id="anio" name="anio">
+            <option value="">Selecciona el año</option>
+          </select>
+        </div>
+      </div>
+      <div class="finder-foot">
+        <button type="submit" class="btn btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.27-1.23A9.96 9.96 0 0 0 12 22a10 10 0 0 0 0-20zm0 18.2c-1.6 0-3.1-.46-4.36-1.25l-.31-.19-3.13.73.75-3.05-.2-.32A8.16 8.16 0 0 1 3.8 12 8.2 8.2 0 1 1 12 20.2zm4.5-6.13c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-1.97-1.21 7.4 7.4 0 0 1-1.36-1.7c-.14-.24-.02-.37.1-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.16 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.16 1.73 2.64 4.2 3.7.59.26 1.05.41 1.4.52.59.19 1.13.16 1.56.1.47-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+          Consultar por WhatsApp
+        </button>
+        <p class="finder-note">Sin compromiso — te atiende directo el equipo de LTH Venezuela.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ 02 SEDES ============ -->
+<section class="sec" id="sedes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="secnum" aria-hidden="true">02</span>
+      <div class="txt">
+        <p class="eyebrow">Centros de Servicio propios</p>
+        <h2 class="h2">3 sedes en <em>Caracas</em></h2>
+        <p class="lede">Llegas, diagnosticamos tu batería, y si toca cambio, sales rodando con tu LTH nueva instalada. Todo en el mismo lugar.</p>
+      </div>
+    </div>
+    <div class="sedes-grid">
+      <article class="sede reveal">
+        <span class="sede-num" aria-hidden="true">01</span>
+        <h3>Catia</h3>
+        <p class="sede-city">Caracas — Oeste</p>
+        <ul class="sede-servicios">
+          <li>Diagnóstico</li><li>Venta</li><li>Instalación</li>
+        </ul>
+        <a class="btn btn-wa" href="https://wa.me/584143520645?text=Hola%20LTH%2C%20quiero%20informaci%C3%B3n%20de%20la%20sede%20de%20Catia." target="_blank" rel="noopener">Escríbenos</a>
+      </article>
+      <article class="sede reveal">
+        <span class="sede-num" aria-hidden="true">02</span>
+        <h3>Quinta Crespo</h3>
+        <p class="sede-city">Caracas — Centro</p>
+        <ul class="sede-servicios">
+          <li>Diagnóstico</li><li>Venta</li><li>Instalación</li>
+        </ul>
+        <a class="btn btn-wa" href="https://wa.me/584143520645?text=Hola%20LTH%2C%20quiero%20informaci%C3%B3n%20de%20la%20sede%20de%20Quinta%20Crespo." target="_blank" rel="noopener">Escríbenos</a>
+      </article>
+      <article class="sede reveal">
+        <span class="sede-num" aria-hidden="true">03</span>
+        <h3>La Urbina</h3>
+        <p class="sede-city">Caracas — Este</p>
+        <ul class="sede-servicios">
+          <li>Diagnóstico</li><li>Venta</li><li>Instalación</li>
+        </ul>
+        <a class="btn btn-wa" href="https://wa.me/584143520645?text=Hola%20LTH%2C%20quiero%20informaci%C3%B3n%20de%20la%20sede%20de%20La%20Urbina." target="_blank" rel="noopener">Escríbenos</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMO MUNDIAL 2026 ============ -->
+<aside class="promo" aria-label="Promoción Mundial 2026">
+  <div class="promo-in">
+    <div class="wrap promo-grid">
+      <div class="promo-shirt reveal" aria-hidden="true">
+        <svg viewBox="0 0 140 130">
+          <path d="M45 8 L22 20 L6 52 L28 62 L32 46 L32 118 L108 118 L108 46 L112 62 L134 52 L118 20 L95 8 C95 8 88 22 70 22 C52 22 45 8 45 8 Z" fill="none" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+          <text x="70" y="82" text-anchor="middle" font-family="Barlow Condensed, Arial" font-style="italic" font-weight="900" font-size="30" fill="#ffffff">2026</text>
+        </svg>
+      </div>
+      <div class="reveal">
+        <span class="promo-tag">Promo Mundial 2026</span>
+        <h2>Tu batería trae camiseta.</h2>
+        <p>Compra tu batería LTH en cualquiera de nuestras 3 sedes y llévate <strong>gratis la camiseta de tu selección</strong>. Así de simple: batería nueva, camiseta nueva.</p>
+      </div>
+      <div class="reveal">
+        <a class="btn btn-dark" href="https://wa.me/584143520645?text=Hola%20LTH%2C%20quiero%20mi%20bater%C3%ADa%20con%20la%20camiseta%20del%20Mundial%202026.%20%C2%BFC%C3%B3mo%20aplico%3F" target="_blank" rel="noopener">Quiero la mía</a>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- ============ 03 SERVICIO PESADO ============ -->
+<section class="sec" id="pesado">
+  <div class="wrap pesado-grid">
+    <div>
+      <div class="sec-head reveal" style="margin-bottom:1.6rem">
+        <span class="secnum" aria-hidden="true">03</span>
+        <div class="txt">
+          <p class="eyebrow">Camiones y flotas</p>
+          <h2 class="h2">LTH <em>Servicio Pesado</em></h2>
+        </div>
+      </div>
+      <p class="lede reveal">La línea LTH para el trabajo rudo: camiones, transporte de carga y flotas que no pueden quedarse accidentadas. Cotiza por WhatsApp para tu unidad o para toda tu flota.</p>
+      <div class="hero-ctas reveal">
+        <a class="btn btn-red" href="https://wa.me/584143520645?text=Hola%20LTH%2C%20necesito%20cotizar%20bater%C3%ADas%20de%20Servicio%20Pesado%20para%20cami%C3%B3n%2Fflota." target="_blank" rel="noopener">Cotizar Servicio Pesado</a>
+      </div>
+    </div>
+    <div class="pesado-art reveal" aria-hidden="true">
+      <!-- silueta de camión -->
+      <svg viewBox="0 0 340 190">
+        <g fill="none" stroke="#4a4a4a" stroke-width="4" stroke-linejoin="round">
+          <path d="M10 130 L10 40 L200 40 L200 130 Z" fill="#1d1d1d"/>
+          <path d="M200 70 L262 70 L288 100 L288 130 L200 130 Z" fill="#1d1d1d"/>
+          <path d="M212 78 L254 78 L272 100 L212 100 Z" fill="#101010"/>
+        </g>
+        <rect x="10" y="118" width="190" height="12" fill="#E30613"/>
+        <text x="105" y="98" text-anchor="middle" font-family="Barlow Condensed, Arial" font-style="italic" font-weight="900" font-size="42" fill="#E30613" letter-spacing="2">LTH</text>
+        <g fill="#0c0c0c" stroke="#5a5a5a" stroke-width="4">
+          <circle cx="58" cy="146" r="22"/>
+          <circle cx="118" cy="146" r="22"/>
+          <circle cx="250" cy="146" r="22"/>
+        </g>
+        <g fill="#2A2A2A">
+          <circle cx="58" cy="146" r="9"/>
+          <circle cx="118" cy="146" r="9"/>
+          <circle cx="250" cy="146" r="9"/>
+        </g>
+        <line x1="0" y1="172" x2="340" y2="172" stroke="#333" stroke-width="3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 RUTA LTH ============ -->
+<section class="sec" id="aliados">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="secnum" aria-hidden="true">04</span>
+      <div class="txt">
+        <p class="eyebrow">Red de talleres aliados</p>
+        <h2 class="h2">La ruta está <em>en la calle</em></h2>
+      </div>
+    </div>
+    <div class="ruta-box reveal">
+      <div>
+        <p class="hashtag">#Ruta<span>LTH</span></p>
+        <p class="lede">Estamos recorriendo los talleres aliados de LTH. ¿Tienes un taller y quieres vender e instalar la batería con la garantía más larga de Venezuela? Únete a la red.</p>
+      </div>
+      <a class="btn btn-red" href="https://wa.me/584143520645?text=Hola%20LTH%2C%20tengo%20un%20taller%20y%20quiero%20unirme%20a%20la%20red%20de%20aliados%20de%20la%20%23RutaLTH." target="_blank" rel="noopener">Quiero ser aliado</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="sec contact" id="contacto">
+  <div class="wrap contact-grid">
+    <div class="c-col reveal">
+      <p class="eyebrow">Contacto</p>
+      <h2 class="h2">Hablemos por <em>WhatsApp</em></h2>
+      <a class="c-num" href="https://wa.me/584143520645?text=Hola%20LTH%2C%20quiero%20informaci%C3%B3n%20sobre%20bater%C3%ADas." target="_blank" rel="noopener">0414-352.06.45</a>
+      <p class="lede" style="margin-top:0">Un solo número para las 3 sedes: cotizaciones, disponibilidad, Servicio Pesado y talleres aliados.</p>
+    </div>
+    <div class="c-col reveal">
+      <h3>Sedes — Caracas</h3>
+      <ul>
+        <li><strong>Catia</strong> · Centro de Servicio</li>
+        <li><strong>Quinta Crespo</strong> · Centro de Servicio</li>
+        <li><strong>La Urbina</strong> · Centro de Servicio</li>
+        <li>Diagnóstico · Venta · Instalación</li>
+      </ul>
+    </div>
+    <div class="c-col reveal">
+      <h3>Redes</h3>
+      <ul>
+        <li><a href="https://www.instagram.com/lthvenezuela/" target="_blank" rel="noopener">Instagram · <strong>@lthvenezuela</strong></a></li>
+        <li><a href="https://www.facebook.com/lthvenezuela" target="_blank" rel="noopener">Facebook · <strong>LTH Venezuela</strong></a></li>
+        <li><a href="https://wa.me/584143520645" target="_blank" rel="noopener">WhatsApp · <strong>directo</strong></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand-chip">LTH</span>
+        <span class="brand-word">Venezuela</span>
+      </div>
+      <p class="foot-slogan">El Alma de tu Automóvil</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/lthvenezuela/" target="_blank" rel="noopener" aria-label="Instagram de LTH Venezuela">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/lthvenezuela" target="_blank" rel="noopener" aria-label="Facebook de LTH Venezuela">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.2-3.2 3.3V11H8.9v3h2.4v7h2.2z"/></svg>
+        </a>
+        <a href="https://wa.me/584143520645" target="_blank" rel="noopener" aria-label="WhatsApp de LTH Venezuela">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.27-1.23A9.96 9.96 0 0 0 12 22a10 10 0 0 0 0-20zm0 18.2c-1.6 0-3.1-.46-4.36-1.25l-.31-.19-3.13.73.75-3.05-.2-.32A8.16 8.16 0 0 1 3.8 12 8.2 8.2 0 1 1 12 20.2zm4.5-6.13c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-1.97-1.21 7.4 7.4 0 0 1-1.36-1.7c-.14-.24-.02-.37.1-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.16 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.16 1.73 2.64 4.2 3.7.59.26 1.05.41 1.4.52.59.19 1.13.16 1.56.1.47-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+        </a>
+      </div>
+    </div>
+    <p class="seal">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial</p>
+  </div>
+</footer>
+
+<!-- FAB WhatsApp -->
+<a class="fab" href="https://wa.me/584143520645?text=Hola%20LTH%2C%20quiero%20cotizar%20una%20bater%C3%ADa%20para%20mi%20carro." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.27-1.23A9.96 9.96 0 0 0 12 22a10 10 0 0 0 0-20zm0 18.2c-1.6 0-3.1-.46-4.36-1.25l-.31-.19-3.13.73.75-3.05-.2-.32A8.16 8.16 0 0 1 3.8 12 8.2 8.2 0 1 1 12 20.2zm4.5-6.13c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-1.97-1.21 7.4 7.4 0 0 1-1.36-1.7c-.14-.24-.02-.37.1-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.16 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.16 1.73 2.64 4.2 3.7.59.26 1.05.41 1.4.52.59.19 1.13.16 1.56.1.47-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  var WA = "584143520645";
+
+  /* ----- menú móvil ----- */
+  var burger = document.getElementById("burger");
+  var mnav = document.getElementById("mnav");
+  burger.addEventListener("click", function(){
+    var open = mnav.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    burger.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+  });
+  mnav.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){
+      mnav.classList.remove("open");
+      burger.setAttribute("aria-expanded","false");
+    }
+  });
+
+  /* ----- buscador de batería ----- */
+  var MODELOS = {
+    "Toyota":["Corolla","Yaris","Hilux","Fortuner","4Runner","Land Cruiser (Machito)","Terios","Camry","Otro modelo"],
+    "Chevrolet":["Aveo","Spark","Optra","Cruze","Grand Vitara","Luv D-Max","Tahoe","Silverado","Otro modelo"],
+    "Ford":["Fiesta","Focus","Fusion","EcoSport","Explorer","Ranger","F-150","Otro modelo"],
+    "Kia":["Rio","Picanto","Cerato","Sportage","Sorento","Otro modelo"],
+    "Hyundai":["Accent","Getz","Elantra","Tucson","Santa Fe","Otro modelo"],
+    "Mitsubishi":["Lancer","Signo","Montero","Outlander","L200 Sportero","Panel L300","Otro modelo"],
+    "Jeep":["Grand Cherokee","Cherokee","Wrangler","Compass","Otro modelo"],
+    "Renault":["Logan","Symbol","Twingo","Duster","Otro modelo"],
+    "Volkswagen":["Gol","Polo","Fox","Jetta","Otro modelo"],
+    "Chery":["Arauca","Orinoco","X1","Tiggo","Otro modelo"],
+    "Otra marca":["Otro modelo"]
+  };
+  var selMarca = document.getElementById("marca");
+  var selModelo = document.getElementById("modelo");
+  var selAnio = document.getElementById("anio");
+
+  Object.keys(MODELOS).forEach(function(m){
+    var o = document.createElement("option");
+    o.value = m; o.textContent = m;
+    selMarca.appendChild(o);
+  });
+  for(var y = 2026; y >= 1998; y--){
+    var oy = document.createElement("option");
+    oy.value = String(y); oy.textContent = String(y);
+    selAnio.appendChild(oy);
+  }
+  var oOld = document.createElement("option");
+  oOld.value = "anterior a 1998"; oOld.textContent = "Anterior a 1998";
+  selAnio.appendChild(oOld);
+
+  selMarca.addEventListener("change", function(){
+    selModelo.innerHTML = "";
+    if(!selMarca.value){
+      selModelo.disabled = true;
+      selModelo.appendChild(new Option("Primero elige la marca",""));
+      return;
+    }
+    selModelo.disabled = false;
+    selModelo.appendChild(new Option("Selecciona el modelo",""));
+    MODELOS[selMarca.value].forEach(function(mod){
+      selModelo.appendChild(new Option(mod, mod));
+    });
+  });
+
+  document.getElementById("finder").addEventListener("submit", function(e){
+    e.preventDefault();
+    var marca = selMarca.value;
+    var modelo = selModelo.value;
+    var anio = selAnio.value;
+    var carro;
+    if(!marca || marca === "Otra marca"){
+      carro = "carro" + (anio ? " " + anio : "");
+    }else{
+      carro = marca
+        + (modelo && modelo !== "Otro modelo" ? " " + modelo : "")
+        + (anio ? " " + anio : "");
+    }
+    var msg = "Hola LTH, ¿cuál batería lleva mi " + carro + "?";
+    window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
+  });
+
+  /* ----- reveal on scroll ----- */
+  var els = document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add("in");
+          io.unobserve(en.target);
+        }
+      });
+    },{threshold:.12,rootMargin:"0px 0px -5% 0px"});
+    els.forEach(function(el){ io.observe(el); });
+  }else{
+    els.forEach(function(el){ el.classList.add("in"); });
+  }
+})();
+</script>
+</body>
+</html>

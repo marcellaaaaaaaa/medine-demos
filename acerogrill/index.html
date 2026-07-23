@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Acero Grill — Rejillas electroforjadas fabricadas en Venezuela desde 1977</title>
+<meta name="description" content="E.M. Acero Grill, C.A. — 49 años fabricando rejillas electroforjadas, cercas, sumideros y peldaños antideslizantes en Santa Cruz de Aragua. Cotiza por WhatsApp.">
+<meta property="og:title" content="Acero Grill — Rejillas electroforjadas desde 1977">
+<meta property="og:description" content="El piso industrial que aguanta 49 años de trabajo pesado. Fabricación metalmecánica venezolana: grating, cercas, sumideros, peldaños y proyectos a medida.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_VE">
+<link rel="icon" type="image/png" href="./assets/acero-fav.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --amber:#EAAA04;
+    --black:#070606;
+    --charcoal:#272121;
+    --steel:#DADADA;
+    --paper:#F5F5F5;
+    --maxw:1200px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Barlow',system-ui,sans-serif;
+    background:var(--black);
+    color:var(--steel);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+  h1,h2,h3{text-transform:uppercase;letter-spacing:1.5px;font-weight:800;line-height:1.04}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+  .label{
+    display:inline-flex;align-items:center;gap:.65rem;
+    font-size:.72rem;font-weight:600;text-transform:uppercase;
+    letter-spacing:.22em;color:var(--amber);
+  }
+  .label::before{content:"";width:2rem;height:2px;background:var(--amber);flex:none}
+
+  /* ============ NAV ============ */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(7,6,6,.94);
+    border-bottom:1px solid #2e2828;
+    backdrop-filter:blur(8px);
+  }
+  .nav-in{
+    max-width:var(--maxw);margin:0 auto;
+    padding:.7rem clamp(1.1rem,4vw,2.5rem);
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  }
+  .nav-logo img{height:38px;width:auto}
+  .nav-links{display:flex;align-items:center;gap:1.9rem;list-style:none}
+  .nav-links a{
+    font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+    color:var(--steel);padding:.35rem 0;border-bottom:2px solid transparent;
+    transition:color .2s,border-color .2s;
+  }
+  .nav-links a:hover{color:var(--amber);border-color:var(--amber)}
+  .btn{
+    display:inline-flex;align-items:center;gap:.6rem;
+    background:var(--amber);color:var(--black);
+    font-family:inherit;font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;
+    padding:.85rem 1.5rem;border:2px solid var(--amber);cursor:pointer;
+    transition:background .2s,color .2s;
+  }
+  .btn:hover{background:transparent;color:var(--amber)}
+  .btn--ghost{background:transparent;color:var(--amber)}
+  .btn--ghost:hover{background:var(--amber);color:var(--black)}
+  .nav .btn{padding:.6rem 1.1rem;font-size:.74rem}
+  .nav-burger{
+    display:none;background:none;border:1px solid #3a3232;color:var(--steel);
+    width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center;
+  }
+  .nav-burger svg{width:22px;height:22px}
+  @media (max-width:760px){
+    .nav-links{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      background:var(--black);border-bottom:1px solid #2e2828;
+      flex-direction:column;align-items:flex-start;gap:0;padding:.5rem 1.1rem 1rem;
+    }
+    .nav-links.open{display:flex}
+    .nav-links li{width:100%;border-bottom:1px solid #211c1c}
+    .nav-links a{display:block;padding:.9rem 0;font-size:.9rem}
+    .nav-burger{display:inline-flex}
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    background:var(--charcoal);
+    overflow:hidden;
+    border-bottom:4px solid var(--amber);
+  }
+  /* trama de grating plana, sutil, sobre todo el hero */
+  .hero-grid{
+    position:absolute;inset:0;pointer-events:none;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(218,218,218,.07) 0 3px, transparent 3px 28px),
+      repeating-linear-gradient(0deg, rgba(218,218,218,.05) 0 2px, transparent 2px 62px);
+  }
+  /* piso de grating en perspectiva */
+  .hero-floor{
+    position:absolute;left:-25%;right:-25%;bottom:-6%;height:62%;
+    pointer-events:none;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(234,170,4,.34) 0 4px, transparent 4px 30px),
+      repeating-linear-gradient(0deg, rgba(218,218,218,.22) 0 3px, transparent 3px 46px);
+    transform:perspective(640px) rotateX(58deg);
+    transform-origin:bottom center;
+    -webkit-mask-image:linear-gradient(to top, rgba(0,0,0,.85) 0%, transparent 92%);
+    mask-image:linear-gradient(to top, rgba(0,0,0,.85) 0%, transparent 92%);
+  }
+  .hero-in{
+    position:relative;z-index:1;
+    max-width:var(--maxw);margin:0 auto;
+    padding:clamp(4.2rem,10vw,7.5rem) clamp(1.1rem,4vw,2.5rem) clamp(6rem,14vw,9.5rem);
+  }
+  .hero h1{
+    font-size:clamp(2.55rem,8.6vw,8.25rem);
+    color:#fff;
+    max-width:14ch;
+    margin:1.4rem 0 1.8rem;
+  }
+  .hero h1 em{font-style:normal;color:var(--amber)}
+  .hero p.sub{
+    max-width:46ch;font-size:clamp(1rem,1.6vw,1.2rem);color:var(--steel);
+    margin-bottom:2.4rem;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:1rem}
+  .hero-note{
+    margin-top:2.6rem;display:flex;flex-wrap:wrap;gap:.6rem 2rem;
+    font-size:.74rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#9c9494;
+  }
+  .hero-note span{display:inline-flex;align-items:center;gap:.55rem}
+  .hero-note span::before{content:"";width:6px;height:6px;background:var(--amber);flex:none}
+
+  /* ============ METRICS ============ */
+  .metrics{background:var(--black);border-bottom:1px solid #221d1d}
+  .metrics-in{
+    max-width:var(--maxw);margin:0 auto;
+    display:grid;grid-template-columns:repeat(3,1fr);
+  }
+  .metric{
+    padding:clamp(2.2rem,5vw,3.8rem) clamp(1.1rem,3vw,2.5rem);
+    border-left:1px solid #221d1d;
+  }
+  .metric:first-child{border-left:none}
+  .metric .num{
+    font-size:clamp(3.4rem,7.5vw,6.5rem);font-weight:800;line-height:1;
+    color:var(--amber);letter-spacing:-0.01em;
+  }
+  .metric .unit{
+    display:block;font-size:.74rem;font-weight:800;text-transform:uppercase;
+    letter-spacing:.24em;color:#fff;margin:.7rem 0 .45rem;
+  }
+  .metric p{font-size:.92rem;color:#a8a0a0;max-width:26ch}
+  @media (max-width:760px){
+    .metrics-in{grid-template-columns:1fr}
+    .metric{border-left:none;border-top:1px solid #221d1d}
+    .metric:first-child{border-top:none}
+  }
+
+  /* ============ SECTION SHELL ============ */
+  section{position:relative}
+  .sec-head{
+    display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+    margin-bottom:clamp(2rem,5vw,3.5rem);
+  }
+  .sec-head h2{font-size:clamp(1.7rem,4vw,3rem);color:#fff}
+  .sec-num{
+    font-size:clamp(2.4rem,6vw,4.5rem);font-weight:800;color:transparent;
+    -webkit-text-stroke:1.5px #4a4040;line-height:1;flex:none;
+  }
+
+  /* ============ PRODUCTOS (índice de catálogo) ============ */
+  .productos{background:var(--charcoal);padding:clamp(4rem,9vw,7rem) 0}
+  .cat-list{list-style:none;border-top:1px solid #3b3333}
+  .cat-row{border-bottom:1px solid #3b3333;position:relative}
+  .cat-row a{
+    position:relative;display:grid;
+    grid-template-columns:3.4rem 1fr auto;
+    gap:.4rem 1.6rem;align-items:center;
+    padding:1.6rem .6rem;
+    isolation:isolate;
+  }
+  .cat-row a::before{
+    content:"";position:absolute;inset:0;background:var(--amber);
+    transform:scaleX(0);transform-origin:left center;
+    transition:transform .3s cubic-bezier(.4,0,.2,1);z-index:-1;
+  }
+  .cat-row a:hover::before,.cat-row a:focus-visible::before{transform:scaleX(1)}
+  .cat-idx{
+    font-size:.8rem;font-weight:600;color:var(--amber);letter-spacing:.12em;
+    transition:color .25s;
+  }
+  .cat-body h3{font-size:clamp(1.25rem,3vw,2.1rem);color:#fff;transition:color .25s}
+  .cat-body p{font-size:.94rem;color:#b3abab;margin-top:.35rem;transition:color .25s}
+  .cat-apps{
+    grid-column:2;display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem;
+  }
+  .cat-apps span{
+    font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+    border:1px solid #4a4040;color:#9c9494;padding:.28rem .6rem;
+    transition:border-color .25s,color .25s;
+  }
+  .cat-arrow{
+    grid-row:1 / span 2;grid-column:3;align-self:center;
+    width:2.6rem;height:2.6rem;border:1px solid #4a4040;
+    display:flex;align-items:center;justify-content:center;
+    transition:border-color .25s,color .25s;color:var(--amber);
+  }
+  .cat-arrow svg{width:1rem;height:1rem}
+  .cat-row a:hover .cat-idx,.cat-row a:focus-visible .cat-idx,
+  .cat-row a:hover .cat-body h3,.cat-row a:focus-visible .cat-body h3,
+  .cat-row a:hover .cat-arrow,.cat-row a:focus-visible .cat-arrow{color:var(--black)}
+  .cat-row a:hover .cat-body p,.cat-row a:focus-visible .cat-body p{color:#3d3106}
+  .cat-row a:hover .cat-apps span,.cat-row a:focus-visible .cat-apps span{border-color:rgba(7,6,6,.45);color:#3d3106}
+  .cat-row a:hover .cat-arrow,.cat-row a:focus-visible .cat-arrow{border-color:var(--black)}
+  .cat-hint{
+    margin-top:1.4rem;font-size:.78rem;color:#8d8585;
+    text-transform:uppercase;letter-spacing:.16em;font-weight:600;
+  }
+  @media (max-width:640px){
+    .cat-row a{grid-template-columns:2.2rem 1fr;padding:1.3rem .35rem}
+    .cat-arrow{display:none}
+    .cat-apps{grid-column:1 / -1}
+  }
+
+  /* ============ A LA MEDIDA ============ */
+  .medida{
+    background:var(--amber);color:var(--black);
+    padding:clamp(4rem,9vw,7rem) 0;
+    position:relative;overflow:hidden;
+  }
+  .medida-grid{
+    position:absolute;inset:0;pointer-events:none;opacity:.14;
+    background-image:
+      repeating-linear-gradient(90deg, var(--black) 0 3px, transparent 3px 30px),
+      repeating-linear-gradient(0deg, var(--black) 0 2px, transparent 2px 64px);
+  }
+  .medida .wrap{position:relative;z-index:1}
+  .medida .label{color:var(--black)}
+  .medida .label::before{background:var(--black)}
+  .medida h2{
+    font-size:clamp(2rem,5.5vw,4.2rem);color:var(--black);
+    max-width:18ch;margin:1.2rem 0 1.4rem;
+  }
+  .medida p{max-width:56ch;font-size:clamp(1rem,1.5vw,1.15rem);font-weight:400;margin-bottom:2.2rem;color:#1c1602}
+  .btn--dark{background:var(--black);border-color:var(--black);color:var(--amber)}
+  .btn--dark:hover{background:transparent;color:var(--black)}
+
+  /* ============ CONTACTO ============ */
+  .contacto{background:var(--black);padding:clamp(4rem,9vw,7rem) 0}
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#221d1d;border:1px solid #221d1d}
+  .loc{
+    background:var(--charcoal);padding:clamp(1.8rem,4vw,3rem);
+  }
+  .loc .tag{
+    font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.24em;
+    color:var(--amber);display:block;margin-bottom:1rem;
+  }
+  .loc h3{font-size:1.25rem;color:#fff;margin-bottom:.7rem}
+  .loc p{font-size:.98rem;color:#b3abab;max-width:32ch}
+  .contact-cta{
+    margin-top:2.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem 2rem;
+  }
+  .contact-cta .alt{
+    font-size:.86rem;color:#9c9494;
+  }
+  .contact-cta .alt a{color:var(--amber);font-weight:600;border-bottom:1px solid var(--amber)}
+  @media (max-width:760px){.loc-grid{grid-template-columns:1fr}}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--black);border-top:1px solid #221d1d;padding:2.6rem 0 6.5rem}
+  .foot-in{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.6rem;
+  }
+  .foot-in img{height:32px;width:auto}
+  .foot-meta{font-size:.8rem;color:#8d8585;line-height:1.8}
+  .foot-social{display:flex;align-items:center;gap:1rem}
+  .foot-social a{
+    width:42px;height:42px;border:1px solid #3a3232;display:flex;align-items:center;justify-content:center;
+    color:var(--steel);transition:border-color .2s,color .2s;
+  }
+  .foot-social a:hover{border-color:var(--amber);color:var(--amber)}
+  .foot-social svg{width:18px;height:18px}
+  .demo-seal{
+    margin-top:2.2rem;padding-top:1.4rem;border-top:1px solid #1c1818;
+    font-size:.74rem;color:#8d8585;
+  }
+  .demo-seal a{color:#a8a0a0;border-bottom:1px solid #4a4040}
+  .demo-seal a:hover{color:var(--amber);border-color:var(--amber)}
+
+  /* ============ WHATSAPP FAB ============ */
+  .wa-fab{
+    position:fixed;right:1.1rem;bottom:1.1rem;z-index:60;
+    width:58px;height:58px;border-radius:50%;
+    background:#25D366;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.45);
+    transition:transform .2s;
+  }
+  .wa-fab:hover{transform:scale(1.08)}
+  .wa-fab svg{width:30px;height:30px;fill:#fff}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{transition:none !important;animation:none !important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-in">
+    <a class="nav-logo" href="#" aria-label="Acero Grill — inicio">
+      <img src="./assets/acero-logo.svg" alt="Acero Grill" width="113" height="47">
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#medida">A la medida</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex;align-items:center;gap:.7rem">
+      <a class="btn" href="https://wa.me/584123112223?text=Hola%20Acero%20Grill%2C%20vi%20su%20p%C3%A1gina%20de%20rejillas%20electroforjadas%20y%20quiero%20cotizar" target="_blank" rel="noopener">Cotizar</a>
+      <button class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-floor" aria-hidden="true"></div>
+  <div class="hero-in">
+    <span class="label">Desde 1977 · Santa Cruz de Aragua</span>
+    <h1>El piso industrial que aguanta <em>49 años</em> de trabajo pesado.</h1>
+    <p class="sub">Rejillas electroforjadas, cercas y estructuras metálicas fabricadas en nuestra propia planta en la Zona Industrial de Santa Cruz de Aragua. Acero venezolano para la industria petrolera, la construcción y la arquitectura.</p>
+    <div class="hero-ctas">
+      <a class="btn" href="https://wa.me/584123112223?text=Hola%20Acero%20Grill%2C%20vi%20su%20p%C3%A1gina%20de%20rejillas%20electroforjadas%20y%20quiero%20cotizar" target="_blank" rel="noopener">Cotiza por WhatsApp</a>
+      <a class="btn btn--ghost" href="#productos">Ver catálogo</a>
+    </div>
+    <div class="hero-note" aria-label="Líneas de producto">
+      <span>Grating electroforjado</span>
+      <span>Protección perimetral</span>
+      <span>Proyectos a medida</span>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics" aria-label="Números de fábrica">
+  <div class="metrics-in">
+    <div class="metric reveal">
+      <span class="num">49</span>
+      <span class="unit">Años</span>
+      <p>De manufactura metalmecánica continua, sin pausa, desde 1977.</p>
+    </div>
+    <div class="metric reveal">
+      <span class="num">1</span>
+      <span class="unit">Planta propia</span>
+      <p>En la Zona Industrial de Santa Cruz de Aragua: fabricamos, no revendemos.</p>
+    </div>
+    <div class="metric reveal">
+      <span class="num">3</span>
+      <span class="unit">Sectores</span>
+      <p>Industria petrolera, construcción y arquitectura confían en nuestro acero.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="productos" id="productos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="label">Catálogo técnico</span>
+        <h2 style="margin-top:.9rem">Lo que sale de nuestra planta</h2>
+      </div>
+      <span class="sec-num" aria-hidden="true">01</span>
+    </div>
+    <ul class="cat-list">
+      <li class="cat-row reveal">
+        <a href="https://wa.me/584123112223?text=Hola%20Acero%20Grill%2C%20quiero%20cotizar%20rejillas%20electroforjadas" target="_blank" rel="noopener">
+          <span class="cat-idx">01</span>
+          <div class="cat-body">
+            <h3>Rejillas electroforjadas</h3>
+            <p>Grating de acero soldado por electrofusión: pisos, plataformas y pasarelas que no ceden.</p>
+          </div>
+          <span class="cat-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h11M9 3l5 5-5 5"/></svg></span>
+          <div class="cat-apps">
+            <span>Plataformas petroleras</span><span>Pasarelas</span><span>Pisos industriales</span>
+          </div>
+        </a>
+      </li>
+      <li class="cat-row reveal">
+        <a href="https://wa.me/584123112223?text=Hola%20Acero%20Grill%2C%20quiero%20cotizar%20cercas%20y%20protecci%C3%B3n%20perimetral" target="_blank" rel="noopener">
+          <span class="cat-idx">02</span>
+          <div class="cat-body">
+            <h3>Cercas y protección perimetral</h3>
+            <p>Cerramientos metálicos que resguardan plantas, obras e instalaciones críticas.</p>
+          </div>
+          <span class="cat-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h11M9 3l5 5-5 5"/></svg></span>
+          <div class="cat-apps">
+            <span>Instalaciones industriales</span><span>Obras civiles</span><span>Seguridad perimetral</span>
+          </div>
+        </a>
+      </li>
+      <li class="cat-row reveal">
+        <a href="https://wa.me/584123112223?text=Hola%20Acero%20Grill%2C%20quiero%20cotizar%20sumideros%20met%C3%A1licos" target="_blank" rel="noopener">
+          <span class="cat-idx">03</span>
+          <div class="cat-body">
+            <h3>Sumideros metálicos</h3>
+            <p>Rejillas de drenaje para vialidad y obra urbana, calculadas para tráfico pesado.</p>
+          </div>
+          <span class="cat-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h11M9 3l5 5-5 5"/></svg></span>
+          <div class="cat-apps">
+            <span>Vialidad</span><span>Drenajes urbanos</span><span>Estacionamientos</span>
+          </div>
+        </a>
+      </li>
+      <li class="cat-row reveal">
+        <a href="https://wa.me/584123112223?text=Hola%20Acero%20Grill%2C%20quiero%20cotizar%20pelda%C3%B1os%20antideslizantes" target="_blank" rel="noopener">
+          <span class="cat-idx">04</span>
+          <div class="cat-body">
+            <h3>Peldaños antideslizantes</h3>
+            <p>Escalones de grating con borde de seguridad para escaleras industriales.</p>
+          </div>
+          <span class="cat-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h11M9 3l5 5-5 5"/></svg></span>
+          <div class="cat-apps">
+            <span>Escaleras de planta</span><span>Torres y andamiaje</span><span>Accesos técnicos</span>
+          </div>
+        </a>
+      </li>
+      <li class="cat-row reveal">
+        <a href="https://wa.me/584123112223?text=Hola%20Acero%20Grill%2C%20quiero%20cotizar%20pletinas" target="_blank" rel="noopener">
+          <span class="cat-idx">05</span>
+          <div class="cat-body">
+            <h3>Pletinas</h3>
+            <p>Barras planas de acero para fabricación, refuerzo y estructura.</p>
+          </div>
+          <span class="cat-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h11M9 3l5 5-5 5"/></svg></span>
+          <div class="cat-apps">
+            <span>Herrería</span><span>Estructuras</span><span>Fabricación en serie</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <p class="cat-hint reveal">Toca cualquier línea para cotizarla directo por WhatsApp</p>
+  </div>
+</section>
+
+<!-- A LA MEDIDA -->
+<section class="medida" id="medida">
+  <div class="medida-grid" aria-hidden="true"></div>
+  <div class="wrap reveal">
+    <span class="label">02 · Proyectos especiales</span>
+    <h2>A la medida de tu proyecto</h2>
+    <p>Si tu obra necesita una medida, una carga o un acabado que no está en catálogo, lo fabricamos. Envíanos el plano o las dimensiones y te devolvemos una propuesta con especificación técnica: así trabajamos con la industria petrolera y la construcción desde 1977.</p>
+    <a class="btn btn--dark" href="https://wa.me/584123112223?text=Hola%20Acero%20Grill%2C%20tengo%20un%20proyecto%20a%20medida%20y%20quiero%20una%20propuesta" target="_blank" rel="noopener">Enviar mi proyecto</a>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="label">Dónde estamos</span>
+        <h2 style="margin-top:.9rem">Planta y oficinas</h2>
+      </div>
+      <span class="sec-num" aria-hidden="true">03</span>
+    </div>
+    <div class="loc-grid">
+      <div class="loc reveal">
+        <span class="tag">Planta de producción</span>
+        <h3>Santa Cruz de Aragua</h3>
+        <p>Zona Industrial Santa Cruz de Aragua, estado Aragua. Aquí se fabrica cada rejilla, cerca y peldaño que entregamos.</p>
+      </div>
+      <div class="loc reveal">
+        <span class="tag">Oficinas comerciales</span>
+        <h3>Caracas</h3>
+        <p>Centro Plaza, Torre B, Piso 13, Los Palos Grandes, Caracas. Atención a proyectos y cotizaciones.</p>
+      </div>
+    </div>
+    <div class="contact-cta reveal">
+      <a class="btn" href="https://wa.me/584123112223?text=Hola%20Acero%20Grill%2C%20vi%20su%20p%C3%A1gina%20de%20rejillas%20electroforjadas%20y%20quiero%20cotizar" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+      <p class="alt">O síguenos en Instagram: <a href="https://instagram.com/acerogrill" target="_blank" rel="noopener">@acerogrill</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-in">
+      <img src="./assets/acero-logo.svg" alt="Acero Grill" width="113" height="47">
+      <p class="foot-meta">
+        E.M. Acero Grill, C.A. · Fabricantes metalmecánicos desde 1977<br>
+        Planta: Zona Industrial Santa Cruz de Aragua · Oficinas: Centro Plaza, Torre B, Piso 13, Los Palos Grandes, Caracas
+      </p>
+      <div class="foot-social">
+        <a href="https://instagram.com/acerogrill" target="_blank" rel="noopener" aria-label="Instagram de Acero Grill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://wa.me/584123112223?text=Hola%20Acero%20Grill%2C%20vi%20su%20p%C3%A1gina%20de%20rejillas%20electroforjadas%20y%20quiero%20cotizar" target="_blank" rel="noopener" aria-label="WhatsApp de Acero Grill">
+          <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.1.6 4.1 1.6 5.9L4 29l8.4-1.6c1.7.9 3.6 1.4 5.6 1.4 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.3l-.4-.2-5 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.5 4.5-9.9 10.1-9.9s10.1 4.4 10.1 9.9-4.5 9.9-10.1 9.9zm5.6-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.2 3 1.3 3.2c.2.2 2.3 3.5 5.6 4.9.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
+        </a>
+      </div>
+    </div>
+    <p class="demo-seal">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FAB -->
+<a class="wa-fab" href="https://wa.me/584123112223?text=Hola%20Acero%20Grill%2C%20vi%20su%20p%C3%A1gina%20de%20rejillas%20electroforjadas%20y%20quiero%20cotizar" target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.1.6 4.1 1.6 5.9L4 29l8.4-1.6c1.7.9 3.6 1.4 5.6 1.4 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.3l-.4-.2-5 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.5 4.5-9.9 10.1-9.9s10.1 4.4 10.1 9.9-4.5 9.9-10.1 9.9zm5.6-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.2 3 1.3 3.2c.2.2 2.3 3.5 5.6 4.9.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script>
+  // Menú móvil
+  var burger = document.getElementById('navBurger');
+  var links = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  });
+  links.addEventListener('click', function(e){
+    if (e.target.tagName === 'A') {
+      links.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+    }
+  });
+
+  // Reveal on scroll
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function(el){ io.observe(el); });
+  }
+</script>
+
+</body>
+</html>
