@@ -18,6 +18,7 @@ Base: `https://marcellaaaaaaaa.github.io/medine-demos/<slug>/`
 | Detective de Productos | detective | Ámbar #FFC54A + chocolate #26140A, Archivo Black | Zine/póster retail lúdico | Efecto lupa: doble capa wallpaper SVG + clip-path circle en spline + sigue cursor | 2026-07-23 | Mensaje por enviar (ECU confirmado) |
 | Especialidades de Carnes | carnes | Maroon #600505 + amarillo #F7C413, Anton | Mercado de precios con dirección de arte | Interacción "Arma tu pedido": steppers + total en vivo + wa.me armado; sticker góndola pop | 2026-07-23 | Referido a Iván López (redes) |
 | Distribuidora OBA | oba | Crema #FCF8EF + marrón #7A5128 + ámbar #F6A900, Poppins | El pasillo mayorista (base clara) | 3 pasillos scroll-snap horizontales + precios con animación de sello de goma | 2026-07-23 | Seguimiento con demo enviado |
+| Pastel & Crema | pastelycrema | Crema #F5EBDD + rosa empolvado #C88BA0 + dorado #C9A227 + pop carmesí #A0001A, Fraunces+Mulish | Editorial de pâtisserie / revista (secciones numeradas, base clara con aire) | Relleno de texto al scroll (letra a letra, stagger) + SVG line-drawing dorado (batidor/torta, stroke-dashoffset IO) + galería bento asimétrica con micro-interacciones. Nav píldora flotante glass · footer-póster wordmark gigante · CTA sello circular. Interacción "arma tu encargo" 4 pasos → wa.me (SIN precios) | 2026-07-24 | Demo lista — WhatsApp PENDIENTE (no público) |
 
 ## Notas de unicidad
 
@@ -29,7 +30,9 @@ Base: `https://marcellaaaaaaaa.github.io/medine-demos/<slug>/`
 
 - `background-clip:text` usado 2 veces (Supulca, Magusa) — NO usarlo más.
 - Marquees: SMD (marcas) y OBA (franja ámbar) — evitar como firma principal en adelante.
-- Bases claras: solo Mersan y OBA — alternar más hacia claro/excéntrico en futuras.
+- Bases claras: Mersan, OBA y Pastel & Crema — alternar más hacia claro/excéntrico en futuras.
+- Nav píldora flotante + footer-póster + CTA sello circular: usados por Pastel & Crema — rotar en las próximas.
+- Fraunces (display): usado por Pastel & Crema. Relleno-de-texto-al-scroll: usado — rotar firma.
 - Pool de técnicas disponibles: ver `references/diseno.md` de la skill `demo-landing`
   (before/after slider, spotlight, SVG line-drawing, bento, sticky chapters, split-flap,
   día/noche, mapa SVG con pines, flip 3D, tipográfico puro, risograph, neo-brutalismo...).
