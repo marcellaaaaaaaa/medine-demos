@@ -18,6 +18,7 @@ Base: `https://marcellaaaaaaaa.github.io/medine-demos/<slug>/`
 | Detective de Productos | detective | Ámbar #FFC54A + chocolate #26140A, Archivo Black | Zine/póster retail lúdico | Efecto lupa: doble capa wallpaper SVG + clip-path circle en spline + sigue cursor | 2026-07-23 | Mensaje por enviar (ECU confirmado) |
 | Especialidades de Carnes | carnes | Maroon #600505 + amarillo #F7C413, Anton | Mercado de precios con dirección de arte | Interacción "Arma tu pedido": steppers + total en vivo + wa.me armado; sticker góndola pop | 2026-07-23 | Referido a Iván López (redes) |
 | Distribuidora OBA | oba | Crema #FCF8EF + marrón #7A5128 + ámbar #F6A900, Poppins | El pasillo mayorista (base clara) | 3 pasillos scroll-snap horizontales + precios con animación de sello de goma | 2026-07-23 | Seguimiento con demo enviado |
+| C.C. Plaza Mayor | plazamayor | Arena #F6EBD9 + azul canal #0B4A75 + turquesa #3E9A8E + terracota #A34A28 + sol #F2B441, Marcellus+Karla | Guía del visitante / wayfinding — la página ES el directorio y el plano que el centro comercial no tiene | **Plano SVG propio de los 6 edificios + canal, sincronizado en ambos sentidos con el directorio**: filtrar por categoría atenúa los pines que no aplican (CSS puro con `:has()`), y tocar un edificio salta a su local en la lista. Segunda técnica: **toggle día/noche** que reescribe las custom properties (día arena / noche azul canal) e invierte el filtro de las fotos. Nav **rail lateral fijo** (desktop) → **barra inferior thumb-zone** (móvil) · footer **índice numerado** · directorio en **filas con hairlines**, sin tarjetas · CTA con **forma de boleto** (mask de radial-gradients) | 2026-07-31 | Demo lista — mensaje por enviar (sin WhatsApp público: CTA va a DM de IG) |
 | Pastel & Crema | pastelycrema | Crema #F5EBDD + rosa empolvado #C88BA0 + dorado #C9A227 + pop carmesí #A0001A, Fraunces+Mulish | Editorial de pâtisserie / revista (secciones numeradas, base clara con aire) | Relleno de texto al scroll (letra a letra, stagger) + SVG line-drawing dorado (batidor/torta, stroke-dashoffset IO) + galería bento asimétrica con micro-interacciones. Nav píldora flotante glass · footer-póster wordmark gigante · CTA sello circular. Interacción "arma tu encargo" 4 pasos → wa.me (SIN precios) | 2026-07-24 | Demo lista — WhatsApp PENDIENTE (no público) |
 
 ## Notas de unicidad
@@ -32,6 +33,10 @@ Base: `https://marcellaaaaaaaa.github.io/medine-demos/<slug>/`
 - Marquees: SMD (marcas) y OBA (franja ámbar) — evitar como firma principal en adelante.
 - Bases claras: Mersan, OBA y Pastel & Crema — alternar más hacia claro/excéntrico en futuras.
 - Nav píldora flotante + footer-póster + CTA sello circular: usados por Pastel & Crema — rotar en las próximas.
+- Rail lateral fijo + barra inferior móvil + footer-índice numerado + CTA-boleto: usados por Plaza Mayor — rotar.
+- Toggle día/noche y plano SVG con pines: usados por Plaza Mayor — sacarlos del pool de ideas frescas.
+- Filtrado CSS puro con `:has()` (sin JS): estrenado en Plaza Mayor; se puede reusar, pero no como firma principal.
+- Marcellus (display) y Karla (texto): usados por Plaza Mayor.
 - Fraunces (display): usado por Pastel & Crema. Relleno-de-texto-al-scroll: usado — rotar firma.
 - Pool de técnicas disponibles: ver `references/diseno.md` de la skill `demo-landing`
   (before/after slider, spotlight, SVG line-drawing, bento, sticky chapters, split-flap,
